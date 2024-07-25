@@ -1,0 +1,38 @@
+input AMPLIFY {
+ engine: String = "mysql"  
+ globalAuthRule: AuthRule = { allow: public }
+}
+
+
+type Doctor @refersTo(name: "doctor") @model @auth(rules: [{ allow: public }]){
+  doctorid: String! @primaryKey
+  qualifications: String
+  tags: String
+  registeredHospitalId: String @index(name: "registeredHospitalId")
+}
+
+type Hospital @refersTo(name: "hospital") @model @auth(rules: [{ allow: public }]){
+  hospitalid: String! @primaryKey
+  location: String
+  opendate: AWSDate
+  tags: String
+}
+
+type Patient @refersTo(name: "patient") @model @auth(rules: [{ allow: public }]){
+  patientid: String! @primaryKey
+  name: String 
+  registeredHospitalId: String @index(name: "registeredHospitalId")
+  registeredDoctorId: String @index(name: "registeredDoctorId")
+  address: String
+  age: Int
+}
+
+type Appointment @refersTo(name: "Appointments") @model @auth(rules: [{allow: public}]){
+  appointmentid: Int! @primaryKey
+  doctorid: String @index(name: "doctorid")
+  patientid: String @index(name: "patientid")
+  app_datetime: AWSDateTime 
+  appointment_name: String 
+  appointment_status: String
+  appointment_notes: String  
+}

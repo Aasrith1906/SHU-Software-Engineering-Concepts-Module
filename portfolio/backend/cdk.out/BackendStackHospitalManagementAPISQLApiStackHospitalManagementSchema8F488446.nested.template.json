@@ -1,0 +1,1088 @@
+{
+ "Resources": {
+  "SQLLayerVersionCustomResourceHospitalManagementSchema6DF7E14F": {
+   "Type": "Custom::SQLLayerVersionCustomResource",
+   "Properties": {
+    "ServiceToken": {
+     "Fn::GetAtt": [
+      "AWS679f53fac002430cb0da5b7982bd22872D164C4C",
+      "Arn"
+     ]
+    },
+    "Create": {
+     "Fn::Join": [
+      "",
+      [
+       "{\"service\":\"S3\",\"action\":\"getObject\",\"region\":\"us-east-1\",\"parameters\":{\"Bucket\":\"amplify-rds-layer-resources\",\"Key\":\"sql-layer-versions/",
+       {
+        "Ref": "AWS::Region"
+       },
+       "\"},\"physicalResourceId\":{\"id\":\"SQLLayerVersionCustomResourceHospitalManagementSchema-1721163611525\"}}"
+      ]
+     ]
+    },
+    "Update": {
+     "Fn::Join": [
+      "",
+      [
+       "{\"service\":\"S3\",\"action\":\"getObject\",\"region\":\"us-east-1\",\"parameters\":{\"Bucket\":\"amplify-rds-layer-resources\",\"Key\":\"sql-layer-versions/",
+       {
+        "Ref": "AWS::Region"
+       },
+       "\"},\"physicalResourceId\":{\"id\":\"SQLLayerVersionCustomResourceHospitalManagementSchema-1721163611525\"}}"
+      ]
+     ]
+    },
+    "InstallLatestAwsSdk": false
+   },
+   "DependsOn": [
+    "SQLLayerVersionCustomResourceHospitalManagementSchemaCustomResourcePolicyA55D4DD9"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/SQLApiStackHospitalManagementSchema/SQLLayerVersionCustomResourceHospitalManagementSchema/Resource/Default"
+   }
+  },
+  "SQLLayerVersionCustomResourceHospitalManagementSchemaCustomResourcePolicyA55D4DD9": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "s3:GetObject",
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          "arn:aws:s3:::amplify-rds-layer-resources/sql-layer-versions/",
+          {
+           "Ref": "AWS::Region"
+          }
+         ]
+        ]
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SQLLayerVersionCustomResourceHospitalManagementSchemaCustomResourcePolicyA55D4DD9",
+    "Roles": [
+     {
+      "Ref": "AWS679f53fac002430cb0da5b7982bd2287ServiceRoleC1EA0FF2"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/SQLApiStackHospitalManagementSchema/SQLLayerVersionCustomResourceHospitalManagementSchema/CustomResourcePolicy/Resource"
+   }
+  },
+  "AWS679f53fac002430cb0da5b7982bd2287ServiceRoleC1EA0FF2": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/SQLApiStackHospitalManagementSchema/AWS679f53fac002430cb0da5b7982bd2287/ServiceRole/Resource"
+   }
+  },
+  "AWS679f53fac002430cb0da5b7982bd22872D164C4C": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": {
+      "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+     },
+     "S3Key": "97f30e67419a1676a2215492723e5add1aa491caf0cbe2dd878fc4fab0468cd4.zip"
+    },
+    "Handler": "index.handler",
+    "Role": {
+     "Fn::GetAtt": [
+      "AWS679f53fac002430cb0da5b7982bd2287ServiceRoleC1EA0FF2",
+      "Arn"
+     ]
+    },
+    "Runtime": {
+     "Fn::FindInMap": [
+      "LatestNodeRuntimeMap",
+      {
+       "Ref": "AWS::Region"
+      },
+      "value"
+     ]
+    },
+    "Timeout": 120
+   },
+   "DependsOn": [
+    "AWS679f53fac002430cb0da5b7982bd2287ServiceRoleC1EA0FF2"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/SQLApiStackHospitalManagementSchema/AWS679f53fac002430cb0da5b7982bd2287/Resource",
+    "aws:asset:path": "asset.97f30e67419a1676a2215492723e5add1aa491caf0cbe2dd878fc4fab0468cd4",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Code"
+   }
+  },
+  "SQLLambdaRoleHospitalManagementSchemaDCDEE442": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "RoleName": {
+     "Fn::Join": [
+      "",
+      [
+       "SQLLambdaRoleHospitaff2fb9-",
+       {
+        "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+       },
+       "-NONE"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/SQLApiStackHospitalManagementSchema/SQLLambdaRoleHospitalManagementSchema/Resource"
+   }
+  },
+  "SQLLambdaRoleHospitalManagementSchemaDefaultPolicy28E804F4": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "ec2:CreateNetworkInterface",
+        "ec2:DeleteNetworkInterface",
+        "ec2:DescribeNetworkInterfaces"
+       ],
+       "Effect": "Allow",
+       "Resource": "*"
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SQLLambdaRoleHospitalManagementSchemaDefaultPolicy28E804F4",
+    "Roles": [
+     {
+      "Ref": "SQLLambdaRoleHospitalManagementSchemaDCDEE442"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/SQLApiStackHospitalManagementSchema/SQLLambdaRoleHospitalManagementSchema/DefaultPolicy/Resource"
+   }
+  },
+  "SQLLambdaRolePolicyHospitalManagementSchema9EE97FB1": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents"
+       ],
+       "Effect": "Allow",
+       "Resource": "arn:aws:logs:*:*:*"
+      },
+      {
+       "Action": "secretsmanager:GetSecretValue",
+       "Effect": "Allow",
+       "Resource": "arn:aws:secretsmanager:eu-west-1:239415019418:secret:hospitalmanagement-rds-pfDhum"
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": {
+     "Fn::Join": [
+      "",
+      [
+       "SQLLambdaRoleHospitaff2fb9-",
+       {
+        "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+       },
+       "-NONEPolicy"
+      ]
+     ]
+    },
+    "Roles": [
+     {
+      "Ref": "SQLLambdaRoleHospitalManagementSchemaDCDEE442"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/SQLApiStackHospitalManagementSchema/SQLLambdaRolePolicyHospitalManagementSchema/Resource"
+   }
+  },
+  "SQLVpcEndpointHospitalManagementSchemasecretsmanager": {
+   "Type": "AWS::EC2::VPCEndpoint",
+   "Properties": {
+    "PrivateDnsEnabled": false,
+    "SecurityGroupIds": [
+     "sg-026a8e46a822d9c5d"
+    ],
+    "ServiceName": {
+     "Fn::Join": [
+      "",
+      [
+       "com.amazonaws.",
+       {
+        "Ref": "AWS::Region"
+       },
+       ".secretsmanager"
+      ]
+     ]
+    },
+    "SubnetIds": [
+     "subnet-0c2e728078f8259fd",
+     "subnet-0dbf86d2f46192a0d",
+     "subnet-073c00edb009b4a0e"
+    ],
+    "VpcEndpointType": "Interface",
+    "VpcId": "vpc-03293c2c6f7620041"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/SQLApiStackHospitalManagementSchema/SQLVpcEndpointHospitalManagementSchemasecretsmanager"
+   }
+  },
+  "SQLFunctionHospitalManagementSchema9AF2D47C": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": {
+      "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+     },
+     "S3Key": "717626b5eec471a6fcdeece82585125b7e02e8d5e827ed64901fb8952bb14383.zip"
+    },
+    "Description": "Amplify-managed SQL function",
+    "Environment": {
+     "Variables": {
+      "engine": "mysql",
+      "CREDENTIAL_STORAGE_METHOD": "SECRETS_MANAGER",
+      "secretArn": "arn:aws:secretsmanager:eu-west-1:239415019418:secret:hospitalmanagement-rds-pfDhum",
+      "port": "3306",
+      "database": "hospitalmanagement",
+      "host": "hospital-management-app.cxv1rdz31qj2.eu-west-1.rds.amazonaws.com",
+      "SECRETS_MANAGER_ENDPOINT": {
+       "Fn::Select": [
+        0,
+        {
+         "Fn::GetAtt": [
+          "SQLVpcEndpointHospitalManagementSchemasecretsmanager",
+          "DnsEntries"
+         ]
+        }
+       ]
+      }
+     }
+    },
+    "Handler": "handler.run",
+    "Layers": [
+     {
+      "Fn::GetAtt": [
+       "SQLLayerVersionCustomResourceHospitalManagementSchema6DF7E14F",
+       "Body"
+      ]
+     }
+    ],
+    "Role": {
+     "Fn::GetAtt": [
+      "SQLLambdaRoleHospitalManagementSchemaDCDEE442",
+      "Arn"
+     ]
+    },
+    "Runtime": "nodejs18.x",
+    "Tags": [
+     {
+      "Key": "amplify:function-type",
+      "Value": "sql-data-source"
+     }
+    ],
+    "Timeout": 30,
+    "VpcConfig": {
+     "SecurityGroupIds": [
+      "sg-026a8e46a822d9c5d"
+     ],
+     "SubnetIds": [
+      "subnet-0c2e728078f8259fd",
+      "subnet-0dbf86d2f46192a0d",
+      "subnet-073c00edb009b4a0e"
+     ]
+    }
+   },
+   "DependsOn": [
+    "SQLLambdaRoleHospitalManagementSchemaDefaultPolicy28E804F4",
+    "SQLLambdaRoleHospitalManagementSchemaDCDEE442"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/SQLApiStackHospitalManagementSchema/SQLFunctionHospitalManagementSchema/Resource"
+   }
+  },
+  "SQLPatchingLambdaRoleHospitalManagementSchema673EA777": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "RoleName": {
+     "Fn::Join": [
+      "",
+      [
+       "SQLPatchingLambdaRole82349-",
+       {
+        "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+       },
+       "-NONE"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/SQLApiStackHospitalManagementSchema/SQLPatchingLambdaRoleHospitalManagementSchema/Resource"
+   }
+  },
+  "SQLPatchingLambdaRoleHospitalManagementSchemaDefaultPolicyC4C9112B": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "ec2:CreateNetworkInterface",
+        "ec2:DeleteNetworkInterface",
+        "ec2:DescribeNetworkInterfaces"
+       ],
+       "Effect": "Allow",
+       "Resource": "*"
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SQLPatchingLambdaRoleHospitalManagementSchemaDefaultPolicyC4C9112B",
+    "Roles": [
+     {
+      "Ref": "SQLPatchingLambdaRoleHospitalManagementSchema673EA777"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/SQLApiStackHospitalManagementSchema/SQLPatchingLambdaRoleHospitalManagementSchema/DefaultPolicy/Resource"
+   }
+  },
+  "SQLPatchingLambdaRolePolicyHospitalManagementSchemaFEDE22E9": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents"
+       ],
+       "Effect": "Allow",
+       "Resource": "arn:aws:logs:*:*:*"
+      },
+      {
+       "Action": "lambda:UpdateFunctionConfiguration",
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::GetAtt": [
+         "SQLFunctionHospitalManagementSchema9AF2D47C",
+         "Arn"
+        ]
+       }
+      },
+      {
+       "Action": [
+        "lambda:GetLayerVersion",
+        "lambda:GetLayerVersionPolicy"
+       ],
+       "Effect": "Allow",
+       "Resource": "*"
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": {
+     "Fn::Join": [
+      "",
+      [
+       "SQLPatchingLambdaRole82349-",
+       {
+        "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+       },
+       "-NONEPolicy"
+      ]
+     ]
+    },
+    "Roles": [
+     {
+      "Ref": "SQLPatchingLambdaRoleHospitalManagementSchema673EA777"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/SQLApiStackHospitalManagementSchema/SQLPatchingLambdaRolePolicyHospitalManagementSchema/Resource"
+   }
+  },
+  "SQLLambdaLayerPatchingFunctionHospitalManagementSchema826D9A1F": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": {
+      "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+     },
+     "S3Key": "5026d8b72f52ec34ef590b54529fcf53579af1df056f7a028c8ac913738a703b.zip"
+    },
+    "Environment": {
+     "Variables": {
+      "LAMBDA_FUNCTION_ARN": {
+       "Fn::GetAtt": [
+        "SQLFunctionHospitalManagementSchema9AF2D47C",
+        "Arn"
+       ]
+      }
+     }
+    },
+    "Handler": "index.handler",
+    "Role": {
+     "Fn::GetAtt": [
+      "SQLPatchingLambdaRoleHospitalManagementSchema673EA777",
+      "Arn"
+     ]
+    },
+    "Runtime": "nodejs18.x",
+    "Timeout": 360
+   },
+   "DependsOn": [
+    "SQLPatchingLambdaRoleHospitalManagementSchemaDefaultPolicyC4C9112B",
+    "SQLPatchingLambdaRoleHospitalManagementSchema673EA777"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/SQLApiStackHospitalManagementSchema/SQLLambdaLayerPatchingFunctionHospitalManagementSchema/Resource"
+   }
+  },
+  "SQLLambdaLayerPatchingFunctionHospitalManagementSchemaAllowInvokeBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLLambdaLayerPatchingTopicHospitalManagementSchema1840D45D9828F6B6": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::GetAtt": [
+      "SQLLambdaLayerPatchingFunctionHospitalManagementSchema826D9A1F",
+      "Arn"
+     ]
+    },
+    "Principal": "sns.amazonaws.com",
+    "SourceArn": {
+     "Fn::GetAtt": [
+      "SQLLambdaLayerPatchingTopicARNResolverHospitalManagementSchemaF22EFA04",
+      "Body"
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/SQLApiStackHospitalManagementSchema/SQLLambdaLayerPatchingFunctionHospitalManagementSchema/AllowInvoke:BackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLLambdaLayerPatchingTopicHospitalManagementSchema1840D45D"
+   }
+  },
+  "SQLLambdaLayerPatchingFunctionHospitalManagementSchemaSQLLambdaLayerPatchingTopicHospitalManagementSchema4A889578": {
+   "Type": "AWS::SNS::Subscription",
+   "Properties": {
+    "Endpoint": {
+     "Fn::GetAtt": [
+      "SQLLambdaLayerPatchingFunctionHospitalManagementSchema826D9A1F",
+      "Arn"
+     ]
+    },
+    "FilterPolicy": {
+     "Region": [
+      {
+       "Ref": "AWS::Region"
+      }
+     ]
+    },
+    "Protocol": "lambda",
+    "Region": {
+     "Fn::Select": [
+      3,
+      {
+       "Fn::Split": [
+        ":",
+        {
+         "Fn::GetAtt": [
+          "SQLLambdaLayerPatchingTopicARNResolverHospitalManagementSchemaF22EFA04",
+          "Body"
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    "TopicArn": {
+     "Fn::GetAtt": [
+      "SQLLambdaLayerPatchingTopicARNResolverHospitalManagementSchemaF22EFA04",
+      "Body"
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/SQLApiStackHospitalManagementSchema/SQLLambdaLayerPatchingFunctionHospitalManagementSchema/SQLLambdaLayerPatchingTopicHospitalManagementSchema/Resource"
+   }
+  },
+  "SQLLambdaLayerPatchingTopicARNResolverHospitalManagementSchemaF22EFA04": {
+   "Type": "Custom::SQLSNSTopicARNCustomResource",
+   "Properties": {
+    "ServiceToken": {
+     "Fn::GetAtt": [
+      "AWS679f53fac002430cb0da5b7982bd22872D164C4C",
+      "Arn"
+     ]
+    },
+    "Create": {
+     "Fn::Join": [
+      "",
+      [
+       "{\"service\":\"S3\",\"action\":\"getObject\",\"region\":\"us-east-1\",\"parameters\":{\"Bucket\":\"amplify-rds-layer-resources\",\"Key\":\"sql-sns-topic-versions/",
+       {
+        "Ref": "AWS::Region"
+       },
+       "\"},\"physicalResourceId\":{\"id\":\"SQLLambdaLayerPatchingTopicARNResolverHospitalManagementSchema-1721163611681\"}}"
+      ]
+     ]
+    },
+    "Update": {
+     "Fn::Join": [
+      "",
+      [
+       "{\"service\":\"S3\",\"action\":\"getObject\",\"region\":\"us-east-1\",\"parameters\":{\"Bucket\":\"amplify-rds-layer-resources\",\"Key\":\"sql-sns-topic-versions/",
+       {
+        "Ref": "AWS::Region"
+       },
+       "\"},\"physicalResourceId\":{\"id\":\"SQLLambdaLayerPatchingTopicARNResolverHospitalManagementSchema-1721163611681\"}}"
+      ]
+     ]
+    },
+    "InstallLatestAwsSdk": false
+   },
+   "DependsOn": [
+    "SQLLambdaLayerPatchingTopicARNResolverHospitalManagementSchemaCustomResourcePolicyE9C1B9BB"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/SQLApiStackHospitalManagementSchema/SQLLambdaLayerPatchingTopicARNResolverHospitalManagementSchema/Resource/Default"
+   }
+  },
+  "SQLLambdaLayerPatchingTopicARNResolverHospitalManagementSchemaCustomResourcePolicyE9C1B9BB": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "s3:GetObject",
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          "arn:aws:s3:::amplify-rds-layer-resources/sql-sns-topic-versions/",
+          {
+           "Ref": "AWS::Region"
+          }
+         ]
+        ]
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SQLLambdaLayerPatchingTopicARNResolverHospitalManagementSchemaCustomResourcePolicyE9C1B9BB",
+    "Roles": [
+     {
+      "Ref": "AWS679f53fac002430cb0da5b7982bd2287ServiceRoleC1EA0FF2"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/SQLApiStackHospitalManagementSchema/SQLLambdaLayerPatchingTopicARNResolverHospitalManagementSchema/CustomResourcePolicy/Resource"
+   }
+  },
+  "SQLLambdaDataSourceHospitalManagementSchemaServiceRole4A64F564": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "appsync.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/SQLApiStackHospitalManagementSchema/SQLLambdaDataSourceHospitalManagementSchema/ServiceRole/Resource"
+   }
+  },
+  "SQLLambdaDataSourceHospitalManagementSchemaServiceRoleDefaultPolicy6815C7C2": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "lambda:InvokeFunction",
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "SQLFunctionHospitalManagementSchema9AF2D47C",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "SQLFunctionHospitalManagementSchema9AF2D47C",
+             "Arn"
+            ]
+           },
+           ":*"
+          ]
+         ]
+        }
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SQLLambdaDataSourceHospitalManagementSchemaServiceRoleDefaultPolicy6815C7C2",
+    "Roles": [
+     {
+      "Ref": "SQLLambdaDataSourceHospitalManagementSchemaServiceRole4A64F564"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/SQLApiStackHospitalManagementSchema/SQLLambdaDataSourceHospitalManagementSchema/ServiceRole/DefaultPolicy/Resource"
+   }
+  },
+  "SQLLambdaDataSourceHospitalManagementSchema": {
+   "Type": "AWS::AppSync::DataSource",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "LambdaConfig": {
+     "LambdaFunctionArn": {
+      "Fn::GetAtt": [
+       "SQLFunctionHospitalManagementSchema9AF2D47C",
+       "Arn"
+      ]
+     }
+    },
+    "Name": "SQLLambdaDataSourceHospitalManagementSchema",
+    "ServiceRoleArn": {
+     "Fn::GetAtt": [
+      "SQLLambdaDataSourceHospitalManagementSchemaServiceRole4A64F564",
+      "Arn"
+     ]
+    },
+    "Type": "AWS_LAMBDA"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/SQLApiStackHospitalManagementSchema/SQLLambdaDataSourceHospitalManagementSchema/Resource"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/11RwU7DMAz9Fu5ZgILEmRU4AapaxLVKEzN5bZ2qTpimqv+O08IYnPzei52852T6+vZOX12YA2+sazcdNnp6BQ7gqmBsq2zk4Pt6BPZxtMD6/sD5opXfkpLZeupM3zijpwpp10Hw9BTJBvSkTiD/oHNcwNgjs7BZoen1VPgO7XE5WlHpO0g01VnxTW2YIYiFVITrbbQthK1hUGAzLa3vRf5IbvBI0kAsfmLDdsTh59U//M0PaNP4rMww8JGsnp6XIA8mmGqNJ0O/bJ7Vv/TJ3xl+kYtkBeqkLWZll7ukSkPuyWFYUpN3oPd8+ZllOpNP2DPiZowUsAddrvULSvl6dqEBAAA="
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/SQLApiStackHospitalManagementSchema/CDKMetadata/Default"
+   },
+   "Condition": "CDKMetadataAvailable"
+  }
+ },
+ "Mappings": {
+  "LatestNodeRuntimeMap": {
+   "af-south-1": {
+    "value": "nodejs20.x"
+   },
+   "ap-east-1": {
+    "value": "nodejs20.x"
+   },
+   "ap-northeast-1": {
+    "value": "nodejs20.x"
+   },
+   "ap-northeast-2": {
+    "value": "nodejs20.x"
+   },
+   "ap-northeast-3": {
+    "value": "nodejs20.x"
+   },
+   "ap-south-1": {
+    "value": "nodejs20.x"
+   },
+   "ap-south-2": {
+    "value": "nodejs20.x"
+   },
+   "ap-southeast-1": {
+    "value": "nodejs20.x"
+   },
+   "ap-southeast-2": {
+    "value": "nodejs20.x"
+   },
+   "ap-southeast-3": {
+    "value": "nodejs20.x"
+   },
+   "ap-southeast-4": {
+    "value": "nodejs20.x"
+   },
+   "ca-central-1": {
+    "value": "nodejs20.x"
+   },
+   "cn-north-1": {
+    "value": "nodejs18.x"
+   },
+   "cn-northwest-1": {
+    "value": "nodejs18.x"
+   },
+   "eu-central-1": {
+    "value": "nodejs20.x"
+   },
+   "eu-central-2": {
+    "value": "nodejs20.x"
+   },
+   "eu-north-1": {
+    "value": "nodejs20.x"
+   },
+   "eu-south-1": {
+    "value": "nodejs20.x"
+   },
+   "eu-south-2": {
+    "value": "nodejs20.x"
+   },
+   "eu-west-1": {
+    "value": "nodejs20.x"
+   },
+   "eu-west-2": {
+    "value": "nodejs20.x"
+   },
+   "eu-west-3": {
+    "value": "nodejs20.x"
+   },
+   "il-central-1": {
+    "value": "nodejs20.x"
+   },
+   "me-central-1": {
+    "value": "nodejs20.x"
+   },
+   "me-south-1": {
+    "value": "nodejs20.x"
+   },
+   "sa-east-1": {
+    "value": "nodejs20.x"
+   },
+   "us-east-1": {
+    "value": "nodejs20.x"
+   },
+   "us-east-2": {
+    "value": "nodejs20.x"
+   },
+   "us-west-1": {
+    "value": "nodejs20.x"
+   },
+   "us-west-2": {
+    "value": "nodejs20.x"
+   }
+  }
+ },
+ "Conditions": {
+  "CDKMetadataAvailable": {
+   "Fn::Or": [
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "af-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-northeast-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-northeast-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ca-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "cn-north-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "cn-northwest-1"
+       ]
+      }
+     ]
+    },
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-north-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-3"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "il-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "me-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "me-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "sa-east-1"
+       ]
+      }
+     ]
+    },
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-east-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-west-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-west-2"
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "Parameters": {
+  "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId": {
+   "Type": "String"
+  }
+ },
+ "Outputs": {
+  "BackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLLambdaDataSourceHospitalManagementSchema30F8FE8CName": {
+   "Value": {
+    "Fn::GetAtt": [
+     "SQLLambdaDataSourceHospitalManagementSchema",
+     "Name"
+    ]
+   }
+  },
+  "BackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLFunctionHospitalManagementSchema60B0171EArn": {
+   "Value": {
+    "Fn::GetAtt": [
+     "SQLFunctionHospitalManagementSchema9AF2D47C",
+     "Arn"
+    ]
+   }
+  }
+ }
+}

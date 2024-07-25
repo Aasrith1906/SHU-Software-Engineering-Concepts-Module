@@ -1,0 +1,1562 @@
+{
+ "Resources": {
+  "QuerygetPatientpreAuth0FunctionQuerygetPatientpreAuth0FunctionAppSyncFunction7E26F855": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerygetPatientpreAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/61f68dec2e605bddfc4884dba6ec095082b42ad0507ce9cb6016dfbdb032ac7c.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Patient/QuerygetPatientpreAuth0Function/QuerygetPatientpreAuth0Function.AppSyncFunction"
+   }
+  },
+  "QuerygetPatientauth0FunctionQuerygetPatientauth0FunctionAppSyncFunction36192A1C": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerygetPatientauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/ed7aee4ef7fcea2620aee982ad8193afe5a366541c5a031bc98417538464a5e0.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Patient/QuerygetPatientauth0Function/QuerygetPatientauth0Function.AppSyncFunction"
+   }
+  },
+  "QuerygetPatientpostAuth0FunctionQuerygetPatientpostAuth0FunctionAppSyncFunction82FA667A": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerygetPatientpostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/0fff176e894a85ceed7486a9ea7444fcf3560c2c64ce431db741c1a2edf40f42.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Patient/QuerygetPatientpostAuth0Function/QuerygetPatientpostAuth0Function.AppSyncFunction"
+   }
+  },
+  "QueryGetPatientDataResolverFnQueryGetPatientDataResolverFnAppSyncFunction63361816": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538OutputsBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLLambdaData83D6855B"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QueryGetPatientDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/d0ba9359825d38c3f142a56313a7be65a7a9e5614fffda5cc985882c7a7eac5c.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/cc01911d0269d4080ea57505dc445dfc315ef7ad85d3d9d4ea1357858bff451d.vtl"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Patient/QueryGetPatientDataResolverFn/QueryGetPatientDataResolverFn.AppSyncFunction"
+   }
+  },
+  "GetPatientResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "FieldName": "getPatient",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "QuerygetPatientpreAuth0FunctionQuerygetPatientpreAuth0FunctionAppSyncFunction7E26F855",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QuerygetPatientauth0FunctionQuerygetPatientauth0FunctionAppSyncFunction36192A1C",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QuerygetPatientpostAuth0FunctionQuerygetPatientpostAuth0FunctionAppSyncFunction82FA667A",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QueryGetPatientDataResolverFnQueryGetPatientDataResolverFnAppSyncFunction63361816",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Query\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"getPatient\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AWS_LAMBDA\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"lambdaFunctionArn\", \"",
+       {
+        "Ref": "referencetoBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538OutputsBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLFunctionHo5FC8E1BE"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Query"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Patient/queryGetPatientResolver"
+   }
+  },
+  "QuerylistPatientspreAuth0FunctionQuerylistPatientspreAuth0FunctionAppSyncFunctionD0213297": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerylistPatientspreAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/b1239b06bf0d85f051f7a587b50cd834ca05ba700479f2822a19d517ef445da9.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Patient/QuerylistPatientspreAuth0Function/QuerylistPatientspreAuth0Function.AppSyncFunction"
+   }
+  },
+  "QuerylistPatientsauth0FunctionQuerylistPatientsauth0FunctionAppSyncFunction178A0B1A": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerylistPatientsauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/ed7aee4ef7fcea2620aee982ad8193afe5a366541c5a031bc98417538464a5e0.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Patient/QuerylistPatientsauth0Function/QuerylistPatientsauth0Function.AppSyncFunction"
+   }
+  },
+  "QuerylistPatientspostAuth0FunctionQuerylistPatientspostAuth0FunctionAppSyncFunction551E6891": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerylistPatientspostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/0fff176e894a85ceed7486a9ea7444fcf3560c2c64ce431db741c1a2edf40f42.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Patient/QuerylistPatientspostAuth0Function/QuerylistPatientspostAuth0Function.AppSyncFunction"
+   }
+  },
+  "QueryListPatientsDataResolverFnQueryListPatientsDataResolverFnAppSyncFunction017AB2F8": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538OutputsBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLLambdaData83D6855B"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QueryListPatientsDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/9259940e90adbd0bbc2bb46f7a00d78f88c18c0e4eea26f0abd50252770c17b2.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/cc01911d0269d4080ea57505dc445dfc315ef7ad85d3d9d4ea1357858bff451d.vtl"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Patient/QueryListPatientsDataResolverFn/QueryListPatientsDataResolverFn.AppSyncFunction"
+   }
+  },
+  "ListPatientResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "FieldName": "listPatients",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "QuerylistPatientspreAuth0FunctionQuerylistPatientspreAuth0FunctionAppSyncFunctionD0213297",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QuerylistPatientsauth0FunctionQuerylistPatientsauth0FunctionAppSyncFunction178A0B1A",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QuerylistPatientspostAuth0FunctionQuerylistPatientspostAuth0FunctionAppSyncFunction551E6891",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QueryListPatientsDataResolverFnQueryListPatientsDataResolverFnAppSyncFunction017AB2F8",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Query\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"listPatients\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AWS_LAMBDA\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"lambdaFunctionArn\", \"",
+       {
+        "Ref": "referencetoBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538OutputsBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLFunctionHo5FC8E1BE"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Query"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Patient/queryListPatientsResolver"
+   }
+  },
+  "MutationcreatePatientinit0FunctionMutationcreatePatientinit0FunctionAppSyncFunction0CD0CD62": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationcreatePatientinit0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/a23c4a3e5ddfdbb2b45573a1ba5b62e5ffd290eb5546b612731e44cacd77fdee.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Patient/MutationcreatePatientinit0Function/MutationcreatePatientinit0Function.AppSyncFunction"
+   }
+  },
+  "MutationcreatePatientpreAuth0FunctionMutationcreatePatientpreAuth0FunctionAppSyncFunction4CEF0F35": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationcreatePatientpreAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/61f68dec2e605bddfc4884dba6ec095082b42ad0507ce9cb6016dfbdb032ac7c.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Patient/MutationcreatePatientpreAuth0Function/MutationcreatePatientpreAuth0Function.AppSyncFunction"
+   }
+  },
+  "MutationcreatePatientauth0FunctionMutationcreatePatientauth0FunctionAppSyncFunction4B518D1A": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationcreatePatientauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/da7d7836d6df6d562ec3eaf214f1c8a8f43543c093a744c036582a09b869e8fa.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Patient/MutationcreatePatientauth0Function/MutationcreatePatientauth0Function.AppSyncFunction"
+   }
+  },
+  "MutationcreatePatientpostAuth0FunctionMutationcreatePatientpostAuth0FunctionAppSyncFunctionBD6CE1E4": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationcreatePatientpostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/0fff176e894a85ceed7486a9ea7444fcf3560c2c64ce431db741c1a2edf40f42.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Patient/MutationcreatePatientpostAuth0Function/MutationcreatePatientpostAuth0Function.AppSyncFunction"
+   }
+  },
+  "MutationCreatePatientDataResolverFnMutationCreatePatientDataResolverFnAppSyncFunction571019B0": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538OutputsBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLLambdaData83D6855B"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationCreatePatientDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/cac1bb592912c9eaff399f671f1f08669d6be386a3592fb650f6cb48d967dce0.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/f4a52b72209a9dfa197b5e7367a5c378c5bb86de6e29ddd9e48b49a3fe54b249.vtl"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Patient/MutationCreatePatientDataResolverFn/MutationCreatePatientDataResolverFn.AppSyncFunction"
+   }
+  },
+  "CreatePatientResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "FieldName": "createPatient",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "MutationcreatePatientinit0FunctionMutationcreatePatientinit0FunctionAppSyncFunction0CD0CD62",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationcreatePatientpreAuth0FunctionMutationcreatePatientpreAuth0FunctionAppSyncFunction4CEF0F35",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationcreatePatientauth0FunctionMutationcreatePatientauth0FunctionAppSyncFunction4B518D1A",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationcreatePatientpostAuth0FunctionMutationcreatePatientpostAuth0FunctionAppSyncFunctionBD6CE1E4",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationCreatePatientDataResolverFnMutationCreatePatientDataResolverFnAppSyncFunction571019B0",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Mutation\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"createPatient\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AWS_LAMBDA\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"lambdaFunctionArn\", \"",
+       {
+        "Ref": "referencetoBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538OutputsBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLFunctionHo5FC8E1BE"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Mutation"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Patient/mutationCreatePatientResolver"
+   }
+  },
+  "MutationupdatePatientinit0FunctionMutationupdatePatientinit0FunctionAppSyncFunction52F8D404": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationupdatePatientinit0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/69012da9b7b085486ee5cab0cdc6841382cdb3d605c26bed1cc10125538d5d1f.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Patient/MutationupdatePatientinit0Function/MutationupdatePatientinit0Function.AppSyncFunction"
+   }
+  },
+  "MutationupdatePatientpreAuth0FunctionMutationupdatePatientpreAuth0FunctionAppSyncFunctionB694E710": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationupdatePatientpreAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/61f68dec2e605bddfc4884dba6ec095082b42ad0507ce9cb6016dfbdb032ac7c.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Patient/MutationupdatePatientpreAuth0Function/MutationupdatePatientpreAuth0Function.AppSyncFunction"
+   }
+  },
+  "MutationupdatePatientauth0FunctionMutationupdatePatientauth0FunctionAppSyncFunction7F17F47B": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538OutputsBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLLambdaData83D6855B"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationupdatePatientauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/df87e6351af33c524edcd55970de932cc234ed94ac09dc523024536ce3f09b91.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/d862ba132d4a6a0b3d478735be3c76b7e774977dad66bd4aa5a86fd7c0b91e62.vtl"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Patient/MutationupdatePatientauth0Function/MutationupdatePatientauth0Function.AppSyncFunction"
+   }
+  },
+  "MutationupdatePatientpostAuth0FunctionMutationupdatePatientpostAuth0FunctionAppSyncFunction21174856": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationupdatePatientpostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/0fff176e894a85ceed7486a9ea7444fcf3560c2c64ce431db741c1a2edf40f42.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Patient/MutationupdatePatientpostAuth0Function/MutationupdatePatientpostAuth0Function.AppSyncFunction"
+   }
+  },
+  "MutationUpdatePatientDataResolverFnMutationUpdatePatientDataResolverFnAppSyncFunctionE259C0CA": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538OutputsBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLLambdaData83D6855B"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationUpdatePatientDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/db38c6450ab8037a84d2fe656234edc0c85f0da901a92697cfee7677c6945209.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/f4a52b72209a9dfa197b5e7367a5c378c5bb86de6e29ddd9e48b49a3fe54b249.vtl"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Patient/MutationUpdatePatientDataResolverFn/MutationUpdatePatientDataResolverFn.AppSyncFunction"
+   }
+  },
+  "UpdatePatientResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "FieldName": "updatePatient",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "MutationupdatePatientinit0FunctionMutationupdatePatientinit0FunctionAppSyncFunction52F8D404",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationupdatePatientpreAuth0FunctionMutationupdatePatientpreAuth0FunctionAppSyncFunctionB694E710",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationupdatePatientauth0FunctionMutationupdatePatientauth0FunctionAppSyncFunction7F17F47B",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationupdatePatientpostAuth0FunctionMutationupdatePatientpostAuth0FunctionAppSyncFunction21174856",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationUpdatePatientDataResolverFnMutationUpdatePatientDataResolverFnAppSyncFunctionE259C0CA",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Mutation\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"updatePatient\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AWS_LAMBDA\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"lambdaFunctionArn\", \"",
+       {
+        "Ref": "referencetoBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538OutputsBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLFunctionHo5FC8E1BE"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Mutation"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Patient/mutationUpdatePatientResolver"
+   }
+  },
+  "MutationdeletePatientpreAuth0FunctionMutationdeletePatientpreAuth0FunctionAppSyncFunction062407D8": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationdeletePatientpreAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/61f68dec2e605bddfc4884dba6ec095082b42ad0507ce9cb6016dfbdb032ac7c.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Patient/MutationdeletePatientpreAuth0Function/MutationdeletePatientpreAuth0Function.AppSyncFunction"
+   }
+  },
+  "MutationdeletePatientauth0FunctionMutationdeletePatientauth0FunctionAppSyncFunction7E0E87EC": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538OutputsBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLLambdaData83D6855B"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationdeletePatientauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/df87e6351af33c524edcd55970de932cc234ed94ac09dc523024536ce3f09b91.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/b849a313d533aad5db2c828b718c699d8b4ff9ceb817989a0e0f488561158908.vtl"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Patient/MutationdeletePatientauth0Function/MutationdeletePatientauth0Function.AppSyncFunction"
+   }
+  },
+  "MutationdeletePatientpostAuth0FunctionMutationdeletePatientpostAuth0FunctionAppSyncFunction9252F852": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationdeletePatientpostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/0fff176e894a85ceed7486a9ea7444fcf3560c2c64ce431db741c1a2edf40f42.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Patient/MutationdeletePatientpostAuth0Function/MutationdeletePatientpostAuth0Function.AppSyncFunction"
+   }
+  },
+  "MutationDeletePatientDataResolverFnMutationDeletePatientDataResolverFnAppSyncFunction2AC12786": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538OutputsBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLLambdaData83D6855B"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationDeletePatientDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c58ae509749b30ffaa40378315b47a6b7cde367e7f0f10903f83d2e38c253020.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/f4a52b72209a9dfa197b5e7367a5c378c5bb86de6e29ddd9e48b49a3fe54b249.vtl"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Patient/MutationDeletePatientDataResolverFn/MutationDeletePatientDataResolverFn.AppSyncFunction"
+   }
+  },
+  "DeletePatientResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "FieldName": "deletePatient",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "MutationdeletePatientpreAuth0FunctionMutationdeletePatientpreAuth0FunctionAppSyncFunction062407D8",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationdeletePatientauth0FunctionMutationdeletePatientauth0FunctionAppSyncFunction7E0E87EC",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationdeletePatientpostAuth0FunctionMutationdeletePatientpostAuth0FunctionAppSyncFunction9252F852",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationDeletePatientDataResolverFnMutationDeletePatientDataResolverFnAppSyncFunction2AC12786",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Mutation\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"deletePatient\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AWS_LAMBDA\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"lambdaFunctionArn\", \"",
+       {
+        "Ref": "referencetoBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538OutputsBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLFunctionHo5FC8E1BE"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Mutation"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Patient/mutationDeletePatientResolver"
+   }
+  },
+  "SubscriptiononCreatePatientauth0FunctionSubscriptiononCreatePatientauth0FunctionAppSyncFunction7BC63B56": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononCreatePatientauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/d9aa567f194c805fe6b3ba471de897f7c3f8c93ed1db9f4e754b05de669a509f.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Patient/SubscriptiononCreatePatientauth0Function/SubscriptiononCreatePatientauth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptiononCreatePatientpostAuth0FunctionSubscriptiononCreatePatientpostAuth0FunctionAppSyncFunction7680783B": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononCreatePatientpostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/0fff176e894a85ceed7486a9ea7444fcf3560c2c64ce431db741c1a2edf40f42.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Patient/SubscriptiononCreatePatientpostAuth0Function/SubscriptiononCreatePatientpostAuth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptionOnCreatePatientDataResolverFnSubscriptionOnCreatePatientDataResolverFnAppSyncFunction0CDA21EE": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptionOnCreatePatientDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/fe3c43ada4b9d681a5e2312663ef7a73386424d73b73e51f8e2e9d4b50f7c502.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/e0cff47fb007f0bbf2a4e43ca256d6aa7ec109821769fd79fa7c5e83f0e7f9fc.vtl"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Patient/SubscriptionOnCreatePatientDataResolverFn/SubscriptionOnCreatePatientDataResolverFn.AppSyncFunction"
+   }
+  },
+  "SubscriptiononCreatePatientResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "FieldName": "onCreatePatient",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononCreatePatientauth0FunctionSubscriptiononCreatePatientauth0FunctionAppSyncFunction7BC63B56",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononCreatePatientpostAuth0FunctionSubscriptiononCreatePatientpostAuth0FunctionAppSyncFunction7680783B",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptionOnCreatePatientDataResolverFnSubscriptionOnCreatePatientDataResolverFnAppSyncFunction0CDA21EE",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Subscription\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"onCreatePatient\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Subscription"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Patient/subscriptionOnCreatePatientResolver"
+   }
+  },
+  "SubscriptiononUpdatePatientauth0FunctionSubscriptiononUpdatePatientauth0FunctionAppSyncFunction096C94CC": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononUpdatePatientauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/d9aa567f194c805fe6b3ba471de897f7c3f8c93ed1db9f4e754b05de669a509f.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Patient/SubscriptiononUpdatePatientauth0Function/SubscriptiononUpdatePatientauth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptiononUpdatePatientpostAuth0FunctionSubscriptiononUpdatePatientpostAuth0FunctionAppSyncFunction39298827": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononUpdatePatientpostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/0fff176e894a85ceed7486a9ea7444fcf3560c2c64ce431db741c1a2edf40f42.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Patient/SubscriptiononUpdatePatientpostAuth0Function/SubscriptiononUpdatePatientpostAuth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptionOnUpdatePatientDataResolverFnSubscriptionOnUpdatePatientDataResolverFnAppSyncFunctionC1B0BBB4": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptionOnUpdatePatientDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/fe3c43ada4b9d681a5e2312663ef7a73386424d73b73e51f8e2e9d4b50f7c502.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/e0cff47fb007f0bbf2a4e43ca256d6aa7ec109821769fd79fa7c5e83f0e7f9fc.vtl"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Patient/SubscriptionOnUpdatePatientDataResolverFn/SubscriptionOnUpdatePatientDataResolverFn.AppSyncFunction"
+   }
+  },
+  "SubscriptiononUpdatePatientResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "FieldName": "onUpdatePatient",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononUpdatePatientauth0FunctionSubscriptiononUpdatePatientauth0FunctionAppSyncFunction096C94CC",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononUpdatePatientpostAuth0FunctionSubscriptiononUpdatePatientpostAuth0FunctionAppSyncFunction39298827",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptionOnUpdatePatientDataResolverFnSubscriptionOnUpdatePatientDataResolverFnAppSyncFunctionC1B0BBB4",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Subscription\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"onUpdatePatient\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Subscription"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Patient/subscriptionOnUpdatePatientResolver"
+   }
+  },
+  "SubscriptiononDeletePatientauth0FunctionSubscriptiononDeletePatientauth0FunctionAppSyncFunction03DA42A7": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononDeletePatientauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/d9aa567f194c805fe6b3ba471de897f7c3f8c93ed1db9f4e754b05de669a509f.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Patient/SubscriptiononDeletePatientauth0Function/SubscriptiononDeletePatientauth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptiononDeletePatientpostAuth0FunctionSubscriptiononDeletePatientpostAuth0FunctionAppSyncFunctionBAB77182": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononDeletePatientpostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/0fff176e894a85ceed7486a9ea7444fcf3560c2c64ce431db741c1a2edf40f42.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Patient/SubscriptiononDeletePatientpostAuth0Function/SubscriptiononDeletePatientpostAuth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptionOnDeletePatientDataResolverFnSubscriptionOnDeletePatientDataResolverFnAppSyncFunction0178DEB0": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptionOnDeletePatientDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/fe3c43ada4b9d681a5e2312663ef7a73386424d73b73e51f8e2e9d4b50f7c502.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/e0cff47fb007f0bbf2a4e43ca256d6aa7ec109821769fd79fa7c5e83f0e7f9fc.vtl"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Patient/SubscriptionOnDeletePatientDataResolverFn/SubscriptionOnDeletePatientDataResolverFn.AppSyncFunction"
+   }
+  },
+  "SubscriptiononDeletePatientResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "FieldName": "onDeletePatient",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononDeletePatientauth0FunctionSubscriptiononDeletePatientauth0FunctionAppSyncFunction03DA42A7",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononDeletePatientpostAuth0FunctionSubscriptiononDeletePatientpostAuth0FunctionAppSyncFunctionBAB77182",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptionOnDeletePatientDataResolverFnSubscriptionOnDeletePatientDataResolverFnAppSyncFunction0178DEB0",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Subscription\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"onDeletePatient\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Subscription"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Patient/subscriptionOnDeletePatientResolver"
+   }
+  },
+  "QuerypatientsByRegisteredHospitalIdauth0FunctionQuerypatientsByRegisteredHospitalIdauth0FunctionAppSyncFunction12F30F44": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerypatientsByRegisteredHospitalIdauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/ed7aee4ef7fcea2620aee982ad8193afe5a366541c5a031bc98417538464a5e0.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Patient/QuerypatientsByRegisteredHospitalIdauth0Function/QuerypatientsByRegisteredHospitalIdauth0Function.AppSyncFunction"
+   }
+  },
+  "QuerypatientsByRegisteredHospitalIdpostAuth0FunctionQuerypatientsByRegisteredHospitalIdpostAuth0FunctionAppSyncFunction69A42C24": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerypatientsByRegisteredHospitalIdpostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/0fff176e894a85ceed7486a9ea7444fcf3560c2c64ce431db741c1a2edf40f42.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Patient/QuerypatientsByRegisteredHospitalIdpostAuth0Function/QuerypatientsByRegisteredHospitalIdpostAuth0Function.AppSyncFunction"
+   }
+  },
+  "QueryPatientsByRegisteredHospitalIdDataResolverFnQueryPatientsByRegisteredHospitalIdDataResolverFnAppSyncFunction6A1A82BA": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538OutputsBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLLambdaData83D6855B"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QueryPatientsByRegisteredHospitalIdDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/f439cf8285c0310454a73933bf1c8ef93300ad5b8830686f9c0cac874990f044.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/098c998f215c333f57348ca8912f66057ae6b574fe34013033dc54362ee2372c.vtl"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Patient/QueryPatientsByRegisteredHospitalIdDataResolverFn/QueryPatientsByRegisteredHospitalIdDataResolverFn.AppSyncFunction"
+   }
+  },
+  "QuerypatientsByRegisteredHospitalIdResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "FieldName": "patientsByRegisteredHospitalId",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "QuerypatientsByRegisteredHospitalIdauth0FunctionQuerypatientsByRegisteredHospitalIdauth0FunctionAppSyncFunction12F30F44",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QuerypatientsByRegisteredHospitalIdpostAuth0FunctionQuerypatientsByRegisteredHospitalIdpostAuth0FunctionAppSyncFunction69A42C24",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QueryPatientsByRegisteredHospitalIdDataResolverFnQueryPatientsByRegisteredHospitalIdDataResolverFnAppSyncFunction6A1A82BA",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Query\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"patientsByRegisteredHospitalId\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AWS_LAMBDA\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"lambdaFunctionArn\", \"",
+       {
+        "Ref": "referencetoBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538OutputsBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLFunctionHo5FC8E1BE"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Query"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Patient/queryPatientsByRegisteredHospitalIdResolver"
+   }
+  },
+  "QuerypatientsByRegisteredDoctorIdauth0FunctionQuerypatientsByRegisteredDoctorIdauth0FunctionAppSyncFunction5E4F8501": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerypatientsByRegisteredDoctorIdauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/ed7aee4ef7fcea2620aee982ad8193afe5a366541c5a031bc98417538464a5e0.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Patient/QuerypatientsByRegisteredDoctorIdauth0Function/QuerypatientsByRegisteredDoctorIdauth0Function.AppSyncFunction"
+   }
+  },
+  "QuerypatientsByRegisteredDoctorIdpostAuth0FunctionQuerypatientsByRegisteredDoctorIdpostAuth0FunctionAppSyncFunction199DE06C": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerypatientsByRegisteredDoctorIdpostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/0fff176e894a85ceed7486a9ea7444fcf3560c2c64ce431db741c1a2edf40f42.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Patient/QuerypatientsByRegisteredDoctorIdpostAuth0Function/QuerypatientsByRegisteredDoctorIdpostAuth0Function.AppSyncFunction"
+   }
+  },
+  "QueryPatientsByRegisteredDoctorIdDataResolverFnQueryPatientsByRegisteredDoctorIdDataResolverFnAppSyncFunction87397770": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538OutputsBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLLambdaData83D6855B"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QueryPatientsByRegisteredDoctorIdDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/2ff7159ea5524732d9e2bb8fe6549ba4129b632282d53471cab0c0e7307ef17c.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/098c998f215c333f57348ca8912f66057ae6b574fe34013033dc54362ee2372c.vtl"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Patient/QueryPatientsByRegisteredDoctorIdDataResolverFn/QueryPatientsByRegisteredDoctorIdDataResolverFn.AppSyncFunction"
+   }
+  },
+  "QuerypatientsByRegisteredDoctorIdResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "FieldName": "patientsByRegisteredDoctorId",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "QuerypatientsByRegisteredDoctorIdauth0FunctionQuerypatientsByRegisteredDoctorIdauth0FunctionAppSyncFunction5E4F8501",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QuerypatientsByRegisteredDoctorIdpostAuth0FunctionQuerypatientsByRegisteredDoctorIdpostAuth0FunctionAppSyncFunction199DE06C",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QueryPatientsByRegisteredDoctorIdDataResolverFnQueryPatientsByRegisteredDoctorIdDataResolverFnAppSyncFunction87397770",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Query\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"patientsByRegisteredDoctorId\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AWS_LAMBDA\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"lambdaFunctionArn\", \"",
+       {
+        "Ref": "referencetoBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538OutputsBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLFunctionHo5FC8E1BE"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Query"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Patient/queryPatientsByRegisteredDoctorIdResolver"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/zWOwQ6CMBBEv8V7WbWYeBYSjx7wA0htF1LALem2GEP4d1uNp5nJy0xGwvF0hsNOvbjQZiwm+4D1hhzQ3IPSo0igXblsFTMGhksWwSVUUY8YKsUo1DzzmzSsdUfXSDpYR7WjzvbRqxxEAg2ymxb02ya+G2m9t9T/UfQas089Y3NnE+QMwsD7RUqQ6eLA1hY+UrBPhOanH6IQMqa/AAAA"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Patient/CDKMetadata/Default"
+   },
+   "Condition": "CDKMetadataAvailable"
+  }
+ },
+ "Conditions": {
+  "CDKMetadataAvailable": {
+   "Fn::Or": [
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "af-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-northeast-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-northeast-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ca-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "cn-north-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "cn-northwest-1"
+       ]
+      }
+     ]
+    },
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-north-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-3"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "il-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "me-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "me-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "sa-east-1"
+       ]
+      }
+     ]
+    },
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-east-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-west-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-west-2"
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "Parameters": {
+  "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId": {
+   "Type": "String"
+  },
+  "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName": {
+   "Type": "String"
+  },
+  "referencetoBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538OutputsBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLLambdaData83D6855B": {
+   "Type": "String"
+  },
+  "referencetoBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538OutputsBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLFunctionHo5FC8E1BE": {
+   "Type": "String"
+  }
+ }
+}

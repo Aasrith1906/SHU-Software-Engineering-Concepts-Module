@@ -1,0 +1,484 @@
+{
+ "Description": "An auto-generated nested stack for the @sql directive.",
+ "AWSTemplateFormatVersion": "2010-09-09",
+ "Conditions": {
+  "HasEnvironmentParameter": {
+   "Fn::Not": [
+    {
+     "Fn::Equals": [
+      "NONE",
+      "NONE"
+     ]
+    }
+   ]
+  },
+  "CDKMetadataAvailable": {
+   "Fn::Or": [
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "af-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-northeast-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-northeast-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ca-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "cn-north-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "cn-northwest-1"
+       ]
+      }
+     ]
+    },
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-north-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-3"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "il-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "me-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "me-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "sa-east-1"
+       ]
+      }
+     ]
+    },
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-east-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-west-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-west-2"
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "Resources": {
+  "QuerygetPatientsauth0FunctionQuerygetPatientsauth0FunctionAppSyncFunction4B73E46E": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackSqlBoundApiGraphQLAPI36865B90ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackSqlBoundApiGraphQLAPINONEDS3FD26DC8Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerygetPatientsauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/f51d1537b900030de4231544c3d4dbd3001fa2508a5f5603dc84fb22426aaa65.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/56a8283870c8527a5a4dd5f5ec9a9a3e8d8d48ccab22dd8b2f8af369e2e8059b.vtl"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/SqlBoundApi/CustomSQLStack/QuerygetPatientsauth0Function/QuerygetPatientsauth0Function.AppSyncFunction"
+   }
+  },
+  "QuerygetPatientspostAuth0FunctionQuerygetPatientspostAuth0FunctionAppSyncFunction31A5E956": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackSqlBoundApiGraphQLAPI36865B90ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackSqlBoundApiGraphQLAPINONEDS3FD26DC8Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerygetPatientspostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/0fff176e894a85ceed7486a9ea7444fcf3560c2c64ce431db741c1a2edf40f42.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/SqlBoundApi/CustomSQLStack/QuerygetPatientspostAuth0Function/QuerygetPatientspostAuth0Function.AppSyncFunction"
+   }
+  },
+  "QueryGetPatientsDataResolverFnQueryGetPatientsDataResolverFnAppSyncFunction303A8142": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackSqlBoundApiGraphQLAPI36865B90ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackSqlBoundApiSQLApiStackMySQLSchemaDefinitionNestedStackSQLApiStackMySQLSchemaDefinitionNestedStackResource3A2B533FOutputsBackendStackSqlBoundApiSQLApiStackMySQLSchemaDefinitionSQLLambdaDataSourceMySQLSchemaDefinitionA2B1B3EEName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QueryGetPatientsDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/7fdfed36f2de6a7912a45291f2a5c7896e7322e436a7a4f0f268ae28dce03892.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/cc01911d0269d4080ea57505dc445dfc315ef7ad85d3d9d4ea1357858bff451d.vtl"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/SqlBoundApi/CustomSQLStack/QueryGetPatientsDataResolverFn/QueryGetPatientsDataResolverFn.AppSyncFunction"
+   }
+  },
+  "QuerygetPatientsResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackSqlBoundApiGraphQLAPI36865B90ApiId"
+    },
+    "FieldName": "getPatients",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "QuerygetPatientsauth0FunctionQuerygetPatientsauth0FunctionAppSyncFunction4B73E46E",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QuerygetPatientspostAuth0FunctionQuerygetPatientspostAuth0FunctionAppSyncFunction31A5E956",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QueryGetPatientsDataResolverFnQueryGetPatientsDataResolverFnAppSyncFunction303A8142",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Query\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"getPatients\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AWS_LAMBDA\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoBackendStackSqlBoundApiGraphQLAPI36865B90ApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"lambdaFunctionArn\", \"",
+       {
+        "Ref": "referencetoBackendStackSqlBoundApiSQLApiStackMySQLSchemaDefinitionNestedStackSQLApiStackMySQLSchemaDefinitionNestedStackResource3A2B533FOutputsBackendStackSqlBoundApiSQLApiStackMySQLSchemaDefinitionSQLFunctionMySQLSchemaDefinition0F5692D5Arn"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Query"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/SqlBoundApi/CustomSQLStack/queryGetPatientsResolver"
+   }
+  },
+  "MutationcreatePatientauth0FunctionMutationcreatePatientauth0FunctionAppSyncFunction4B518D1A": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackSqlBoundApiGraphQLAPI36865B90ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackSqlBoundApiGraphQLAPINONEDS3FD26DC8Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationcreatePatientauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/f51d1537b900030de4231544c3d4dbd3001fa2508a5f5603dc84fb22426aaa65.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/471854b012f46a07f67d00f97b29221229811ce468b461395751bd78e540e62f.vtl"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/SqlBoundApi/CustomSQLStack/MutationcreatePatientauth0Function/MutationcreatePatientauth0Function.AppSyncFunction"
+   }
+  },
+  "MutationcreatePatientpostAuth0FunctionMutationcreatePatientpostAuth0FunctionAppSyncFunctionBD6CE1E4": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackSqlBoundApiGraphQLAPI36865B90ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackSqlBoundApiGraphQLAPINONEDS3FD26DC8Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationcreatePatientpostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/0fff176e894a85ceed7486a9ea7444fcf3560c2c64ce431db741c1a2edf40f42.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/SqlBoundApi/CustomSQLStack/MutationcreatePatientpostAuth0Function/MutationcreatePatientpostAuth0Function.AppSyncFunction"
+   }
+  },
+  "MutationCreatePatientDataResolverFnMutationCreatePatientDataResolverFnAppSyncFunction571019B0": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackSqlBoundApiGraphQLAPI36865B90ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackSqlBoundApiSQLApiStackMySQLSchemaDefinitionNestedStackSQLApiStackMySQLSchemaDefinitionNestedStackResource3A2B533FOutputsBackendStackSqlBoundApiSQLApiStackMySQLSchemaDefinitionSQLLambdaDataSourceMySQLSchemaDefinitionA2B1B3EEName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationCreatePatientDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/4dce0cbbf9fbf9883309802b68ef0864f871adbfbdcd45be4106b6043ace17f9.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/cc01911d0269d4080ea57505dc445dfc315ef7ad85d3d9d4ea1357858bff451d.vtl"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/SqlBoundApi/CustomSQLStack/MutationCreatePatientDataResolverFn/MutationCreatePatientDataResolverFn.AppSyncFunction"
+   }
+  },
+  "MutationcreatePatientResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackSqlBoundApiGraphQLAPI36865B90ApiId"
+    },
+    "FieldName": "createPatient",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "MutationcreatePatientauth0FunctionMutationcreatePatientauth0FunctionAppSyncFunction4B518D1A",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationcreatePatientpostAuth0FunctionMutationcreatePatientpostAuth0FunctionAppSyncFunctionBD6CE1E4",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationCreatePatientDataResolverFnMutationCreatePatientDataResolverFnAppSyncFunction571019B0",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Mutation\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"createPatient\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AWS_LAMBDA\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoBackendStackSqlBoundApiGraphQLAPI36865B90ApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"lambdaFunctionArn\", \"",
+       {
+        "Ref": "referencetoBackendStackSqlBoundApiSQLApiStackMySQLSchemaDefinitionNestedStackSQLApiStackMySQLSchemaDefinitionNestedStackResource3A2B533FOutputsBackendStackSqlBoundApiSQLApiStackMySQLSchemaDefinitionSQLFunctionMySQLSchemaDefinition0F5692D5Arn"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Mutation"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/SqlBoundApi/CustomSQLStack/mutationCreatePatientResolver"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/zWOwQ6CMBBEv8V7WbWYeBYSjx7wA0gtC1nALem2GEP4dyvG0xxm5s1oOJ7OcNiZl2S2GbKRHrDcUAI292DsoMqWS8cNBXKsUqpeJK+NCAaBy1eU5FBEO2AojKAy0yRvtrCk4jWy/fYSoKUuerNBklGhuHFGv65qY6Spjrj7W9FbXBW7BqGX/aw16HSxF6LMRw70RKh++gEPqKiAvwAAAA=="
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/SqlBoundApi/CustomSQLStack/CDKMetadata/Default"
+   },
+   "Condition": "CDKMetadataAvailable"
+  }
+ },
+ "Parameters": {
+  "referencetoBackendStackSqlBoundApiGraphQLAPI36865B90ApiId": {
+   "Type": "String"
+  },
+  "referencetoBackendStackSqlBoundApiGraphQLAPINONEDS3FD26DC8Name": {
+   "Type": "String"
+  },
+  "referencetoBackendStackSqlBoundApiSQLApiStackMySQLSchemaDefinitionNestedStackSQLApiStackMySQLSchemaDefinitionNestedStackResource3A2B533FOutputsBackendStackSqlBoundApiSQLApiStackMySQLSchemaDefinitionSQLLambdaDataSourceMySQLSchemaDefinitionA2B1B3EEName": {
+   "Type": "String"
+  },
+  "referencetoBackendStackSqlBoundApiSQLApiStackMySQLSchemaDefinitionNestedStackSQLApiStackMySQLSchemaDefinitionNestedStackResource3A2B533FOutputsBackendStackSqlBoundApiSQLApiStackMySQLSchemaDefinitionSQLFunctionMySQLSchemaDefinition0F5692D5Arn": {
+   "Type": "String"
+  }
+ }
+}

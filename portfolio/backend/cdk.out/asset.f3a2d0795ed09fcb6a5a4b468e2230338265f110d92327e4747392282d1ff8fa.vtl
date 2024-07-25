@@ -1,0 +1,13 @@
+## [Start] Invoke RDS Lambda data source. **
+#set( $lambdaInput = {} )
+#set( $lambdaInput.parameters = {} )
+#set( $lambdaInput.statement = "SELECT * FROM posts WHERE title LIKE CONCAT('%', :contains, '%');" )
+#set( $lambdaInput.operation = "RAW_SQL" )
+#set( $lambdaInput.operationName = "searchPosts" )
+#set( $lambdaInput.parameters = $util.defaultIfNull($context.arguments, {}) )
+{
+  "version": "2018-05-29",
+  "operation": "Invoke",
+  "payload":   $util.toJson($lambdaInput)
+}
+## [End] Invoke RDS Lambda data source. **

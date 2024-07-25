@@ -1,0 +1,3767 @@
+{
+  "version": "36.0.0",
+  "artifacts": {
+    "BackendStack.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "BackendStack.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "BackendStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "BackendStack.template.json",
+        "terminationProtection": false,
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/43f153a239c19dc37100dd950cbf4650a58874a6a6a6ec2e86383e2ad3ac523c.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "BackendStack.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "BackendStack.assets"
+      ],
+      "metadata": {
+        "/BackendStack/HospitalManagementAPI/GraphQLAPI/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HospitalManagementAPIGraphQLAPI9F85DA17"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/GraphQLAPI/TransformerSchema": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HospitalManagementAPIGraphQLAPITransformerSchemaDDF4672C"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/GraphQLAPI/DefaultApiKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HospitalManagementAPIGraphQLAPIDefaultApiKeyCC4FF53A"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/GraphQLAPI/NONE_DS": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "NONE_DS"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/GraphQLAPI/NONE_DS/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HospitalManagementAPIGraphQLAPINONEDS1A67C111"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "NONE_DS"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/SQLApiStackHospitalManagementSchema/SQLLayerVersionCustomResourceHospitalManagementSchema/Resource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SQLLayerVersionCustomResourceHospitalManagementSchema6DF7E14F"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/SQLApiStackHospitalManagementSchema/SQLLayerVersionCustomResourceHospitalManagementSchema/CustomResourcePolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SQLLayerVersionCustomResourceHospitalManagementSchemaCustomResourcePolicyA55D4DD9"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/SQLApiStackHospitalManagementSchema/LatestNodeRuntimeMap": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LatestNodeRuntimeMap"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/SQLApiStackHospitalManagementSchema/AWS679f53fac002430cb0da5b7982bd2287/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AWS679f53fac002430cb0da5b7982bd2287ServiceRoleC1EA0FF2"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/SQLApiStackHospitalManagementSchema/AWS679f53fac002430cb0da5b7982bd2287/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AWS679f53fac002430cb0da5b7982bd22872D164C4C"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/SQLApiStackHospitalManagementSchema/SQLLambdaRoleHospitalManagementSchema": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SQLLambdaRoleHospitalManagementSchema"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/SQLApiStackHospitalManagementSchema/SQLLambdaRoleHospitalManagementSchema/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SQLLambdaRoleHospitalManagementSchemaDCDEE442"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SQLLambdaRoleHospitalManagementSchema"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/SQLApiStackHospitalManagementSchema/SQLLambdaRoleHospitalManagementSchema/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SQLLambdaRoleHospitalManagementSchemaDefaultPolicy28E804F4"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/SQLApiStackHospitalManagementSchema/SQLLambdaRolePolicyHospitalManagementSchema/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SQLLambdaRolePolicyHospitalManagementSchema9EE97FB1"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/SQLApiStackHospitalManagementSchema/SQLVpcEndpointHospitalManagementSchemasecretsmanager": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SQLVpcEndpointHospitalManagementSchemasecretsmanager"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SQLVpcEndpointHospitalManagementSchemasecretsmanager"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/SQLApiStackHospitalManagementSchema/SQLFunctionHospitalManagementSchema": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SQLFunctionHospitalManagementSchema"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/SQLApiStackHospitalManagementSchema/SQLFunctionHospitalManagementSchema/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SQLFunctionHospitalManagementSchema9AF2D47C"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SQLFunctionHospitalManagementSchema"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/SQLApiStackHospitalManagementSchema/SQLPatchingLambdaRoleHospitalManagementSchema": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SQLPatchingLambdaRoleHospitalManagementSchema"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/SQLApiStackHospitalManagementSchema/SQLPatchingLambdaRoleHospitalManagementSchema/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SQLPatchingLambdaRoleHospitalManagementSchema673EA777"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SQLPatchingLambdaRoleHospitalManagementSchema"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/SQLApiStackHospitalManagementSchema/SQLPatchingLambdaRoleHospitalManagementSchema/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SQLPatchingLambdaRoleHospitalManagementSchemaDefaultPolicyC4C9112B"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/SQLApiStackHospitalManagementSchema/SQLPatchingLambdaRolePolicyHospitalManagementSchema/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SQLPatchingLambdaRolePolicyHospitalManagementSchemaFEDE22E9"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/SQLApiStackHospitalManagementSchema/SQLLambdaLayerPatchingFunctionHospitalManagementSchema": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SQLLambdaLayerPatchingFunctionHospitalManagementSchema"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/SQLApiStackHospitalManagementSchema/SQLLambdaLayerPatchingFunctionHospitalManagementSchema/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SQLLambdaLayerPatchingFunctionHospitalManagementSchema826D9A1F"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SQLLambdaLayerPatchingFunctionHospitalManagementSchema"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/SQLApiStackHospitalManagementSchema/SQLLambdaLayerPatchingFunctionHospitalManagementSchema/AllowInvoke:BackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLLambdaLayerPatchingTopicHospitalManagementSchema1840D45D": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SQLLambdaLayerPatchingFunctionHospitalManagementSchemaAllowInvokeBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLLambdaLayerPatchingTopicHospitalManagementSchema1840D45D9828F6B6"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/SQLApiStackHospitalManagementSchema/SQLLambdaLayerPatchingFunctionHospitalManagementSchema/SQLLambdaLayerPatchingTopicHospitalManagementSchema/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SQLLambdaLayerPatchingFunctionHospitalManagementSchemaSQLLambdaLayerPatchingTopicHospitalManagementSchema4A889578"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/SQLApiStackHospitalManagementSchema/SQLLambdaLayerPatchingTopicARNResolverHospitalManagementSchema/Resource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SQLLambdaLayerPatchingTopicARNResolverHospitalManagementSchemaF22EFA04"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/SQLApiStackHospitalManagementSchema/SQLLambdaLayerPatchingTopicARNResolverHospitalManagementSchema/CustomResourcePolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SQLLambdaLayerPatchingTopicARNResolverHospitalManagementSchemaCustomResourcePolicyE9C1B9BB"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/SQLApiStackHospitalManagementSchema/SQLLambdaDataSourceHospitalManagementSchema": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SQLLambdaDataSourceHospitalManagementSchema"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/SQLApiStackHospitalManagementSchema/SQLLambdaDataSourceHospitalManagementSchema/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SQLLambdaDataSourceHospitalManagementSchemaServiceRole4A64F564"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/SQLApiStackHospitalManagementSchema/SQLLambdaDataSourceHospitalManagementSchema/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SQLLambdaDataSourceHospitalManagementSchemaServiceRoleDefaultPolicy6815C7C2"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/SQLApiStackHospitalManagementSchema/SQLLambdaDataSourceHospitalManagementSchema/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SQLLambdaDataSourceHospitalManagementSchema"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SQLLambdaDataSourceHospitalManagementSchema"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/SQLApiStackHospitalManagementSchema/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/SQLApiStackHospitalManagementSchema/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/SQLApiStackHospitalManagementSchema/reference-to-BackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/SQLApiStackHospitalManagementSchema/BackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLLambdaDataSourceHospitalManagementSchema30F8FE8CName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLLambdaDataSourceHospitalManagementSchema30F8FE8CName"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/SQLApiStackHospitalManagementSchema/BackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLFunctionHospitalManagementSchema60B0171EArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLFunctionHospitalManagementSchema60B0171EArn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/SQLApiStackHospitalManagementSchema.NestedStack/SQLApiStackHospitalManagementSchema.NestedStackResource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResourceD02B0072"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Appointment/QuerygetAppointmentpreAuth0Function/QuerygetAppointmentpreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerygetAppointmentpreAuth0FunctionQuerygetAppointmentpreAuth0FunctionAppSyncFunction5EB21E8D"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerygetAppointmentpreAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Appointment/QuerygetAppointmentauth0Function/QuerygetAppointmentauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerygetAppointmentauth0FunctionQuerygetAppointmentauth0FunctionAppSyncFunctionCA69404A"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerygetAppointmentauth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Appointment/QuerygetAppointmentpostAuth0Function/QuerygetAppointmentpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerygetAppointmentpostAuth0FunctionQuerygetAppointmentpostAuth0FunctionAppSyncFunction9DE766A3"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerygetAppointmentpostAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Appointment/QueryGetAppointmentDataResolverFn/QueryGetAppointmentDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryGetAppointmentDataResolverFnQueryGetAppointmentDataResolverFnAppSyncFunction0BA0960B"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryGetAppointmentDataResolverFn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Appointment/queryGetAppointmentResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetAppointmentResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Query.getAppointment"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Appointment/QuerylistAppointmentspreAuth0Function/QuerylistAppointmentspreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistAppointmentspreAuth0FunctionQuerylistAppointmentspreAuth0FunctionAppSyncFunctionDE8F456B"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistAppointmentspreAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Appointment/QuerylistAppointmentsauth0Function/QuerylistAppointmentsauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistAppointmentsauth0FunctionQuerylistAppointmentsauth0FunctionAppSyncFunction75A441EF"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistAppointmentsauth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Appointment/QuerylistAppointmentspostAuth0Function/QuerylistAppointmentspostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistAppointmentspostAuth0FunctionQuerylistAppointmentspostAuth0FunctionAppSyncFunction38D90138"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistAppointmentspostAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Appointment/QueryListAppointmentsDataResolverFn/QueryListAppointmentsDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryListAppointmentsDataResolverFnQueryListAppointmentsDataResolverFnAppSyncFunction1CD1AD63"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryListAppointmentsDataResolverFn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Appointment/queryListAppointmentsResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ListAppointmentResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Query.listAppointments"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Appointment/MutationcreateAppointmentinit0Function/MutationcreateAppointmentinit0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateAppointmentinit0FunctionMutationcreateAppointmentinit0FunctionAppSyncFunction06CD0EE6"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateAppointmentinit0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Appointment/MutationcreateAppointmentpreAuth0Function/MutationcreateAppointmentpreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateAppointmentpreAuth0FunctionMutationcreateAppointmentpreAuth0FunctionAppSyncFunction0EDA22D0"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateAppointmentpreAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Appointment/MutationcreateAppointmentauth0Function/MutationcreateAppointmentauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateAppointmentauth0FunctionMutationcreateAppointmentauth0FunctionAppSyncFunction7EE07719"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateAppointmentauth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Appointment/MutationcreateAppointmentpostAuth0Function/MutationcreateAppointmentpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateAppointmentpostAuth0FunctionMutationcreateAppointmentpostAuth0FunctionAppSyncFunction098FBE24"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateAppointmentpostAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Appointment/MutationCreateAppointmentDataResolverFn/MutationCreateAppointmentDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationCreateAppointmentDataResolverFnMutationCreateAppointmentDataResolverFnAppSyncFunction2E414CFD"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationCreateAppointmentDataResolverFn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Appointment/mutationCreateAppointmentResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CreateAppointmentResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.createAppointment"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Appointment/MutationupdateAppointmentinit0Function/MutationupdateAppointmentinit0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateAppointmentinit0FunctionMutationupdateAppointmentinit0FunctionAppSyncFunctionEFD32C5C"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateAppointmentinit0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Appointment/MutationupdateAppointmentpreAuth0Function/MutationupdateAppointmentpreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateAppointmentpreAuth0FunctionMutationupdateAppointmentpreAuth0FunctionAppSyncFunctionF7988E7E"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateAppointmentpreAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Appointment/MutationupdateAppointmentauth0Function/MutationupdateAppointmentauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateAppointmentauth0FunctionMutationupdateAppointmentauth0FunctionAppSyncFunctionE8A8A715"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateAppointmentauth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Appointment/MutationupdateAppointmentpostAuth0Function/MutationupdateAppointmentpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateAppointmentpostAuth0FunctionMutationupdateAppointmentpostAuth0FunctionAppSyncFunction5092D70B"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateAppointmentpostAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Appointment/MutationUpdateAppointmentDataResolverFn/MutationUpdateAppointmentDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationUpdateAppointmentDataResolverFnMutationUpdateAppointmentDataResolverFnAppSyncFunction0CC05D8F"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationUpdateAppointmentDataResolverFn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Appointment/mutationUpdateAppointmentResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UpdateAppointmentResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.updateAppointment"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Appointment/MutationdeleteAppointmentpreAuth0Function/MutationdeleteAppointmentpreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationdeleteAppointmentpreAuth0FunctionMutationdeleteAppointmentpreAuth0FunctionAppSyncFunctionC9D5BB21"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationdeleteAppointmentpreAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Appointment/MutationdeleteAppointmentauth0Function/MutationdeleteAppointmentauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationdeleteAppointmentauth0FunctionMutationdeleteAppointmentauth0FunctionAppSyncFunction0C7AB3D3"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationdeleteAppointmentauth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Appointment/MutationdeleteAppointmentpostAuth0Function/MutationdeleteAppointmentpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationdeleteAppointmentpostAuth0FunctionMutationdeleteAppointmentpostAuth0FunctionAppSyncFunctionE85FAACB"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationdeleteAppointmentpostAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Appointment/MutationDeleteAppointmentDataResolverFn/MutationDeleteAppointmentDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationDeleteAppointmentDataResolverFnMutationDeleteAppointmentDataResolverFnAppSyncFunction084DEA51"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationDeleteAppointmentDataResolverFn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Appointment/mutationDeleteAppointmentResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DeleteAppointmentResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.deleteAppointment"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Appointment/SubscriptiononCreateAppointmentauth0Function/SubscriptiononCreateAppointmentauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreateAppointmentauth0FunctionSubscriptiononCreateAppointmentauth0FunctionAppSyncFunction61B57CBB"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononCreateAppointmentauth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Appointment/SubscriptiononCreateAppointmentpostAuth0Function/SubscriptiononCreateAppointmentpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreateAppointmentpostAuth0FunctionSubscriptiononCreateAppointmentpostAuth0FunctionAppSyncFunctionE1742C98"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononCreateAppointmentpostAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Appointment/SubscriptionOnCreateAppointmentDataResolverFn/SubscriptionOnCreateAppointmentDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnCreateAppointmentDataResolverFnSubscriptionOnCreateAppointmentDataResolverFnAppSyncFunction9169F9C4"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnCreateAppointmentDataResolverFn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Appointment/subscriptionOnCreateAppointmentResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreateAppointmentResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onCreateAppointment"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Appointment/SubscriptiononUpdateAppointmentauth0Function/SubscriptiononUpdateAppointmentauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdateAppointmentauth0FunctionSubscriptiononUpdateAppointmentauth0FunctionAppSyncFunction825576F4"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononUpdateAppointmentauth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Appointment/SubscriptiononUpdateAppointmentpostAuth0Function/SubscriptiononUpdateAppointmentpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdateAppointmentpostAuth0FunctionSubscriptiononUpdateAppointmentpostAuth0FunctionAppSyncFunctionF970CC75"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononUpdateAppointmentpostAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Appointment/SubscriptionOnUpdateAppointmentDataResolverFn/SubscriptionOnUpdateAppointmentDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnUpdateAppointmentDataResolverFnSubscriptionOnUpdateAppointmentDataResolverFnAppSyncFunctionE5294A60"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnUpdateAppointmentDataResolverFn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Appointment/subscriptionOnUpdateAppointmentResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdateAppointmentResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onUpdateAppointment"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Appointment/SubscriptiononDeleteAppointmentauth0Function/SubscriptiononDeleteAppointmentauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeleteAppointmentauth0FunctionSubscriptiononDeleteAppointmentauth0FunctionAppSyncFunctionBFFE9440"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononDeleteAppointmentauth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Appointment/SubscriptiononDeleteAppointmentpostAuth0Function/SubscriptiononDeleteAppointmentpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeleteAppointmentpostAuth0FunctionSubscriptiononDeleteAppointmentpostAuth0FunctionAppSyncFunction9028B716"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononDeleteAppointmentpostAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Appointment/SubscriptionOnDeleteAppointmentDataResolverFn/SubscriptionOnDeleteAppointmentDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnDeleteAppointmentDataResolverFnSubscriptionOnDeleteAppointmentDataResolverFnAppSyncFunction06000094"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnDeleteAppointmentDataResolverFn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Appointment/subscriptionOnDeleteAppointmentResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeleteAppointmentResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onDeleteAppointment"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Appointment/QueryappointmentsByDoctoridauth0Function/QueryappointmentsByDoctoridauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryappointmentsByDoctoridauth0FunctionQueryappointmentsByDoctoridauth0FunctionAppSyncFunctionB44A05BD"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryappointmentsByDoctoridauth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Appointment/QueryappointmentsByDoctoridpostAuth0Function/QueryappointmentsByDoctoridpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryappointmentsByDoctoridpostAuth0FunctionQueryappointmentsByDoctoridpostAuth0FunctionAppSyncFunctionDE8472AB"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryappointmentsByDoctoridpostAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Appointment/QueryAppointmentsByDoctoridDataResolverFn/QueryAppointmentsByDoctoridDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryAppointmentsByDoctoridDataResolverFnQueryAppointmentsByDoctoridDataResolverFnAppSyncFunctionA983AF11"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryAppointmentsByDoctoridDataResolverFn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Appointment/queryAppointmentsByDoctoridResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryappointmentsByDoctoridResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Query.appointmentsByDoctorid"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Appointment/QueryappointmentsByPatientidauth0Function/QueryappointmentsByPatientidauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryappointmentsByPatientidauth0FunctionQueryappointmentsByPatientidauth0FunctionAppSyncFunction5875D827"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryappointmentsByPatientidauth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Appointment/QueryappointmentsByPatientidpostAuth0Function/QueryappointmentsByPatientidpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryappointmentsByPatientidpostAuth0FunctionQueryappointmentsByPatientidpostAuth0FunctionAppSyncFunction778FC872"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryappointmentsByPatientidpostAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Appointment/QueryAppointmentsByPatientidDataResolverFn/QueryAppointmentsByPatientidDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryAppointmentsByPatientidDataResolverFnQueryAppointmentsByPatientidDataResolverFnAppSyncFunctionB7A5B87A"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryAppointmentsByPatientidDataResolverFn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Appointment/queryAppointmentsByPatientidResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryappointmentsByPatientidResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Query.appointmentsByPatientid"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Appointment/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Appointment/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Appointment/reference-to-BackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Appointment/reference-to-BackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Appointment/reference-to-BackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538Outputs.BackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLLambdaDataSourceHospitalManagementSchema30F8FE8CName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538OutputsBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLLambdaData83D6855B"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Appointment/reference-to-BackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538Outputs.BackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLFunctionHospitalManagementSchema60B0171EArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538OutputsBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLFunctionHo5FC8E1BE"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Appointment.NestedStack/Appointment.NestedStackResource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HospitalManagementAPIAppointmentNestedStackAppointmentNestedStackResource85D9BD25"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Diagnosis/QuerygetDiagnosispreAuth0Function/QuerygetDiagnosispreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerygetDiagnosispreAuth0FunctionQuerygetDiagnosispreAuth0FunctionAppSyncFunctionBC24E2F1"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerygetDiagnosispreAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Diagnosis/QuerygetDiagnosispreAuth1Function/QuerygetDiagnosispreAuth1Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerygetDiagnosispreAuth1FunctionQuerygetDiagnosispreAuth1FunctionAppSyncFunction554B394C"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerygetDiagnosispreAuth1Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Diagnosis/QuerygetDiagnosisauth0Function/QuerygetDiagnosisauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerygetDiagnosisauth0FunctionQuerygetDiagnosisauth0FunctionAppSyncFunction6369A901"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerygetDiagnosisauth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Diagnosis/QuerygetDiagnosispostAuth0Function/QuerygetDiagnosispostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerygetDiagnosispostAuth0FunctionQuerygetDiagnosispostAuth0FunctionAppSyncFunction28495936"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerygetDiagnosispostAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Diagnosis/QueryGetDiagnosisDataResolverFn/QueryGetDiagnosisDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryGetDiagnosisDataResolverFnQueryGetDiagnosisDataResolverFnAppSyncFunctionBCAF9B9E"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryGetDiagnosisDataResolverFn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Diagnosis/queryGetDiagnosisResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetDiagnosisResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Query.getDiagnosis"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Diagnosis/QuerylistDiagnosespreAuth0Function/QuerylistDiagnosespreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistDiagnosespreAuth0FunctionQuerylistDiagnosespreAuth0FunctionAppSyncFunction3611CF9A"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistDiagnosespreAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Diagnosis/QuerylistDiagnosespreAuth1Function/QuerylistDiagnosespreAuth1Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistDiagnosespreAuth1FunctionQuerylistDiagnosespreAuth1FunctionAppSyncFunctionBC3CAF19"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistDiagnosespreAuth1Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Diagnosis/QuerylistDiagnosesauth0Function/QuerylistDiagnosesauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistDiagnosesauth0FunctionQuerylistDiagnosesauth0FunctionAppSyncFunctionE0BFF787"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistDiagnosesauth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Diagnosis/QuerylistDiagnosespostAuth0Function/QuerylistDiagnosespostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistDiagnosespostAuth0FunctionQuerylistDiagnosespostAuth0FunctionAppSyncFunction5D68E8F1"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistDiagnosespostAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Diagnosis/QueryListDiagnosesDataResolverFn/QueryListDiagnosesDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryListDiagnosesDataResolverFnQueryListDiagnosesDataResolverFnAppSyncFunction44680D69"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryListDiagnosesDataResolverFn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Diagnosis/queryListDiagnosesResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ListDiagnosisResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Query.listDiagnoses"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Diagnosis/MutationcreateDiagnosisinit0Function/MutationcreateDiagnosisinit0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateDiagnosisinit0FunctionMutationcreateDiagnosisinit0FunctionAppSyncFunctionD63CE04A"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateDiagnosisinit0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Diagnosis/MutationcreateDiagnosispreAuth0Function/MutationcreateDiagnosispreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateDiagnosispreAuth0FunctionMutationcreateDiagnosispreAuth0FunctionAppSyncFunction598D9641"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateDiagnosispreAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Diagnosis/MutationcreateDiagnosispreAuth1Function/MutationcreateDiagnosispreAuth1Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateDiagnosispreAuth1FunctionMutationcreateDiagnosispreAuth1FunctionAppSyncFunction5A1353EA"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateDiagnosispreAuth1Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Diagnosis/MutationcreateDiagnosisauth0Function/MutationcreateDiagnosisauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateDiagnosisauth0FunctionMutationcreateDiagnosisauth0FunctionAppSyncFunction90C443F4"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateDiagnosisauth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Diagnosis/MutationcreateDiagnosispostAuth0Function/MutationcreateDiagnosispostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateDiagnosispostAuth0FunctionMutationcreateDiagnosispostAuth0FunctionAppSyncFunctionAD416FBD"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateDiagnosispostAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Diagnosis/MutationCreateDiagnosisDataResolverFn/MutationCreateDiagnosisDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationCreateDiagnosisDataResolverFnMutationCreateDiagnosisDataResolverFnAppSyncFunction40EB13FE"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationCreateDiagnosisDataResolverFn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Diagnosis/mutationCreateDiagnosisResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CreateDiagnosisResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.createDiagnosis"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Diagnosis/MutationupdateDiagnosisinit0Function/MutationupdateDiagnosisinit0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateDiagnosisinit0FunctionMutationupdateDiagnosisinit0FunctionAppSyncFunction392A02CF"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateDiagnosisinit0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Diagnosis/MutationupdateDiagnosispreAuth0Function/MutationupdateDiagnosispreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateDiagnosispreAuth0FunctionMutationupdateDiagnosispreAuth0FunctionAppSyncFunctionA1386FAC"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateDiagnosispreAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Diagnosis/MutationupdateDiagnosispreAuth1Function/MutationupdateDiagnosispreAuth1Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateDiagnosispreAuth1FunctionMutationupdateDiagnosispreAuth1FunctionAppSyncFunction5493A7D5"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateDiagnosispreAuth1Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Diagnosis/MutationupdateDiagnosisauth0Function/MutationupdateDiagnosisauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateDiagnosisauth0FunctionMutationupdateDiagnosisauth0FunctionAppSyncFunction19B0DD5C"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateDiagnosisauth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Diagnosis/MutationupdateDiagnosispostAuth0Function/MutationupdateDiagnosispostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateDiagnosispostAuth0FunctionMutationupdateDiagnosispostAuth0FunctionAppSyncFunction27565F75"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateDiagnosispostAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Diagnosis/MutationUpdateDiagnosisDataResolverFn/MutationUpdateDiagnosisDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationUpdateDiagnosisDataResolverFnMutationUpdateDiagnosisDataResolverFnAppSyncFunctionEE3849F8"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationUpdateDiagnosisDataResolverFn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Diagnosis/mutationUpdateDiagnosisResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UpdateDiagnosisResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.updateDiagnosis"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Diagnosis/MutationdeleteDiagnosispreAuth0Function/MutationdeleteDiagnosispreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationdeleteDiagnosispreAuth0FunctionMutationdeleteDiagnosispreAuth0FunctionAppSyncFunction31EC1E96"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationdeleteDiagnosispreAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Diagnosis/MutationdeleteDiagnosispreAuth1Function/MutationdeleteDiagnosispreAuth1Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationdeleteDiagnosispreAuth1FunctionMutationdeleteDiagnosispreAuth1FunctionAppSyncFunction6E900BB8"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationdeleteDiagnosispreAuth1Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Diagnosis/MutationdeleteDiagnosisauth0Function/MutationdeleteDiagnosisauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationdeleteDiagnosisauth0FunctionMutationdeleteDiagnosisauth0FunctionAppSyncFunction65C16390"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationdeleteDiagnosisauth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Diagnosis/MutationdeleteDiagnosispostAuth0Function/MutationdeleteDiagnosispostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationdeleteDiagnosispostAuth0FunctionMutationdeleteDiagnosispostAuth0FunctionAppSyncFunction1ACCE4D0"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationdeleteDiagnosispostAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Diagnosis/MutationDeleteDiagnosisDataResolverFn/MutationDeleteDiagnosisDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationDeleteDiagnosisDataResolverFnMutationDeleteDiagnosisDataResolverFnAppSyncFunctionE247A97E"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationDeleteDiagnosisDataResolverFn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Diagnosis/mutationDeleteDiagnosisResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DeleteDiagnosisResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.deleteDiagnosis"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Diagnosis/SubscriptiononCreateDiagnosisauth0Function/SubscriptiononCreateDiagnosisauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreateDiagnosisauth0FunctionSubscriptiononCreateDiagnosisauth0FunctionAppSyncFunction97C18C19"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononCreateDiagnosisauth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Diagnosis/SubscriptiononCreateDiagnosispostAuth0Function/SubscriptiononCreateDiagnosispostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreateDiagnosispostAuth0FunctionSubscriptiononCreateDiagnosispostAuth0FunctionAppSyncFunction224F5320"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononCreateDiagnosispostAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Diagnosis/SubscriptionOnCreateDiagnosisDataResolverFn/SubscriptionOnCreateDiagnosisDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnCreateDiagnosisDataResolverFnSubscriptionOnCreateDiagnosisDataResolverFnAppSyncFunctionFED17712"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnCreateDiagnosisDataResolverFn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Diagnosis/subscriptionOnCreateDiagnosisResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreateDiagnosisResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onCreateDiagnosis"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Diagnosis/SubscriptiononUpdateDiagnosisauth0Function/SubscriptiononUpdateDiagnosisauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdateDiagnosisauth0FunctionSubscriptiononUpdateDiagnosisauth0FunctionAppSyncFunction59554843"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononUpdateDiagnosisauth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Diagnosis/SubscriptiononUpdateDiagnosispostAuth0Function/SubscriptiononUpdateDiagnosispostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdateDiagnosispostAuth0FunctionSubscriptiononUpdateDiagnosispostAuth0FunctionAppSyncFunctionA54D175D"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononUpdateDiagnosispostAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Diagnosis/SubscriptionOnUpdateDiagnosisDataResolverFn/SubscriptionOnUpdateDiagnosisDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnUpdateDiagnosisDataResolverFnSubscriptionOnUpdateDiagnosisDataResolverFnAppSyncFunction78CCF9BD"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnUpdateDiagnosisDataResolverFn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Diagnosis/subscriptionOnUpdateDiagnosisResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdateDiagnosisResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onUpdateDiagnosis"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Diagnosis/SubscriptiononDeleteDiagnosisauth0Function/SubscriptiononDeleteDiagnosisauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeleteDiagnosisauth0FunctionSubscriptiononDeleteDiagnosisauth0FunctionAppSyncFunction2E1E9ED9"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononDeleteDiagnosisauth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Diagnosis/SubscriptiononDeleteDiagnosispostAuth0Function/SubscriptiononDeleteDiagnosispostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeleteDiagnosispostAuth0FunctionSubscriptiononDeleteDiagnosispostAuth0FunctionAppSyncFunction66F8660F"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononDeleteDiagnosispostAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Diagnosis/SubscriptionOnDeleteDiagnosisDataResolverFn/SubscriptionOnDeleteDiagnosisDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnDeleteDiagnosisDataResolverFnSubscriptionOnDeleteDiagnosisDataResolverFnAppSyncFunction07471EBF"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnDeleteDiagnosisDataResolverFn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Diagnosis/subscriptionOnDeleteDiagnosisResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeleteDiagnosisResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onDeleteDiagnosis"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Diagnosis/QuerydiagnosesByPatientidpreAuth0Function/QuerydiagnosesByPatientidpreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerydiagnosesByPatientidpreAuth0FunctionQuerydiagnosesByPatientidpreAuth0FunctionAppSyncFunctionB0078586"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerydiagnosesByPatientidpreAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Diagnosis/QuerydiagnosesByPatientidauth0Function/QuerydiagnosesByPatientidauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerydiagnosesByPatientidauth0FunctionQuerydiagnosesByPatientidauth0FunctionAppSyncFunction45DD7C24"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerydiagnosesByPatientidauth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Diagnosis/QuerydiagnosesByPatientidpostAuth0Function/QuerydiagnosesByPatientidpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerydiagnosesByPatientidpostAuth0FunctionQuerydiagnosesByPatientidpostAuth0FunctionAppSyncFunction0E7113F2"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerydiagnosesByPatientidpostAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Diagnosis/QueryDiagnosesByPatientidDataResolverFn/QueryDiagnosesByPatientidDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryDiagnosesByPatientidDataResolverFnQueryDiagnosesByPatientidDataResolverFnAppSyncFunction68532AF8"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryDiagnosesByPatientidDataResolverFn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Diagnosis/queryDiagnosesByPatientidResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerydiagnosesByPatientidResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Query.diagnosesByPatientid"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Diagnosis/QuerydiagnosesByDoctoridpreAuth0Function/QuerydiagnosesByDoctoridpreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerydiagnosesByDoctoridpreAuth0FunctionQuerydiagnosesByDoctoridpreAuth0FunctionAppSyncFunction4D0D08F0"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerydiagnosesByDoctoridpreAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Diagnosis/QuerydiagnosesByDoctoridauth0Function/QuerydiagnosesByDoctoridauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerydiagnosesByDoctoridauth0FunctionQuerydiagnosesByDoctoridauth0FunctionAppSyncFunction83E1D4C6"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerydiagnosesByDoctoridauth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Diagnosis/QuerydiagnosesByDoctoridpostAuth0Function/QuerydiagnosesByDoctoridpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerydiagnosesByDoctoridpostAuth0FunctionQuerydiagnosesByDoctoridpostAuth0FunctionAppSyncFunction9EE3156C"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerydiagnosesByDoctoridpostAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Diagnosis/QueryDiagnosesByDoctoridDataResolverFn/QueryDiagnosesByDoctoridDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryDiagnosesByDoctoridDataResolverFnQueryDiagnosesByDoctoridDataResolverFnAppSyncFunction49359BE6"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryDiagnosesByDoctoridDataResolverFn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Diagnosis/queryDiagnosesByDoctoridResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerydiagnosesByDoctoridResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Query.diagnosesByDoctorid"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Diagnosis/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Diagnosis/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Diagnosis/reference-to-BackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Diagnosis/reference-to-BackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Diagnosis/reference-to-BackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538Outputs.BackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLLambdaDataSourceHospitalManagementSchema30F8FE8CName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538OutputsBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLLambdaData83D6855B"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Diagnosis/reference-to-BackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538Outputs.BackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLFunctionHospitalManagementSchema60B0171EArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538OutputsBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLFunctionHo5FC8E1BE"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Diagnosis.NestedStack/Diagnosis.NestedStackResource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HospitalManagementAPIDiagnosisNestedStackDiagnosisNestedStackResourceB3DC2188"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Doctor/QuerygetDoctorpreAuth0Function/QuerygetDoctorpreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerygetDoctorpreAuth0FunctionQuerygetDoctorpreAuth0FunctionAppSyncFunctionF43C38DA"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerygetDoctorpreAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Doctor/QuerygetDoctorauth0Function/QuerygetDoctorauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerygetDoctorauth0FunctionQuerygetDoctorauth0FunctionAppSyncFunctionA487165A"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerygetDoctorauth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Doctor/QuerygetDoctorpostAuth0Function/QuerygetDoctorpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerygetDoctorpostAuth0FunctionQuerygetDoctorpostAuth0FunctionAppSyncFunction8C1EC38D"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerygetDoctorpostAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Doctor/QueryGetDoctorDataResolverFn/QueryGetDoctorDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryGetDoctorDataResolverFnQueryGetDoctorDataResolverFnAppSyncFunction88B72D97"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryGetDoctorDataResolverFn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Doctor/queryGetDoctorResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetDoctorResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Query.getDoctor"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Doctor/QuerylistDoctorspreAuth0Function/QuerylistDoctorspreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistDoctorspreAuth0FunctionQuerylistDoctorspreAuth0FunctionAppSyncFunction48BC81F4"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistDoctorspreAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Doctor/QuerylistDoctorsauth0Function/QuerylistDoctorsauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistDoctorsauth0FunctionQuerylistDoctorsauth0FunctionAppSyncFunction742A45D8"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistDoctorsauth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Doctor/QuerylistDoctorspostAuth0Function/QuerylistDoctorspostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistDoctorspostAuth0FunctionQuerylistDoctorspostAuth0FunctionAppSyncFunction84EFB5F5"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistDoctorspostAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Doctor/QueryListDoctorsDataResolverFn/QueryListDoctorsDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryListDoctorsDataResolverFnQueryListDoctorsDataResolverFnAppSyncFunctionAB643681"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryListDoctorsDataResolverFn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Doctor/queryListDoctorsResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ListDoctorResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Query.listDoctors"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Doctor/MutationcreateDoctorinit0Function/MutationcreateDoctorinit0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateDoctorinit0FunctionMutationcreateDoctorinit0FunctionAppSyncFunction02A0A42C"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateDoctorinit0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Doctor/MutationcreateDoctorpreAuth0Function/MutationcreateDoctorpreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateDoctorpreAuth0FunctionMutationcreateDoctorpreAuth0FunctionAppSyncFunction2C99442E"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateDoctorpreAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Doctor/MutationcreateDoctorauth0Function/MutationcreateDoctorauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateDoctorauth0FunctionMutationcreateDoctorauth0FunctionAppSyncFunctionB8D40D6C"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateDoctorauth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Doctor/MutationcreateDoctorpostAuth0Function/MutationcreateDoctorpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateDoctorpostAuth0FunctionMutationcreateDoctorpostAuth0FunctionAppSyncFunction84B4D89F"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateDoctorpostAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Doctor/MutationCreateDoctorDataResolverFn/MutationCreateDoctorDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationCreateDoctorDataResolverFnMutationCreateDoctorDataResolverFnAppSyncFunctionD8FCD7B3"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationCreateDoctorDataResolverFn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Doctor/mutationCreateDoctorResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CreateDoctorResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.createDoctor"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Doctor/MutationupdateDoctorinit0Function/MutationupdateDoctorinit0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateDoctorinit0FunctionMutationupdateDoctorinit0FunctionAppSyncFunction38E9EF9E"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateDoctorinit0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Doctor/MutationupdateDoctorpreAuth0Function/MutationupdateDoctorpreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateDoctorpreAuth0FunctionMutationupdateDoctorpreAuth0FunctionAppSyncFunction6F975F38"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateDoctorpreAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Doctor/MutationupdateDoctorauth0Function/MutationupdateDoctorauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateDoctorauth0FunctionMutationupdateDoctorauth0FunctionAppSyncFunction1C033283"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateDoctorauth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Doctor/MutationupdateDoctorpostAuth0Function/MutationupdateDoctorpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateDoctorpostAuth0FunctionMutationupdateDoctorpostAuth0FunctionAppSyncFunction8F1FAB13"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateDoctorpostAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Doctor/MutationUpdateDoctorDataResolverFn/MutationUpdateDoctorDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationUpdateDoctorDataResolverFnMutationUpdateDoctorDataResolverFnAppSyncFunctionDF644555"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationUpdateDoctorDataResolverFn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Doctor/mutationUpdateDoctorResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UpdateDoctorResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.updateDoctor"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Doctor/MutationdeleteDoctorpreAuth0Function/MutationdeleteDoctorpreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationdeleteDoctorpreAuth0FunctionMutationdeleteDoctorpreAuth0FunctionAppSyncFunction44FE115D"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationdeleteDoctorpreAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Doctor/MutationdeleteDoctorauth0Function/MutationdeleteDoctorauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationdeleteDoctorauth0FunctionMutationdeleteDoctorauth0FunctionAppSyncFunction08180DF7"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationdeleteDoctorauth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Doctor/MutationdeleteDoctorpostAuth0Function/MutationdeleteDoctorpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationdeleteDoctorpostAuth0FunctionMutationdeleteDoctorpostAuth0FunctionAppSyncFunction2371120E"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationdeleteDoctorpostAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Doctor/MutationDeleteDoctorDataResolverFn/MutationDeleteDoctorDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationDeleteDoctorDataResolverFnMutationDeleteDoctorDataResolverFnAppSyncFunction1E77297B"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationDeleteDoctorDataResolverFn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Doctor/mutationDeleteDoctorResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DeleteDoctorResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.deleteDoctor"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Doctor/SubscriptiononCreateDoctorauth0Function/SubscriptiononCreateDoctorauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreateDoctorauth0FunctionSubscriptiononCreateDoctorauth0FunctionAppSyncFunction21C8D887"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononCreateDoctorauth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Doctor/SubscriptiononCreateDoctorpostAuth0Function/SubscriptiononCreateDoctorpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreateDoctorpostAuth0FunctionSubscriptiononCreateDoctorpostAuth0FunctionAppSyncFunction4BBED25D"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononCreateDoctorpostAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Doctor/SubscriptionOnCreateDoctorDataResolverFn/SubscriptionOnCreateDoctorDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnCreateDoctorDataResolverFnSubscriptionOnCreateDoctorDataResolverFnAppSyncFunction13638954"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnCreateDoctorDataResolverFn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Doctor/subscriptionOnCreateDoctorResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreateDoctorResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onCreateDoctor"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Doctor/SubscriptiononUpdateDoctorauth0Function/SubscriptiononUpdateDoctorauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdateDoctorauth0FunctionSubscriptiononUpdateDoctorauth0FunctionAppSyncFunction621CCE65"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononUpdateDoctorauth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Doctor/SubscriptiononUpdateDoctorpostAuth0Function/SubscriptiononUpdateDoctorpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdateDoctorpostAuth0FunctionSubscriptiononUpdateDoctorpostAuth0FunctionAppSyncFunction7693BCD4"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononUpdateDoctorpostAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Doctor/SubscriptionOnUpdateDoctorDataResolverFn/SubscriptionOnUpdateDoctorDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnUpdateDoctorDataResolverFnSubscriptionOnUpdateDoctorDataResolverFnAppSyncFunctionFD7F78DF"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnUpdateDoctorDataResolverFn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Doctor/subscriptionOnUpdateDoctorResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdateDoctorResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onUpdateDoctor"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Doctor/SubscriptiononDeleteDoctorauth0Function/SubscriptiononDeleteDoctorauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeleteDoctorauth0FunctionSubscriptiononDeleteDoctorauth0FunctionAppSyncFunctionD5F6AEFF"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononDeleteDoctorauth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Doctor/SubscriptiononDeleteDoctorpostAuth0Function/SubscriptiononDeleteDoctorpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeleteDoctorpostAuth0FunctionSubscriptiononDeleteDoctorpostAuth0FunctionAppSyncFunction0B3D59F1"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononDeleteDoctorpostAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Doctor/SubscriptionOnDeleteDoctorDataResolverFn/SubscriptionOnDeleteDoctorDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnDeleteDoctorDataResolverFnSubscriptionOnDeleteDoctorDataResolverFnAppSyncFunction5B5BA7D7"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnDeleteDoctorDataResolverFn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Doctor/subscriptionOnDeleteDoctorResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeleteDoctorResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onDeleteDoctor"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Doctor/QuerydoctorsByRegisteredHospitalIdauth0Function/QuerydoctorsByRegisteredHospitalIdauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerydoctorsByRegisteredHospitalIdauth0FunctionQuerydoctorsByRegisteredHospitalIdauth0FunctionAppSyncFunction000A74C3"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerydoctorsByRegisteredHospitalIdauth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Doctor/QuerydoctorsByRegisteredHospitalIdpostAuth0Function/QuerydoctorsByRegisteredHospitalIdpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerydoctorsByRegisteredHospitalIdpostAuth0FunctionQuerydoctorsByRegisteredHospitalIdpostAuth0FunctionAppSyncFunction388CFDA0"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerydoctorsByRegisteredHospitalIdpostAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Doctor/QueryDoctorsByRegisteredHospitalIdDataResolverFn/QueryDoctorsByRegisteredHospitalIdDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryDoctorsByRegisteredHospitalIdDataResolverFnQueryDoctorsByRegisteredHospitalIdDataResolverFnAppSyncFunctionA10868E9"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryDoctorsByRegisteredHospitalIdDataResolverFn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Doctor/queryDoctorsByRegisteredHospitalIdResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerydoctorsByRegisteredHospitalIdResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Query.doctorsByRegisteredHospitalId"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Doctor/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Doctor/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Doctor/reference-to-BackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Doctor/reference-to-BackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Doctor/reference-to-BackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538Outputs.BackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLLambdaDataSourceHospitalManagementSchema30F8FE8CName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538OutputsBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLLambdaData83D6855B"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Doctor/reference-to-BackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538Outputs.BackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLFunctionHospitalManagementSchema60B0171EArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538OutputsBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLFunctionHo5FC8E1BE"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Doctor.NestedStack/Doctor.NestedStackResource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HospitalManagementAPIDoctorNestedStackDoctorNestedStackResourceB5892450"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Hospital/QuerygetHospitalpreAuth0Function/QuerygetHospitalpreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerygetHospitalpreAuth0FunctionQuerygetHospitalpreAuth0FunctionAppSyncFunction2821A499"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerygetHospitalpreAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Hospital/QuerygetHospitalauth0Function/QuerygetHospitalauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerygetHospitalauth0FunctionQuerygetHospitalauth0FunctionAppSyncFunctionFB7DD6BE"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerygetHospitalauth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Hospital/QuerygetHospitalpostAuth0Function/QuerygetHospitalpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerygetHospitalpostAuth0FunctionQuerygetHospitalpostAuth0FunctionAppSyncFunctionA8154CA4"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerygetHospitalpostAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Hospital/QueryGetHospitalDataResolverFn/QueryGetHospitalDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryGetHospitalDataResolverFnQueryGetHospitalDataResolverFnAppSyncFunction6326E752"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryGetHospitalDataResolverFn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Hospital/queryGetHospitalResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetHospitalResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Query.getHospital"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Hospital/QuerylistHospitalspreAuth0Function/QuerylistHospitalspreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistHospitalspreAuth0FunctionQuerylistHospitalspreAuth0FunctionAppSyncFunctionACC556E0"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistHospitalspreAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Hospital/QuerylistHospitalsauth0Function/QuerylistHospitalsauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistHospitalsauth0FunctionQuerylistHospitalsauth0FunctionAppSyncFunction17708836"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistHospitalsauth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Hospital/QuerylistHospitalspostAuth0Function/QuerylistHospitalspostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistHospitalspostAuth0FunctionQuerylistHospitalspostAuth0FunctionAppSyncFunction269C9E92"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistHospitalspostAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Hospital/QueryListHospitalsDataResolverFn/QueryListHospitalsDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryListHospitalsDataResolverFnQueryListHospitalsDataResolverFnAppSyncFunction30A1A1C8"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryListHospitalsDataResolverFn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Hospital/queryListHospitalsResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ListHospitalResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Query.listHospitals"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Hospital/MutationcreateHospitalinit0Function/MutationcreateHospitalinit0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateHospitalinit0FunctionMutationcreateHospitalinit0FunctionAppSyncFunction60273595"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateHospitalinit0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Hospital/MutationcreateHospitalpreAuth0Function/MutationcreateHospitalpreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateHospitalpreAuth0FunctionMutationcreateHospitalpreAuth0FunctionAppSyncFunction88F44C77"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateHospitalpreAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Hospital/MutationcreateHospitalauth0Function/MutationcreateHospitalauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateHospitalauth0FunctionMutationcreateHospitalauth0FunctionAppSyncFunction894CB8B0"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateHospitalauth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Hospital/MutationcreateHospitalpostAuth0Function/MutationcreateHospitalpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateHospitalpostAuth0FunctionMutationcreateHospitalpostAuth0FunctionAppSyncFunction9D693C7F"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateHospitalpostAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Hospital/MutationCreateHospitalDataResolverFn/MutationCreateHospitalDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationCreateHospitalDataResolverFnMutationCreateHospitalDataResolverFnAppSyncFunction77A9175B"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationCreateHospitalDataResolverFn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Hospital/mutationCreateHospitalResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CreateHospitalResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.createHospital"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Hospital/MutationupdateHospitalinit0Function/MutationupdateHospitalinit0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateHospitalinit0FunctionMutationupdateHospitalinit0FunctionAppSyncFunction569D097B"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateHospitalinit0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Hospital/MutationupdateHospitalpreAuth0Function/MutationupdateHospitalpreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateHospitalpreAuth0FunctionMutationupdateHospitalpreAuth0FunctionAppSyncFunction9088852B"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateHospitalpreAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Hospital/MutationupdateHospitalauth0Function/MutationupdateHospitalauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateHospitalauth0FunctionMutationupdateHospitalauth0FunctionAppSyncFunction406772DA"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateHospitalauth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Hospital/MutationupdateHospitalpostAuth0Function/MutationupdateHospitalpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateHospitalpostAuth0FunctionMutationupdateHospitalpostAuth0FunctionAppSyncFunction74ACEC62"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateHospitalpostAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Hospital/MutationUpdateHospitalDataResolverFn/MutationUpdateHospitalDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationUpdateHospitalDataResolverFnMutationUpdateHospitalDataResolverFnAppSyncFunction3F5379B9"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationUpdateHospitalDataResolverFn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Hospital/mutationUpdateHospitalResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UpdateHospitalResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.updateHospital"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Hospital/MutationdeleteHospitalpreAuth0Function/MutationdeleteHospitalpreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationdeleteHospitalpreAuth0FunctionMutationdeleteHospitalpreAuth0FunctionAppSyncFunctionE008C69B"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationdeleteHospitalpreAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Hospital/MutationdeleteHospitalauth0Function/MutationdeleteHospitalauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationdeleteHospitalauth0FunctionMutationdeleteHospitalauth0FunctionAppSyncFunction580652BD"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationdeleteHospitalauth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Hospital/MutationdeleteHospitalpostAuth0Function/MutationdeleteHospitalpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationdeleteHospitalpostAuth0FunctionMutationdeleteHospitalpostAuth0FunctionAppSyncFunction333EE94E"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationdeleteHospitalpostAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Hospital/MutationDeleteHospitalDataResolverFn/MutationDeleteHospitalDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationDeleteHospitalDataResolverFnMutationDeleteHospitalDataResolverFnAppSyncFunction698F8BCF"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationDeleteHospitalDataResolverFn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Hospital/mutationDeleteHospitalResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DeleteHospitalResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.deleteHospital"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Hospital/SubscriptiononCreateHospitalauth0Function/SubscriptiononCreateHospitalauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreateHospitalauth0FunctionSubscriptiononCreateHospitalauth0FunctionAppSyncFunction9F37AE90"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononCreateHospitalauth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Hospital/SubscriptiononCreateHospitalpostAuth0Function/SubscriptiononCreateHospitalpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreateHospitalpostAuth0FunctionSubscriptiononCreateHospitalpostAuth0FunctionAppSyncFunction38EC7BC9"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononCreateHospitalpostAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Hospital/SubscriptionOnCreateHospitalDataResolverFn/SubscriptionOnCreateHospitalDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnCreateHospitalDataResolverFnSubscriptionOnCreateHospitalDataResolverFnAppSyncFunction2DCD7D41"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnCreateHospitalDataResolverFn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Hospital/subscriptionOnCreateHospitalResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreateHospitalResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onCreateHospital"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Hospital/SubscriptiononUpdateHospitalauth0Function/SubscriptiononUpdateHospitalauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdateHospitalauth0FunctionSubscriptiononUpdateHospitalauth0FunctionAppSyncFunction1BBC65AA"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononUpdateHospitalauth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Hospital/SubscriptiononUpdateHospitalpostAuth0Function/SubscriptiononUpdateHospitalpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdateHospitalpostAuth0FunctionSubscriptiononUpdateHospitalpostAuth0FunctionAppSyncFunction78CE5AF4"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononUpdateHospitalpostAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Hospital/SubscriptionOnUpdateHospitalDataResolverFn/SubscriptionOnUpdateHospitalDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnUpdateHospitalDataResolverFnSubscriptionOnUpdateHospitalDataResolverFnAppSyncFunction202C7230"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnUpdateHospitalDataResolverFn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Hospital/subscriptionOnUpdateHospitalResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdateHospitalResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onUpdateHospital"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Hospital/SubscriptiononDeleteHospitalauth0Function/SubscriptiononDeleteHospitalauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeleteHospitalauth0FunctionSubscriptiononDeleteHospitalauth0FunctionAppSyncFunction6CB127D0"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononDeleteHospitalauth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Hospital/SubscriptiononDeleteHospitalpostAuth0Function/SubscriptiononDeleteHospitalpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeleteHospitalpostAuth0FunctionSubscriptiononDeleteHospitalpostAuth0FunctionAppSyncFunction5722C5C7"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononDeleteHospitalpostAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Hospital/SubscriptionOnDeleteHospitalDataResolverFn/SubscriptionOnDeleteHospitalDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnDeleteHospitalDataResolverFnSubscriptionOnDeleteHospitalDataResolverFnAppSyncFunctionD42D437B"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnDeleteHospitalDataResolverFn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Hospital/subscriptionOnDeleteHospitalResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeleteHospitalResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onDeleteHospital"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Hospital/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Hospital/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Hospital/reference-to-BackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Hospital/reference-to-BackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Hospital/reference-to-BackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538Outputs.BackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLLambdaDataSourceHospitalManagementSchema30F8FE8CName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538OutputsBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLLambdaData83D6855B"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Hospital/reference-to-BackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538Outputs.BackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLFunctionHospitalManagementSchema60B0171EArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538OutputsBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLFunctionHo5FC8E1BE"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Hospital.NestedStack/Hospital.NestedStackResource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HospitalManagementAPIHospitalNestedStackHospitalNestedStackResource7EE1608F"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Patient/QuerygetPatientpreAuth0Function/QuerygetPatientpreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerygetPatientpreAuth0FunctionQuerygetPatientpreAuth0FunctionAppSyncFunction7E26F855"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerygetPatientpreAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Patient/QuerygetPatientauth0Function/QuerygetPatientauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerygetPatientauth0FunctionQuerygetPatientauth0FunctionAppSyncFunction36192A1C"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerygetPatientauth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Patient/QuerygetPatientpostAuth0Function/QuerygetPatientpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerygetPatientpostAuth0FunctionQuerygetPatientpostAuth0FunctionAppSyncFunction82FA667A"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerygetPatientpostAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Patient/QueryGetPatientDataResolverFn/QueryGetPatientDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryGetPatientDataResolverFnQueryGetPatientDataResolverFnAppSyncFunction63361816"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryGetPatientDataResolverFn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Patient/queryGetPatientResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetPatientResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Query.getPatient"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Patient/QuerylistPatientspreAuth0Function/QuerylistPatientspreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistPatientspreAuth0FunctionQuerylistPatientspreAuth0FunctionAppSyncFunctionD0213297"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistPatientspreAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Patient/QuerylistPatientsauth0Function/QuerylistPatientsauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistPatientsauth0FunctionQuerylistPatientsauth0FunctionAppSyncFunction178A0B1A"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistPatientsauth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Patient/QuerylistPatientspostAuth0Function/QuerylistPatientspostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistPatientspostAuth0FunctionQuerylistPatientspostAuth0FunctionAppSyncFunction551E6891"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistPatientspostAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Patient/QueryListPatientsDataResolverFn/QueryListPatientsDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryListPatientsDataResolverFnQueryListPatientsDataResolverFnAppSyncFunction017AB2F8"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryListPatientsDataResolverFn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Patient/queryListPatientsResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ListPatientResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Query.listPatients"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Patient/MutationcreatePatientinit0Function/MutationcreatePatientinit0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreatePatientinit0FunctionMutationcreatePatientinit0FunctionAppSyncFunction0CD0CD62"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreatePatientinit0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Patient/MutationcreatePatientpreAuth0Function/MutationcreatePatientpreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreatePatientpreAuth0FunctionMutationcreatePatientpreAuth0FunctionAppSyncFunction4CEF0F35"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreatePatientpreAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Patient/MutationcreatePatientauth0Function/MutationcreatePatientauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreatePatientauth0FunctionMutationcreatePatientauth0FunctionAppSyncFunction4B518D1A"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreatePatientauth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Patient/MutationcreatePatientpostAuth0Function/MutationcreatePatientpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreatePatientpostAuth0FunctionMutationcreatePatientpostAuth0FunctionAppSyncFunctionBD6CE1E4"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreatePatientpostAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Patient/MutationCreatePatientDataResolverFn/MutationCreatePatientDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationCreatePatientDataResolverFnMutationCreatePatientDataResolverFnAppSyncFunction571019B0"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationCreatePatientDataResolverFn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Patient/mutationCreatePatientResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CreatePatientResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.createPatient"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Patient/MutationupdatePatientinit0Function/MutationupdatePatientinit0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdatePatientinit0FunctionMutationupdatePatientinit0FunctionAppSyncFunction52F8D404"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdatePatientinit0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Patient/MutationupdatePatientpreAuth0Function/MutationupdatePatientpreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdatePatientpreAuth0FunctionMutationupdatePatientpreAuth0FunctionAppSyncFunctionB694E710"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdatePatientpreAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Patient/MutationupdatePatientauth0Function/MutationupdatePatientauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdatePatientauth0FunctionMutationupdatePatientauth0FunctionAppSyncFunction7F17F47B"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdatePatientauth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Patient/MutationupdatePatientpostAuth0Function/MutationupdatePatientpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdatePatientpostAuth0FunctionMutationupdatePatientpostAuth0FunctionAppSyncFunction21174856"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdatePatientpostAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Patient/MutationUpdatePatientDataResolverFn/MutationUpdatePatientDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationUpdatePatientDataResolverFnMutationUpdatePatientDataResolverFnAppSyncFunctionE259C0CA"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationUpdatePatientDataResolverFn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Patient/mutationUpdatePatientResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UpdatePatientResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.updatePatient"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Patient/MutationdeletePatientpreAuth0Function/MutationdeletePatientpreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationdeletePatientpreAuth0FunctionMutationdeletePatientpreAuth0FunctionAppSyncFunction062407D8"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationdeletePatientpreAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Patient/MutationdeletePatientauth0Function/MutationdeletePatientauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationdeletePatientauth0FunctionMutationdeletePatientauth0FunctionAppSyncFunction7E0E87EC"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationdeletePatientauth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Patient/MutationdeletePatientpostAuth0Function/MutationdeletePatientpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationdeletePatientpostAuth0FunctionMutationdeletePatientpostAuth0FunctionAppSyncFunction9252F852"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationdeletePatientpostAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Patient/MutationDeletePatientDataResolverFn/MutationDeletePatientDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationDeletePatientDataResolverFnMutationDeletePatientDataResolverFnAppSyncFunction2AC12786"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationDeletePatientDataResolverFn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Patient/mutationDeletePatientResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DeletePatientResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.deletePatient"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Patient/SubscriptiononCreatePatientauth0Function/SubscriptiononCreatePatientauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreatePatientauth0FunctionSubscriptiononCreatePatientauth0FunctionAppSyncFunction7BC63B56"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononCreatePatientauth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Patient/SubscriptiononCreatePatientpostAuth0Function/SubscriptiononCreatePatientpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreatePatientpostAuth0FunctionSubscriptiononCreatePatientpostAuth0FunctionAppSyncFunction7680783B"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononCreatePatientpostAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Patient/SubscriptionOnCreatePatientDataResolverFn/SubscriptionOnCreatePatientDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnCreatePatientDataResolverFnSubscriptionOnCreatePatientDataResolverFnAppSyncFunction0CDA21EE"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnCreatePatientDataResolverFn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Patient/subscriptionOnCreatePatientResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreatePatientResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onCreatePatient"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Patient/SubscriptiononUpdatePatientauth0Function/SubscriptiononUpdatePatientauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdatePatientauth0FunctionSubscriptiononUpdatePatientauth0FunctionAppSyncFunction096C94CC"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononUpdatePatientauth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Patient/SubscriptiononUpdatePatientpostAuth0Function/SubscriptiononUpdatePatientpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdatePatientpostAuth0FunctionSubscriptiononUpdatePatientpostAuth0FunctionAppSyncFunction39298827"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononUpdatePatientpostAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Patient/SubscriptionOnUpdatePatientDataResolverFn/SubscriptionOnUpdatePatientDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnUpdatePatientDataResolverFnSubscriptionOnUpdatePatientDataResolverFnAppSyncFunctionC1B0BBB4"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnUpdatePatientDataResolverFn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Patient/subscriptionOnUpdatePatientResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdatePatientResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onUpdatePatient"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Patient/SubscriptiononDeletePatientauth0Function/SubscriptiononDeletePatientauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeletePatientauth0FunctionSubscriptiononDeletePatientauth0FunctionAppSyncFunction03DA42A7"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononDeletePatientauth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Patient/SubscriptiononDeletePatientpostAuth0Function/SubscriptiononDeletePatientpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeletePatientpostAuth0FunctionSubscriptiononDeletePatientpostAuth0FunctionAppSyncFunctionBAB77182"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononDeletePatientpostAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Patient/SubscriptionOnDeletePatientDataResolverFn/SubscriptionOnDeletePatientDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnDeletePatientDataResolverFnSubscriptionOnDeletePatientDataResolverFnAppSyncFunction0178DEB0"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnDeletePatientDataResolverFn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Patient/subscriptionOnDeletePatientResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeletePatientResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onDeletePatient"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Patient/QuerypatientsByRegisteredHospitalIdauth0Function/QuerypatientsByRegisteredHospitalIdauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerypatientsByRegisteredHospitalIdauth0FunctionQuerypatientsByRegisteredHospitalIdauth0FunctionAppSyncFunction12F30F44"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerypatientsByRegisteredHospitalIdauth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Patient/QuerypatientsByRegisteredHospitalIdpostAuth0Function/QuerypatientsByRegisteredHospitalIdpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerypatientsByRegisteredHospitalIdpostAuth0FunctionQuerypatientsByRegisteredHospitalIdpostAuth0FunctionAppSyncFunction69A42C24"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerypatientsByRegisteredHospitalIdpostAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Patient/QueryPatientsByRegisteredHospitalIdDataResolverFn/QueryPatientsByRegisteredHospitalIdDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryPatientsByRegisteredHospitalIdDataResolverFnQueryPatientsByRegisteredHospitalIdDataResolverFnAppSyncFunction6A1A82BA"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryPatientsByRegisteredHospitalIdDataResolverFn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Patient/queryPatientsByRegisteredHospitalIdResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerypatientsByRegisteredHospitalIdResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Query.patientsByRegisteredHospitalId"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Patient/QuerypatientsByRegisteredDoctorIdauth0Function/QuerypatientsByRegisteredDoctorIdauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerypatientsByRegisteredDoctorIdauth0FunctionQuerypatientsByRegisteredDoctorIdauth0FunctionAppSyncFunction5E4F8501"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerypatientsByRegisteredDoctorIdauth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Patient/QuerypatientsByRegisteredDoctorIdpostAuth0Function/QuerypatientsByRegisteredDoctorIdpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerypatientsByRegisteredDoctorIdpostAuth0FunctionQuerypatientsByRegisteredDoctorIdpostAuth0FunctionAppSyncFunction199DE06C"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerypatientsByRegisteredDoctorIdpostAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Patient/QueryPatientsByRegisteredDoctorIdDataResolverFn/QueryPatientsByRegisteredDoctorIdDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryPatientsByRegisteredDoctorIdDataResolverFnQueryPatientsByRegisteredDoctorIdDataResolverFnAppSyncFunction87397770"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryPatientsByRegisteredDoctorIdDataResolverFn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Patient/queryPatientsByRegisteredDoctorIdResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerypatientsByRegisteredDoctorIdResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Query.patientsByRegisteredDoctorId"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Patient/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Patient/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Patient/reference-to-BackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Patient/reference-to-BackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Patient/reference-to-BackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538Outputs.BackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLLambdaDataSourceHospitalManagementSchema30F8FE8CName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538OutputsBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLLambdaData83D6855B"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Patient/reference-to-BackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538Outputs.BackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLFunctionHospitalManagementSchema60B0171EArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538OutputsBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLFunctionHo5FC8E1BE"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Patient.NestedStack/Patient.NestedStackResource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HospitalManagementAPIPatientNestedStackPatientNestedStackResourceA406A01A"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Prescription/QuerygetPrescriptionpreAuth0Function/QuerygetPrescriptionpreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerygetPrescriptionpreAuth0FunctionQuerygetPrescriptionpreAuth0FunctionAppSyncFunctionAC856D16"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerygetPrescriptionpreAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Prescription/QuerygetPrescriptionpreAuth1Function/QuerygetPrescriptionpreAuth1Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerygetPrescriptionpreAuth1FunctionQuerygetPrescriptionpreAuth1FunctionAppSyncFunction6AEBC017"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerygetPrescriptionpreAuth1Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Prescription/QuerygetPrescriptionauth0Function/QuerygetPrescriptionauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerygetPrescriptionauth0FunctionQuerygetPrescriptionauth0FunctionAppSyncFunction9B429108"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerygetPrescriptionauth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Prescription/QuerygetPrescriptionpostAuth0Function/QuerygetPrescriptionpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerygetPrescriptionpostAuth0FunctionQuerygetPrescriptionpostAuth0FunctionAppSyncFunctionBE6D5E27"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerygetPrescriptionpostAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Prescription/QueryGetPrescriptionDataResolverFn/QueryGetPrescriptionDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryGetPrescriptionDataResolverFnQueryGetPrescriptionDataResolverFnAppSyncFunctionF8ACA8B9"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryGetPrescriptionDataResolverFn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Prescription/queryGetPrescriptionResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetPrescriptionResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Query.getPrescription"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Prescription/QuerylistPrescriptionspreAuth0Function/QuerylistPrescriptionspreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistPrescriptionspreAuth0FunctionQuerylistPrescriptionspreAuth0FunctionAppSyncFunction8DF71218"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistPrescriptionspreAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Prescription/QuerylistPrescriptionspreAuth1Function/QuerylistPrescriptionspreAuth1Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistPrescriptionspreAuth1FunctionQuerylistPrescriptionspreAuth1FunctionAppSyncFunctionA3915397"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistPrescriptionspreAuth1Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Prescription/QuerylistPrescriptionsauth0Function/QuerylistPrescriptionsauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistPrescriptionsauth0FunctionQuerylistPrescriptionsauth0FunctionAppSyncFunction292E0A66"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistPrescriptionsauth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Prescription/QuerylistPrescriptionspostAuth0Function/QuerylistPrescriptionspostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistPrescriptionspostAuth0FunctionQuerylistPrescriptionspostAuth0FunctionAppSyncFunction034634C8"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistPrescriptionspostAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Prescription/QueryListPrescriptionsDataResolverFn/QueryListPrescriptionsDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryListPrescriptionsDataResolverFnQueryListPrescriptionsDataResolverFnAppSyncFunction92700F8C"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryListPrescriptionsDataResolverFn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Prescription/queryListPrescriptionsResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ListPrescriptionResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Query.listPrescriptions"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Prescription/MutationcreatePrescriptioninit0Function/MutationcreatePrescriptioninit0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreatePrescriptioninit0FunctionMutationcreatePrescriptioninit0FunctionAppSyncFunction65CEF34A"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreatePrescriptioninit0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Prescription/MutationcreatePrescriptionpreAuth0Function/MutationcreatePrescriptionpreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreatePrescriptionpreAuth0FunctionMutationcreatePrescriptionpreAuth0FunctionAppSyncFunction8A89B803"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreatePrescriptionpreAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Prescription/MutationcreatePrescriptionpreAuth1Function/MutationcreatePrescriptionpreAuth1Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreatePrescriptionpreAuth1FunctionMutationcreatePrescriptionpreAuth1FunctionAppSyncFunction8E80518D"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreatePrescriptionpreAuth1Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Prescription/MutationcreatePrescriptionauth0Function/MutationcreatePrescriptionauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreatePrescriptionauth0FunctionMutationcreatePrescriptionauth0FunctionAppSyncFunctionAFBF2662"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreatePrescriptionauth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Prescription/MutationcreatePrescriptionpostAuth0Function/MutationcreatePrescriptionpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreatePrescriptionpostAuth0FunctionMutationcreatePrescriptionpostAuth0FunctionAppSyncFunction93E2BE6D"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreatePrescriptionpostAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Prescription/MutationCreatePrescriptionDataResolverFn/MutationCreatePrescriptionDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationCreatePrescriptionDataResolverFnMutationCreatePrescriptionDataResolverFnAppSyncFunction2FC203CD"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationCreatePrescriptionDataResolverFn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Prescription/mutationCreatePrescriptionResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CreatePrescriptionResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.createPrescription"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Prescription/MutationupdatePrescriptioninit0Function/MutationupdatePrescriptioninit0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdatePrescriptioninit0FunctionMutationupdatePrescriptioninit0FunctionAppSyncFunction37CFC2F4"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdatePrescriptioninit0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Prescription/MutationupdatePrescriptionpreAuth0Function/MutationupdatePrescriptionpreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdatePrescriptionpreAuth0FunctionMutationupdatePrescriptionpreAuth0FunctionAppSyncFunction0FE1773B"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdatePrescriptionpreAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Prescription/MutationupdatePrescriptionpreAuth1Function/MutationupdatePrescriptionpreAuth1Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdatePrescriptionpreAuth1FunctionMutationupdatePrescriptionpreAuth1FunctionAppSyncFunctionC54CF858"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdatePrescriptionpreAuth1Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Prescription/MutationupdatePrescriptionauth0Function/MutationupdatePrescriptionauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdatePrescriptionauth0FunctionMutationupdatePrescriptionauth0FunctionAppSyncFunction1B731456"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdatePrescriptionauth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Prescription/MutationupdatePrescriptionpostAuth0Function/MutationupdatePrescriptionpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdatePrescriptionpostAuth0FunctionMutationupdatePrescriptionpostAuth0FunctionAppSyncFunctionB0F9ACEC"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdatePrescriptionpostAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Prescription/MutationUpdatePrescriptionDataResolverFn/MutationUpdatePrescriptionDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationUpdatePrescriptionDataResolverFnMutationUpdatePrescriptionDataResolverFnAppSyncFunctionB661DD07"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationUpdatePrescriptionDataResolverFn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Prescription/mutationUpdatePrescriptionResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UpdatePrescriptionResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.updatePrescription"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Prescription/MutationdeletePrescriptionpreAuth0Function/MutationdeletePrescriptionpreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationdeletePrescriptionpreAuth0FunctionMutationdeletePrescriptionpreAuth0FunctionAppSyncFunction293E6029"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationdeletePrescriptionpreAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Prescription/MutationdeletePrescriptionpreAuth1Function/MutationdeletePrescriptionpreAuth1Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationdeletePrescriptionpreAuth1FunctionMutationdeletePrescriptionpreAuth1FunctionAppSyncFunction12C6C0D6"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationdeletePrescriptionpreAuth1Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Prescription/MutationdeletePrescriptionauth0Function/MutationdeletePrescriptionauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationdeletePrescriptionauth0FunctionMutationdeletePrescriptionauth0FunctionAppSyncFunction164D338A"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationdeletePrescriptionauth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Prescription/MutationdeletePrescriptionpostAuth0Function/MutationdeletePrescriptionpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationdeletePrescriptionpostAuth0FunctionMutationdeletePrescriptionpostAuth0FunctionAppSyncFunction8D175515"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationdeletePrescriptionpostAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Prescription/MutationDeletePrescriptionDataResolverFn/MutationDeletePrescriptionDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationDeletePrescriptionDataResolverFnMutationDeletePrescriptionDataResolverFnAppSyncFunction520084F6"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationDeletePrescriptionDataResolverFn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Prescription/mutationDeletePrescriptionResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DeletePrescriptionResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.deletePrescription"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Prescription/SubscriptiononCreatePrescriptionauth0Function/SubscriptiononCreatePrescriptionauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreatePrescriptionauth0FunctionSubscriptiononCreatePrescriptionauth0FunctionAppSyncFunctionF62202D6"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononCreatePrescriptionauth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Prescription/SubscriptiononCreatePrescriptionpostAuth0Function/SubscriptiononCreatePrescriptionpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreatePrescriptionpostAuth0FunctionSubscriptiononCreatePrescriptionpostAuth0FunctionAppSyncFunction9BE3ABBE"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononCreatePrescriptionpostAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Prescription/SubscriptionOnCreatePrescriptionDataResolverFn/SubscriptionOnCreatePrescriptionDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnCreatePrescriptionDataResolverFnSubscriptionOnCreatePrescriptionDataResolverFnAppSyncFunctionC46C1F18"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnCreatePrescriptionDataResolverFn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Prescription/subscriptionOnCreatePrescriptionResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreatePrescriptionResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onCreatePrescription"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Prescription/SubscriptiononUpdatePrescriptionauth0Function/SubscriptiononUpdatePrescriptionauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdatePrescriptionauth0FunctionSubscriptiononUpdatePrescriptionauth0FunctionAppSyncFunction3431C016"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononUpdatePrescriptionauth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Prescription/SubscriptiononUpdatePrescriptionpostAuth0Function/SubscriptiononUpdatePrescriptionpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdatePrescriptionpostAuth0FunctionSubscriptiononUpdatePrescriptionpostAuth0FunctionAppSyncFunctionA1B271B1"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononUpdatePrescriptionpostAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Prescription/SubscriptionOnUpdatePrescriptionDataResolverFn/SubscriptionOnUpdatePrescriptionDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnUpdatePrescriptionDataResolverFnSubscriptionOnUpdatePrescriptionDataResolverFnAppSyncFunction9CFFFF06"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnUpdatePrescriptionDataResolverFn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Prescription/subscriptionOnUpdatePrescriptionResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdatePrescriptionResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onUpdatePrescription"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Prescription/SubscriptiononDeletePrescriptionauth0Function/SubscriptiononDeletePrescriptionauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeletePrescriptionauth0FunctionSubscriptiononDeletePrescriptionauth0FunctionAppSyncFunctionFE227098"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononDeletePrescriptionauth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Prescription/SubscriptiononDeletePrescriptionpostAuth0Function/SubscriptiononDeletePrescriptionpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeletePrescriptionpostAuth0FunctionSubscriptiononDeletePrescriptionpostAuth0FunctionAppSyncFunction65FD2937"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononDeletePrescriptionpostAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Prescription/SubscriptionOnDeletePrescriptionDataResolverFn/SubscriptionOnDeletePrescriptionDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnDeletePrescriptionDataResolverFnSubscriptionOnDeletePrescriptionDataResolverFnAppSyncFunction5514E4D7"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnDeletePrescriptionDataResolverFn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Prescription/subscriptionOnDeletePrescriptionResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeletePrescriptionResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onDeletePrescription"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Prescription/QueryprescriptionsByPatientidpreAuth0Function/QueryprescriptionsByPatientidpreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryprescriptionsByPatientidpreAuth0FunctionQueryprescriptionsByPatientidpreAuth0FunctionAppSyncFunction005005F5"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryprescriptionsByPatientidpreAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Prescription/QueryprescriptionsByPatientidauth0Function/QueryprescriptionsByPatientidauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryprescriptionsByPatientidauth0FunctionQueryprescriptionsByPatientidauth0FunctionAppSyncFunction0B52669F"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryprescriptionsByPatientidauth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Prescription/QueryprescriptionsByPatientidpostAuth0Function/QueryprescriptionsByPatientidpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryprescriptionsByPatientidpostAuth0FunctionQueryprescriptionsByPatientidpostAuth0FunctionAppSyncFunction7BFB0733"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryprescriptionsByPatientidpostAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Prescription/QueryPrescriptionsByPatientidDataResolverFn/QueryPrescriptionsByPatientidDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryPrescriptionsByPatientidDataResolverFnQueryPrescriptionsByPatientidDataResolverFnAppSyncFunction168FB832"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryPrescriptionsByPatientidDataResolverFn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Prescription/queryPrescriptionsByPatientidResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryprescriptionsByPatientidResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Query.prescriptionsByPatientid"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Prescription/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Prescription/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Prescription/reference-to-BackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Prescription/reference-to-BackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Prescription/reference-to-BackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538Outputs.BackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLLambdaDataSourceHospitalManagementSchema30F8FE8CName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538OutputsBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLLambdaData83D6855B"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Prescription/reference-to-BackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538Outputs.BackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLFunctionHospitalManagementSchema60B0171EArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538OutputsBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLFunctionHo5FC8E1BE"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/Prescription.NestedStack/Prescription.NestedStackResource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HospitalManagementAPIPrescriptionNestedStackPrescriptionNestedStackResource490AEFA8"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/ConnectionStack/Doctorpatientsauth0Function/Doctorpatientsauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Doctorpatientsauth0FunctionDoctorpatientsauth0FunctionAppSyncFunctionB7219D11"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Doctorpatientsauth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/ConnectionStack/DoctorPatientsDataResolverFn/DoctorPatientsDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DoctorPatientsDataResolverFnDoctorPatientsDataResolverFnAppSyncFunction0B5B30E6"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "DoctorPatientsDataResolverFn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/ConnectionStack/doctorPatientsResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DoctorpatientsResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Doctor.patients"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/ConnectionStack/Patientappointmentsauth0Function/Patientappointmentsauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Patientappointmentsauth0FunctionPatientappointmentsauth0FunctionAppSyncFunctionB169543F"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Patientappointmentsauth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/ConnectionStack/PatientAppointmentsDataResolverFn/PatientAppointmentsDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PatientAppointmentsDataResolverFnPatientAppointmentsDataResolverFnAppSyncFunction92871DDA"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "PatientAppointmentsDataResolverFn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/ConnectionStack/patientAppointmentsResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PatientappointmentsResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Patient.appointments"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/ConnectionStack/PatientdiagnosispreAuth0Function/PatientdiagnosispreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PatientdiagnosispreAuth0FunctionPatientdiagnosispreAuth0FunctionAppSyncFunctionD6E6EB1A"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "PatientdiagnosispreAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/ConnectionStack/Patientdiagnosisauth0Function/Patientdiagnosisauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Patientdiagnosisauth0FunctionPatientdiagnosisauth0FunctionAppSyncFunction65E310C3"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Patientdiagnosisauth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/ConnectionStack/PatientDiagnosisDataResolverFn/PatientDiagnosisDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PatientDiagnosisDataResolverFnPatientDiagnosisDataResolverFnAppSyncFunctionEF0E0929"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "PatientDiagnosisDataResolverFn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/ConnectionStack/patientDiagnosisResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PatientdiagnosisResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Patient.diagnosis"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/ConnectionStack/PatientprescriptionspreAuth0Function/PatientprescriptionspreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PatientprescriptionspreAuth0FunctionPatientprescriptionspreAuth0FunctionAppSyncFunction389B1F8A"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "PatientprescriptionspreAuth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/ConnectionStack/Patientprescriptionsauth0Function/Patientprescriptionsauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Patientprescriptionsauth0FunctionPatientprescriptionsauth0FunctionAppSyncFunction21519A92"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Patientprescriptionsauth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/ConnectionStack/PatientPrescriptionsDataResolverFn/PatientPrescriptionsDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PatientPrescriptionsDataResolverFnPatientPrescriptionsDataResolverFnAppSyncFunctionB50308F8"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "PatientPrescriptionsDataResolverFn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/ConnectionStack/patientPrescriptionsResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PatientprescriptionsResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Patient.prescriptions"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/ConnectionStack/Appointmentpatientauth0Function/Appointmentpatientauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Appointmentpatientauth0FunctionAppointmentpatientauth0FunctionAppSyncFunction6C5D5F76"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Appointmentpatientauth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/ConnectionStack/AppointmentPatientDataResolverFn/AppointmentPatientDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppointmentPatientDataResolverFnAppointmentPatientDataResolverFnAppSyncFunction49579F7B"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "AppointmentPatientDataResolverFn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/ConnectionStack/appointmentPatientResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppointmentpatientResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Appointment.patient"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/ConnectionStack/Diagnosispatientauth0Function/Diagnosispatientauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Diagnosispatientauth0FunctionDiagnosispatientauth0FunctionAppSyncFunctionF14F2257"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Diagnosispatientauth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/ConnectionStack/DiagnosisPatientDataResolverFn/DiagnosisPatientDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DiagnosisPatientDataResolverFnDiagnosisPatientDataResolverFnAppSyncFunction158848D9"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "DiagnosisPatientDataResolverFn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/ConnectionStack/diagnosisPatientResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DiagnosispatientResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Diagnosis.patient"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/ConnectionStack/Patientdoctorauth0Function/Patientdoctorauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Patientdoctorauth0FunctionPatientdoctorauth0FunctionAppSyncFunction6C20ABD8"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Patientdoctorauth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/ConnectionStack/PatientDoctorDataResolverFn/PatientDoctorDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PatientDoctorDataResolverFnPatientDoctorDataResolverFnAppSyncFunction926C297E"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "PatientDoctorDataResolverFn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/ConnectionStack/patientDoctorResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PatientdoctorResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Patient.doctor"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/ConnectionStack/Prescriptionpatientauth0Function/Prescriptionpatientauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Prescriptionpatientauth0FunctionPrescriptionpatientauth0FunctionAppSyncFunctionD5413CE4"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Prescriptionpatientauth0Function"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/ConnectionStack/PrescriptionPatientDataResolverFn/PrescriptionPatientDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PrescriptionPatientDataResolverFnPrescriptionPatientDataResolverFnAppSyncFunction6C835749"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "PrescriptionPatientDataResolverFn"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/ConnectionStack/prescriptionPatientResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PrescriptionpatientResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Prescription.patient"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/ConnectionStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/ConnectionStack/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/ConnectionStack/reference-to-BackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/ConnectionStack/reference-to-BackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/ConnectionStack/reference-to-BackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538Outputs.BackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLLambdaDataSourceHospitalManagementSchema30F8FE8CName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538OutputsBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLLambdaData83D6855B"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/ConnectionStack/reference-to-BackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538Outputs.BackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLFunctionHospitalManagementSchema60B0171EArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538OutputsBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLFunctionHo5FC8E1BE"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/ConnectionStack.NestedStack/ConnectionStack.NestedStackResource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HospitalManagementAPIConnectionStackNestedStackConnectionStackNestedStackResourceCC3D72F2"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/AmplifyCodegenAssets/AmplifyCodegenAssetsBucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HospitalManagementAPIAmplifyCodegenAssetsAmplifyCodegenAssetsBucket6A159A78"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/AmplifyCodegenAssets/AmplifyCodegenAssetsBucket/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HospitalManagementAPIAmplifyCodegenAssetsAmplifyCodegenAssetsBucketPolicy5DFEECF6"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/AmplifyCodegenAssets/AmplifyCodegenAssetsBucket/AutoDeleteObjectsCustomResource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HospitalManagementAPIAmplifyCodegenAssetsAmplifyCodegenAssetsBucketAutoDeleteObjectsCustomResource74966020"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/AmplifyCodegenAssets/AmplifyCodegenAssetsDeployment/AwsCliLayer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HospitalManagementAPIAmplifyCodegenAssetsAmplifyCodegenAssetsDeploymentAwsCliLayer72B36D2F"
+          }
+        ],
+        "/BackendStack/HospitalManagementAPI/AmplifyCodegenAssets/AmplifyCodegenAssetsDeployment/CustomResource-1536MiB/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HospitalManagementAPIAmplifyCodegenAssetsAmplifyCodegenAssetsDeploymentCustomResource1536MiB6B247A84"
+          }
+        ],
+        "/BackendStack/LatestNodeRuntimeMap": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LatestNodeRuntimeMap"
+          }
+        ],
+        "/BackendStack/Custom::S3AutoDeleteObjectsCustomResourceProvider/Role": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092"
+          }
+        ],
+        "/BackendStack/Custom::S3AutoDeleteObjectsCustomResourceProvider/Handler": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F"
+          }
+        ],
+        "/BackendStack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1536MiB/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1536MiBServiceRoleA41FC8C2"
+          }
+        ],
+        "/BackendStack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1536MiB/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1536MiBServiceRoleDefaultPolicyFF1C635B"
+          }
+        ],
+        "/BackendStack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1536MiB/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1536MiBC5D8AB21"
+          }
+        ],
+        "/BackendStack/awsAppsyncApiId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "awsAppsyncApiId"
+          }
+        ],
+        "/BackendStack/awsAppsyncApiEndpoint": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "awsAppsyncApiEndpoint"
+          }
+        ],
+        "/BackendStack/awsAppsyncAuthenticationType": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "awsAppsyncAuthenticationType"
+          }
+        ],
+        "/BackendStack/awsAppsyncRegion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "awsAppsyncRegion"
+          }
+        ],
+        "/BackendStack/amplifyApiModelSchemaS3Uri": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyApiModelSchemaS3Uri"
+          }
+        ],
+        "/BackendStack/awsAppsyncApiKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "awsAppsyncApiKey"
+          }
+        ],
+        "/BackendStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/BackendStack/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/BackendStack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/BackendStack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "BackendStack"
+    },
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    }
+  }
+}

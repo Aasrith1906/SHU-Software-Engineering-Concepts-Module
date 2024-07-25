@@ -1,0 +1,1088 @@
+{
+ "Resources": {
+  "SQLLayerVersionCustomResourceMySQLSchemaDefinition416C3AA9": {
+   "Type": "Custom::SQLLayerVersionCustomResource",
+   "Properties": {
+    "ServiceToken": {
+     "Fn::GetAtt": [
+      "AWS679f53fac002430cb0da5b7982bd22872D164C4C",
+      "Arn"
+     ]
+    },
+    "Create": {
+     "Fn::Join": [
+      "",
+      [
+       "{\"service\":\"S3\",\"action\":\"getObject\",\"region\":\"us-east-1\",\"parameters\":{\"Bucket\":\"amplify-rds-layer-resources\",\"Key\":\"sql-layer-versions/",
+       {
+        "Ref": "AWS::Region"
+       },
+       "\"},\"physicalResourceId\":{\"id\":\"SQLLayerVersionCustomResourceMySQLSchemaDefinition-1719668103663\"}}"
+      ]
+     ]
+    },
+    "Update": {
+     "Fn::Join": [
+      "",
+      [
+       "{\"service\":\"S3\",\"action\":\"getObject\",\"region\":\"us-east-1\",\"parameters\":{\"Bucket\":\"amplify-rds-layer-resources\",\"Key\":\"sql-layer-versions/",
+       {
+        "Ref": "AWS::Region"
+       },
+       "\"},\"physicalResourceId\":{\"id\":\"SQLLayerVersionCustomResourceMySQLSchemaDefinition-1719668103663\"}}"
+      ]
+     ]
+    },
+    "InstallLatestAwsSdk": false
+   },
+   "DependsOn": [
+    "SQLLayerVersionCustomResourceMySQLSchemaDefinitionCustomResourcePolicy5BAAC85D"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/SqlBoundApi/SQLApiStackMySQLSchemaDefinition/SQLLayerVersionCustomResourceMySQLSchemaDefinition/Resource/Default"
+   }
+  },
+  "SQLLayerVersionCustomResourceMySQLSchemaDefinitionCustomResourcePolicy5BAAC85D": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "s3:GetObject",
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          "arn:aws:s3:::amplify-rds-layer-resources/sql-layer-versions/",
+          {
+           "Ref": "AWS::Region"
+          }
+         ]
+        ]
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SQLLayerVersionCustomResourceMySQLSchemaDefinitionCustomResourcePolicy5BAAC85D",
+    "Roles": [
+     {
+      "Ref": "AWS679f53fac002430cb0da5b7982bd2287ServiceRoleC1EA0FF2"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/SqlBoundApi/SQLApiStackMySQLSchemaDefinition/SQLLayerVersionCustomResourceMySQLSchemaDefinition/CustomResourcePolicy/Resource"
+   }
+  },
+  "AWS679f53fac002430cb0da5b7982bd2287ServiceRoleC1EA0FF2": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/SqlBoundApi/SQLApiStackMySQLSchemaDefinition/AWS679f53fac002430cb0da5b7982bd2287/ServiceRole/Resource"
+   }
+  },
+  "AWS679f53fac002430cb0da5b7982bd22872D164C4C": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": {
+      "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+     },
+     "S3Key": "97f30e67419a1676a2215492723e5add1aa491caf0cbe2dd878fc4fab0468cd4.zip"
+    },
+    "Handler": "index.handler",
+    "Role": {
+     "Fn::GetAtt": [
+      "AWS679f53fac002430cb0da5b7982bd2287ServiceRoleC1EA0FF2",
+      "Arn"
+     ]
+    },
+    "Runtime": {
+     "Fn::FindInMap": [
+      "LatestNodeRuntimeMap",
+      {
+       "Ref": "AWS::Region"
+      },
+      "value"
+     ]
+    },
+    "Timeout": 120
+   },
+   "DependsOn": [
+    "AWS679f53fac002430cb0da5b7982bd2287ServiceRoleC1EA0FF2"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/SqlBoundApi/SQLApiStackMySQLSchemaDefinition/AWS679f53fac002430cb0da5b7982bd2287/Resource",
+    "aws:asset:path": "asset.97f30e67419a1676a2215492723e5add1aa491caf0cbe2dd878fc4fab0468cd4",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Code"
+   }
+  },
+  "SQLLambdaRoleMySQLSchemaDefinition8107E0CD": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "RoleName": {
+     "Fn::Join": [
+      "",
+      [
+       "SQLLambdaRoleMySQLSc205b00-",
+       {
+        "Ref": "referencetoBackendStackSqlBoundApiGraphQLAPI36865B90ApiId"
+       },
+       "-NONE"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/SqlBoundApi/SQLApiStackMySQLSchemaDefinition/SQLLambdaRoleMySQLSchemaDefinition/Resource"
+   }
+  },
+  "SQLLambdaRoleMySQLSchemaDefinitionDefaultPolicy368123B1": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "ec2:CreateNetworkInterface",
+        "ec2:DeleteNetworkInterface",
+        "ec2:DescribeNetworkInterfaces"
+       ],
+       "Effect": "Allow",
+       "Resource": "*"
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SQLLambdaRoleMySQLSchemaDefinitionDefaultPolicy368123B1",
+    "Roles": [
+     {
+      "Ref": "SQLLambdaRoleMySQLSchemaDefinition8107E0CD"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/SqlBoundApi/SQLApiStackMySQLSchemaDefinition/SQLLambdaRoleMySQLSchemaDefinition/DefaultPolicy/Resource"
+   }
+  },
+  "SQLLambdaRolePolicyMySQLSchemaDefinition5BD005FC": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents"
+       ],
+       "Effect": "Allow",
+       "Resource": "arn:aws:logs:*:*:*"
+      },
+      {
+       "Action": "secretsmanager:GetSecretValue",
+       "Effect": "Allow",
+       "Resource": "arn:aws:secretsmanager:eu-west-1:239415019418:secret:hospitalmanagement-rds-pfDhum"
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": {
+     "Fn::Join": [
+      "",
+      [
+       "SQLLambdaRoleMySQLSc205b00-",
+       {
+        "Ref": "referencetoBackendStackSqlBoundApiGraphQLAPI36865B90ApiId"
+       },
+       "-NONEPolicy"
+      ]
+     ]
+    },
+    "Roles": [
+     {
+      "Ref": "SQLLambdaRoleMySQLSchemaDefinition8107E0CD"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/SqlBoundApi/SQLApiStackMySQLSchemaDefinition/SQLLambdaRolePolicyMySQLSchemaDefinition/Resource"
+   }
+  },
+  "SQLVpcEndpointMySQLSchemaDefinitionsecretsmanager": {
+   "Type": "AWS::EC2::VPCEndpoint",
+   "Properties": {
+    "PrivateDnsEnabled": false,
+    "SecurityGroupIds": [
+     "sg-026a8e46a822d9c5d"
+    ],
+    "ServiceName": {
+     "Fn::Join": [
+      "",
+      [
+       "com.amazonaws.",
+       {
+        "Ref": "AWS::Region"
+       },
+       ".secretsmanager"
+      ]
+     ]
+    },
+    "SubnetIds": [
+     "subnet-0c2e728078f8259fd",
+     "subnet-0dbf86d2f46192a0d",
+     "subnet-073c00edb009b4a0e"
+    ],
+    "VpcEndpointType": "Interface",
+    "VpcId": "vpc-03293c2c6f7620041"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/SqlBoundApi/SQLApiStackMySQLSchemaDefinition/SQLVpcEndpointMySQLSchemaDefinitionsecretsmanager"
+   }
+  },
+  "SQLFunctionMySQLSchemaDefinition90F26C0D": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": {
+      "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+     },
+     "S3Key": "717626b5eec471a6fcdeece82585125b7e02e8d5e827ed64901fb8952bb14383.zip"
+    },
+    "Description": "Amplify-managed SQL function",
+    "Environment": {
+     "Variables": {
+      "engine": "mysql",
+      "CREDENTIAL_STORAGE_METHOD": "SECRETS_MANAGER",
+      "secretArn": "arn:aws:secretsmanager:eu-west-1:239415019418:secret:hospitalmanagement-rds-pfDhum",
+      "port": "3306",
+      "database": "hospitalmanagement",
+      "host": "hospital-management-app.cxv1rdz31qj2.eu-west-1.rds.amazonaws.com",
+      "SECRETS_MANAGER_ENDPOINT": {
+       "Fn::Select": [
+        0,
+        {
+         "Fn::GetAtt": [
+          "SQLVpcEndpointMySQLSchemaDefinitionsecretsmanager",
+          "DnsEntries"
+         ]
+        }
+       ]
+      }
+     }
+    },
+    "Handler": "handler.run",
+    "Layers": [
+     {
+      "Fn::GetAtt": [
+       "SQLLayerVersionCustomResourceMySQLSchemaDefinition416C3AA9",
+       "Body"
+      ]
+     }
+    ],
+    "Role": {
+     "Fn::GetAtt": [
+      "SQLLambdaRoleMySQLSchemaDefinition8107E0CD",
+      "Arn"
+     ]
+    },
+    "Runtime": "nodejs18.x",
+    "Tags": [
+     {
+      "Key": "amplify:function-type",
+      "Value": "sql-data-source"
+     }
+    ],
+    "Timeout": 30,
+    "VpcConfig": {
+     "SecurityGroupIds": [
+      "sg-026a8e46a822d9c5d"
+     ],
+     "SubnetIds": [
+      "subnet-0c2e728078f8259fd",
+      "subnet-0dbf86d2f46192a0d",
+      "subnet-073c00edb009b4a0e"
+     ]
+    }
+   },
+   "DependsOn": [
+    "SQLLambdaRoleMySQLSchemaDefinitionDefaultPolicy368123B1",
+    "SQLLambdaRoleMySQLSchemaDefinition8107E0CD"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/SqlBoundApi/SQLApiStackMySQLSchemaDefinition/SQLFunctionMySQLSchemaDefinition/Resource"
+   }
+  },
+  "SQLPatchingLambdaRoleMySQLSchemaDefinition2D65F06C": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "RoleName": {
+     "Fn::Join": [
+      "",
+      [
+       "SQLPatchingLambdaRol2aba8f-",
+       {
+        "Ref": "referencetoBackendStackSqlBoundApiGraphQLAPI36865B90ApiId"
+       },
+       "-NONE"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/SqlBoundApi/SQLApiStackMySQLSchemaDefinition/SQLPatchingLambdaRoleMySQLSchemaDefinition/Resource"
+   }
+  },
+  "SQLPatchingLambdaRoleMySQLSchemaDefinitionDefaultPolicy80A67041": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "ec2:CreateNetworkInterface",
+        "ec2:DeleteNetworkInterface",
+        "ec2:DescribeNetworkInterfaces"
+       ],
+       "Effect": "Allow",
+       "Resource": "*"
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SQLPatchingLambdaRoleMySQLSchemaDefinitionDefaultPolicy80A67041",
+    "Roles": [
+     {
+      "Ref": "SQLPatchingLambdaRoleMySQLSchemaDefinition2D65F06C"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/SqlBoundApi/SQLApiStackMySQLSchemaDefinition/SQLPatchingLambdaRoleMySQLSchemaDefinition/DefaultPolicy/Resource"
+   }
+  },
+  "SQLPatchingLambdaRolePolicyMySQLSchemaDefinitionD42ECB03": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents"
+       ],
+       "Effect": "Allow",
+       "Resource": "arn:aws:logs:*:*:*"
+      },
+      {
+       "Action": "lambda:UpdateFunctionConfiguration",
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::GetAtt": [
+         "SQLFunctionMySQLSchemaDefinition90F26C0D",
+         "Arn"
+        ]
+       }
+      },
+      {
+       "Action": [
+        "lambda:GetLayerVersion",
+        "lambda:GetLayerVersionPolicy"
+       ],
+       "Effect": "Allow",
+       "Resource": "*"
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": {
+     "Fn::Join": [
+      "",
+      [
+       "SQLPatchingLambdaRol2aba8f-",
+       {
+        "Ref": "referencetoBackendStackSqlBoundApiGraphQLAPI36865B90ApiId"
+       },
+       "-NONEPolicy"
+      ]
+     ]
+    },
+    "Roles": [
+     {
+      "Ref": "SQLPatchingLambdaRoleMySQLSchemaDefinition2D65F06C"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/SqlBoundApi/SQLApiStackMySQLSchemaDefinition/SQLPatchingLambdaRolePolicyMySQLSchemaDefinition/Resource"
+   }
+  },
+  "SQLLambdaLayerPatchingFunctionMySQLSchemaDefinition2950E4B0": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": {
+      "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+     },
+     "S3Key": "5026d8b72f52ec34ef590b54529fcf53579af1df056f7a028c8ac913738a703b.zip"
+    },
+    "Environment": {
+     "Variables": {
+      "LAMBDA_FUNCTION_ARN": {
+       "Fn::GetAtt": [
+        "SQLFunctionMySQLSchemaDefinition90F26C0D",
+        "Arn"
+       ]
+      }
+     }
+    },
+    "Handler": "index.handler",
+    "Role": {
+     "Fn::GetAtt": [
+      "SQLPatchingLambdaRoleMySQLSchemaDefinition2D65F06C",
+      "Arn"
+     ]
+    },
+    "Runtime": "nodejs18.x",
+    "Timeout": 360
+   },
+   "DependsOn": [
+    "SQLPatchingLambdaRoleMySQLSchemaDefinitionDefaultPolicy80A67041",
+    "SQLPatchingLambdaRoleMySQLSchemaDefinition2D65F06C"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/SqlBoundApi/SQLApiStackMySQLSchemaDefinition/SQLLambdaLayerPatchingFunctionMySQLSchemaDefinition/Resource"
+   }
+  },
+  "SQLLambdaLayerPatchingFunctionMySQLSchemaDefinitionAllowInvokeBackendStackSqlBoundApiSQLApiStackMySQLSchemaDefinitionSQLLambdaLayerPatchingTopicMySQLSchemaDefinitionED27EC5C727B213E": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::GetAtt": [
+      "SQLLambdaLayerPatchingFunctionMySQLSchemaDefinition2950E4B0",
+      "Arn"
+     ]
+    },
+    "Principal": "sns.amazonaws.com",
+    "SourceArn": {
+     "Fn::GetAtt": [
+      "SQLLambdaLayerPatchingTopicARNResolverMySQLSchemaDefinition64AF9AC7",
+      "Body"
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/SqlBoundApi/SQLApiStackMySQLSchemaDefinition/SQLLambdaLayerPatchingFunctionMySQLSchemaDefinition/AllowInvoke:BackendStackSqlBoundApiSQLApiStackMySQLSchemaDefinitionSQLLambdaLayerPatchingTopicMySQLSchemaDefinitionED27EC5C"
+   }
+  },
+  "SQLLambdaLayerPatchingFunctionMySQLSchemaDefinitionSQLLambdaLayerPatchingTopicMySQLSchemaDefinition3880D0CE": {
+   "Type": "AWS::SNS::Subscription",
+   "Properties": {
+    "Endpoint": {
+     "Fn::GetAtt": [
+      "SQLLambdaLayerPatchingFunctionMySQLSchemaDefinition2950E4B0",
+      "Arn"
+     ]
+    },
+    "FilterPolicy": {
+     "Region": [
+      {
+       "Ref": "AWS::Region"
+      }
+     ]
+    },
+    "Protocol": "lambda",
+    "Region": {
+     "Fn::Select": [
+      3,
+      {
+       "Fn::Split": [
+        ":",
+        {
+         "Fn::GetAtt": [
+          "SQLLambdaLayerPatchingTopicARNResolverMySQLSchemaDefinition64AF9AC7",
+          "Body"
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    "TopicArn": {
+     "Fn::GetAtt": [
+      "SQLLambdaLayerPatchingTopicARNResolverMySQLSchemaDefinition64AF9AC7",
+      "Body"
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/SqlBoundApi/SQLApiStackMySQLSchemaDefinition/SQLLambdaLayerPatchingFunctionMySQLSchemaDefinition/SQLLambdaLayerPatchingTopicMySQLSchemaDefinition/Resource"
+   }
+  },
+  "SQLLambdaLayerPatchingTopicARNResolverMySQLSchemaDefinition64AF9AC7": {
+   "Type": "Custom::SQLSNSTopicARNCustomResource",
+   "Properties": {
+    "ServiceToken": {
+     "Fn::GetAtt": [
+      "AWS679f53fac002430cb0da5b7982bd22872D164C4C",
+      "Arn"
+     ]
+    },
+    "Create": {
+     "Fn::Join": [
+      "",
+      [
+       "{\"service\":\"S3\",\"action\":\"getObject\",\"region\":\"us-east-1\",\"parameters\":{\"Bucket\":\"amplify-rds-layer-resources\",\"Key\":\"sql-sns-topic-versions/",
+       {
+        "Ref": "AWS::Region"
+       },
+       "\"},\"physicalResourceId\":{\"id\":\"SQLLambdaLayerPatchingTopicARNResolverMySQLSchemaDefinition-1719668103841\"}}"
+      ]
+     ]
+    },
+    "Update": {
+     "Fn::Join": [
+      "",
+      [
+       "{\"service\":\"S3\",\"action\":\"getObject\",\"region\":\"us-east-1\",\"parameters\":{\"Bucket\":\"amplify-rds-layer-resources\",\"Key\":\"sql-sns-topic-versions/",
+       {
+        "Ref": "AWS::Region"
+       },
+       "\"},\"physicalResourceId\":{\"id\":\"SQLLambdaLayerPatchingTopicARNResolverMySQLSchemaDefinition-1719668103841\"}}"
+      ]
+     ]
+    },
+    "InstallLatestAwsSdk": false
+   },
+   "DependsOn": [
+    "SQLLambdaLayerPatchingTopicARNResolverMySQLSchemaDefinitionCustomResourcePolicy4E6A0FB5"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/SqlBoundApi/SQLApiStackMySQLSchemaDefinition/SQLLambdaLayerPatchingTopicARNResolverMySQLSchemaDefinition/Resource/Default"
+   }
+  },
+  "SQLLambdaLayerPatchingTopicARNResolverMySQLSchemaDefinitionCustomResourcePolicy4E6A0FB5": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "s3:GetObject",
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          "arn:aws:s3:::amplify-rds-layer-resources/sql-sns-topic-versions/",
+          {
+           "Ref": "AWS::Region"
+          }
+         ]
+        ]
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SQLLambdaLayerPatchingTopicARNResolverMySQLSchemaDefinitionCustomResourcePolicy4E6A0FB5",
+    "Roles": [
+     {
+      "Ref": "AWS679f53fac002430cb0da5b7982bd2287ServiceRoleC1EA0FF2"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/SqlBoundApi/SQLApiStackMySQLSchemaDefinition/SQLLambdaLayerPatchingTopicARNResolverMySQLSchemaDefinition/CustomResourcePolicy/Resource"
+   }
+  },
+  "SQLLambdaDataSourceMySQLSchemaDefinitionServiceRole9B7FF59F": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "appsync.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/SqlBoundApi/SQLApiStackMySQLSchemaDefinition/SQLLambdaDataSourceMySQLSchemaDefinition/ServiceRole/Resource"
+   }
+  },
+  "SQLLambdaDataSourceMySQLSchemaDefinitionServiceRoleDefaultPolicyEB0DD5A7": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "lambda:InvokeFunction",
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "SQLFunctionMySQLSchemaDefinition90F26C0D",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "SQLFunctionMySQLSchemaDefinition90F26C0D",
+             "Arn"
+            ]
+           },
+           ":*"
+          ]
+         ]
+        }
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "SQLLambdaDataSourceMySQLSchemaDefinitionServiceRoleDefaultPolicyEB0DD5A7",
+    "Roles": [
+     {
+      "Ref": "SQLLambdaDataSourceMySQLSchemaDefinitionServiceRole9B7FF59F"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/SqlBoundApi/SQLApiStackMySQLSchemaDefinition/SQLLambdaDataSourceMySQLSchemaDefinition/ServiceRole/DefaultPolicy/Resource"
+   }
+  },
+  "SQLLambdaDataSourceMySQLSchemaDefinition": {
+   "Type": "AWS::AppSync::DataSource",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackSqlBoundApiGraphQLAPI36865B90ApiId"
+    },
+    "LambdaConfig": {
+     "LambdaFunctionArn": {
+      "Fn::GetAtt": [
+       "SQLFunctionMySQLSchemaDefinition90F26C0D",
+       "Arn"
+      ]
+     }
+    },
+    "Name": "SQLLambdaDataSourceMySQLSchemaDefinition",
+    "ServiceRoleArn": {
+     "Fn::GetAtt": [
+      "SQLLambdaDataSourceMySQLSchemaDefinitionServiceRole9B7FF59F",
+      "Arn"
+     ]
+    },
+    "Type": "AWS_LAMBDA"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/SqlBoundApi/SQLApiStackMySQLSchemaDefinition/SQLLambdaDataSourceMySQLSchemaDefinition/Resource"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/11RwU7DMAz9Fu5ZgILEmRU4AapaxLVKEzN5bZ2qTpimqv+O08IYnPzei52852T6+vZOX12YA2+sazcdNnp6BQ7gqmBsq2zk4Pt6BPZxtMD6/sD5opXfkpLZeupM3zijpwpp10Hw9BTJBvSkTiD/oHNcwNgjs7BZoen1VPgO7XE5WlHpO0g01VnxTW2YIYiFVITrbbQthK1hUGAzLa3vRf5IbvBI0kAsfmLDdsTh59U//M0PaNP4rMww8JGsnp6XIA8mmGqNJ0O/bJ7Vv/TJ3xl+kYtkBeqkLWZll7ukSkPuyWFYUpN3oPd8+ZllOpNP2DPiZowUsAddrvULSvl6dqEBAAA="
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/SqlBoundApi/SQLApiStackMySQLSchemaDefinition/CDKMetadata/Default"
+   },
+   "Condition": "CDKMetadataAvailable"
+  }
+ },
+ "Mappings": {
+  "LatestNodeRuntimeMap": {
+   "af-south-1": {
+    "value": "nodejs20.x"
+   },
+   "ap-east-1": {
+    "value": "nodejs20.x"
+   },
+   "ap-northeast-1": {
+    "value": "nodejs20.x"
+   },
+   "ap-northeast-2": {
+    "value": "nodejs20.x"
+   },
+   "ap-northeast-3": {
+    "value": "nodejs20.x"
+   },
+   "ap-south-1": {
+    "value": "nodejs20.x"
+   },
+   "ap-south-2": {
+    "value": "nodejs20.x"
+   },
+   "ap-southeast-1": {
+    "value": "nodejs20.x"
+   },
+   "ap-southeast-2": {
+    "value": "nodejs20.x"
+   },
+   "ap-southeast-3": {
+    "value": "nodejs20.x"
+   },
+   "ap-southeast-4": {
+    "value": "nodejs20.x"
+   },
+   "ca-central-1": {
+    "value": "nodejs20.x"
+   },
+   "cn-north-1": {
+    "value": "nodejs18.x"
+   },
+   "cn-northwest-1": {
+    "value": "nodejs18.x"
+   },
+   "eu-central-1": {
+    "value": "nodejs20.x"
+   },
+   "eu-central-2": {
+    "value": "nodejs20.x"
+   },
+   "eu-north-1": {
+    "value": "nodejs20.x"
+   },
+   "eu-south-1": {
+    "value": "nodejs20.x"
+   },
+   "eu-south-2": {
+    "value": "nodejs20.x"
+   },
+   "eu-west-1": {
+    "value": "nodejs20.x"
+   },
+   "eu-west-2": {
+    "value": "nodejs20.x"
+   },
+   "eu-west-3": {
+    "value": "nodejs20.x"
+   },
+   "il-central-1": {
+    "value": "nodejs20.x"
+   },
+   "me-central-1": {
+    "value": "nodejs20.x"
+   },
+   "me-south-1": {
+    "value": "nodejs20.x"
+   },
+   "sa-east-1": {
+    "value": "nodejs20.x"
+   },
+   "us-east-1": {
+    "value": "nodejs20.x"
+   },
+   "us-east-2": {
+    "value": "nodejs20.x"
+   },
+   "us-west-1": {
+    "value": "nodejs20.x"
+   },
+   "us-west-2": {
+    "value": "nodejs20.x"
+   }
+  }
+ },
+ "Conditions": {
+  "CDKMetadataAvailable": {
+   "Fn::Or": [
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "af-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-northeast-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-northeast-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ca-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "cn-north-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "cn-northwest-1"
+       ]
+      }
+     ]
+    },
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-north-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-3"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "il-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "me-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "me-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "sa-east-1"
+       ]
+      }
+     ]
+    },
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-east-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-west-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-west-2"
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "Parameters": {
+  "referencetoBackendStackSqlBoundApiGraphQLAPI36865B90ApiId": {
+   "Type": "String"
+  }
+ },
+ "Outputs": {
+  "BackendStackSqlBoundApiSQLApiStackMySQLSchemaDefinitionSQLLambdaDataSourceMySQLSchemaDefinitionA2B1B3EEName": {
+   "Value": {
+    "Fn::GetAtt": [
+     "SQLLambdaDataSourceMySQLSchemaDefinition",
+     "Name"
+    ]
+   }
+  },
+  "BackendStackSqlBoundApiSQLApiStackMySQLSchemaDefinitionSQLFunctionMySQLSchemaDefinition0F5692D5Arn": {
+   "Value": {
+    "Fn::GetAtt": [
+     "SQLFunctionMySQLSchemaDefinition90F26C0D",
+     "Arn"
+    ]
+   }
+  }
+ }
+}

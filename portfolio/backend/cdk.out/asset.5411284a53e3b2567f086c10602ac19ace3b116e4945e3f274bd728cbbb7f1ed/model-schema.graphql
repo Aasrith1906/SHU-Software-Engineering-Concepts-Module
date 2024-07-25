@@ -1,0 +1,26 @@
+input AMPLIFY {
+ engine: String = "mysql"  
+}
+
+
+type Doctor @refersTo(name: "doctor") @model @auth(rules: [{ allow: public, operations: [read] }]){
+  doctorid: Int! @primaryKey
+  qualifications: String
+  tags: String
+  registeredHospitalId: Int @index(name: "registeredHospitalId")
+}
+
+type Hospital @refersTo(name: "hospital") @model @auth(rules: [{ allow: public, operations: [read] }]){
+  hospitalid: Int! @primaryKey
+  location: String
+  opendate: AWSDate
+  tags: String
+}
+
+type Patient @refersTo(name: "patient") @model @auth(rules: [{ allow: public, operations: [read] }]){
+  patientid: Int! @primaryKey
+  registeredHospitalId: Int @index(name: "registeredHospitalId")
+  registeredDoctor: Int
+  address: String
+  age: Int
+}

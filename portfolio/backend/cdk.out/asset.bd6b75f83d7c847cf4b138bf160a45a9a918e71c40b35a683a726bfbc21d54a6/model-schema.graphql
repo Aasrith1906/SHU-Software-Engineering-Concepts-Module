@@ -1,0 +1,56 @@
+input AMPLIFY {
+ engine: String = "mysql"  
+}
+
+
+type Appointment @refersTo(name: "Appointments") @model {
+  appointmentid: String! @primaryKey
+  doctorid: String! @index(name: "doctorid")
+  patientid: String! @index(name: "patientid")
+  appDatetime: AWSDateTime! @refersTo(name: "app_datetime")
+  appointmentStatus: String @refersTo(name: "appointment_status")
+  appointmentName: String @refersTo(name: "appointment_name")
+  appointmentNotes: String @refersTo(name: "appointment_notes")
+}
+
+type Diagnosis @model {
+  diagnosisid: String! @primaryKey
+  patientid: String @index(name: "patientid")
+  doctorid: String @index(name: "doctorid")
+  diagnosisDate: AWSDateTime @refersTo(name: "diagnosis_date")
+  diagnosisTitle: String @refersTo(name: "diagnosis_title")
+  diagnosisDetail: String @refersTo(name: "diagnosis_detail")
+}
+
+type Doctor @refersTo(name: "doctor") @model {
+  doctorid: String! @primaryKey
+  qualifications: String
+  tags: String
+  registeredHospitalId: String @index(name: "registeredHospitalId")
+}
+
+type Hospital @refersTo(name: "hospital") @model {
+  hospitalid: String! @primaryKey
+  location: String
+  opendate: AWSDate
+  tags: String
+}
+
+type Patient @refersTo(name: "patient") @model {
+  patientid: String! @primaryKey
+  registeredHospitalId: String @index(name: "registeredHospitalId")
+  registeredDoctorId: String @index(name: "registeredDoctorId")
+  address: String
+  age: Int
+  name: String
+}
+
+
+
+type Prescription @model {
+  prescriptionid: String! @primaryKey
+  patientid: String @index(name: "patientid")
+  prescriptionText: AWSDateTime @refersTo(name: "prescription_text")
+  diagnosisTitle: String @refersTo(name: "diagnosis_title")
+  validUntil: AWSDate @refersTo(name: "valid_until")
+}

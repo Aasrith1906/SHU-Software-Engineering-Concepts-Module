@@ -1,0 +1,1395 @@
+{
+ "Description": "{\"createdOn\":\"Mac\",\"createdBy\":\"AmplifyCDK\",\"createdWith\":\"1.9.5\",\"stackType\":\"api-AppSync\",\"metadata\":{\"dataSources\":\"mysql\"}}",
+ "Metadata": {
+  "AWS::Amplify::GraphQL": {
+   "version": "1",
+   "stackOutputs": [
+    "awsAppsyncApiId",
+    "awsAppsyncApiEndpoint",
+    "awsAppsyncAuthenticationType",
+    "awsAppsyncRegion",
+    "amplifyApiModelSchemaS3Uri",
+    "awsAppsyncApiKey"
+   ]
+  }
+ },
+ "Resources": {
+  "HospitalManagementAPIGraphQLAPI9F85DA17": {
+   "Type": "AWS::AppSync::GraphQLApi",
+   "Properties": {
+    "AuthenticationType": "API_KEY",
+    "Name": "HospitalManagementAPI"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/GraphQLAPI/Resource"
+   }
+  },
+  "HospitalManagementAPIGraphQLAPITransformerSchemaDDF4672C": {
+   "Type": "AWS::AppSync::GraphQLSchema",
+   "Properties": {
+    "ApiId": {
+     "Fn::GetAtt": [
+      "HospitalManagementAPIGraphQLAPI9F85DA17",
+      "ApiId"
+     ]
+    },
+    "DefinitionS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/0c73910e7c767071d098625411b506390e9c4e4279d3f64c5b7fb7936aa358ad.graphql"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/GraphQLAPI/TransformerSchema"
+   }
+  },
+  "HospitalManagementAPIGraphQLAPIDefaultApiKeyCC4FF53A": {
+   "Type": "AWS::AppSync::ApiKey",
+   "Properties": {
+    "ApiId": {
+     "Fn::GetAtt": [
+      "HospitalManagementAPIGraphQLAPI9F85DA17",
+      "ApiId"
+     ]
+    },
+    "Expires": 1723755612
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/GraphQLAPI/DefaultApiKey"
+   }
+  },
+  "HospitalManagementAPIGraphQLAPINONEDS1A67C111": {
+   "Type": "AWS::AppSync::DataSource",
+   "Properties": {
+    "ApiId": {
+     "Fn::GetAtt": [
+      "HospitalManagementAPIGraphQLAPI9F85DA17",
+      "ApiId"
+     ]
+    },
+    "Description": "None Data Source for Pipeline functions",
+    "Name": "NONE_DS",
+    "Type": "NONE"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/GraphQLAPI/NONE_DS/Resource"
+   }
+  },
+  "HospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResourceD02B0072": {
+   "Type": "AWS::CloudFormation::Stack",
+   "Properties": {
+    "Parameters": {
+     "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId": {
+      "Fn::GetAtt": [
+       "HospitalManagementAPIGraphQLAPI9F85DA17",
+       "ApiId"
+      ]
+     }
+    },
+    "TemplateURL": {
+     "Fn::Join": [
+      "",
+      [
+       "https://s3.",
+       {
+        "Ref": "AWS::Region"
+       },
+       ".",
+       {
+        "Ref": "AWS::URLSuffix"
+       },
+       "/",
+       {
+        "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+       },
+       "/2c45d5a859f35e0dbfa24f3b301c2e1a4001447de65e66f205d695b1e360378e.json"
+      ]
+     ]
+    }
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/SQLApiStackHospitalManagementSchema.NestedStack/SQLApiStackHospitalManagementSchema.NestedStackResource",
+    "aws:asset:path": "BackendStackHospitalManagementAPISQLApiStackHospitalManagementSchema8F488446.nested.template.json",
+    "aws:asset:property": "TemplateURL"
+   }
+  },
+  "HospitalManagementAPIAppointmentNestedStackAppointmentNestedStackResource85D9BD25": {
+   "Type": "AWS::CloudFormation::Stack",
+   "Properties": {
+    "Parameters": {
+     "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId": {
+      "Fn::GetAtt": [
+       "HospitalManagementAPIGraphQLAPI9F85DA17",
+       "ApiId"
+      ]
+     },
+     "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName": {
+      "Fn::GetAtt": [
+       "HospitalManagementAPIGraphQLAPINONEDS1A67C111",
+       "Name"
+      ]
+     },
+     "referencetoBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538OutputsBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLLambdaData83D6855B": {
+      "Fn::GetAtt": [
+       "HospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResourceD02B0072",
+       "Outputs.BackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLLambdaDataSourceHospitalManagementSchema30F8FE8CName"
+      ]
+     },
+     "referencetoBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538OutputsBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLFunctionHo5FC8E1BE": {
+      "Fn::GetAtt": [
+       "HospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResourceD02B0072",
+       "Outputs.BackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLFunctionHospitalManagementSchema60B0171EArn"
+      ]
+     }
+    },
+    "TemplateURL": {
+     "Fn::Join": [
+      "",
+      [
+       "https://s3.",
+       {
+        "Ref": "AWS::Region"
+       },
+       ".",
+       {
+        "Ref": "AWS::URLSuffix"
+       },
+       "/",
+       {
+        "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+       },
+       "/69e3033b9217f72ea1d968b7766d1fc5a35120aac031773c4804481d191b9c07.json"
+      ]
+     ]
+    }
+   },
+   "DependsOn": [
+    "HospitalManagementAPIGraphQLAPITransformerSchemaDDF4672C",
+    "HospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResourceD02B0072"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Appointment.NestedStack/Appointment.NestedStackResource",
+    "aws:asset:path": "BackendStackHospitalManagementAPIAppointment2D124814.nested.template.json",
+    "aws:asset:property": "TemplateURL"
+   }
+  },
+  "HospitalManagementAPIDiagnosisNestedStackDiagnosisNestedStackResourceB3DC2188": {
+   "Type": "AWS::CloudFormation::Stack",
+   "Properties": {
+    "Parameters": {
+     "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId": {
+      "Fn::GetAtt": [
+       "HospitalManagementAPIGraphQLAPI9F85DA17",
+       "ApiId"
+      ]
+     },
+     "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName": {
+      "Fn::GetAtt": [
+       "HospitalManagementAPIGraphQLAPINONEDS1A67C111",
+       "Name"
+      ]
+     },
+     "referencetoBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538OutputsBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLLambdaData83D6855B": {
+      "Fn::GetAtt": [
+       "HospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResourceD02B0072",
+       "Outputs.BackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLLambdaDataSourceHospitalManagementSchema30F8FE8CName"
+      ]
+     },
+     "referencetoBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538OutputsBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLFunctionHo5FC8E1BE": {
+      "Fn::GetAtt": [
+       "HospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResourceD02B0072",
+       "Outputs.BackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLFunctionHospitalManagementSchema60B0171EArn"
+      ]
+     }
+    },
+    "TemplateURL": {
+     "Fn::Join": [
+      "",
+      [
+       "https://s3.",
+       {
+        "Ref": "AWS::Region"
+       },
+       ".",
+       {
+        "Ref": "AWS::URLSuffix"
+       },
+       "/",
+       {
+        "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+       },
+       "/98341a31615fa7da2d3453830debc667eb16fcd87aef0dc2676a496e604cf584.json"
+      ]
+     ]
+    }
+   },
+   "DependsOn": [
+    "HospitalManagementAPIGraphQLAPITransformerSchemaDDF4672C",
+    "HospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResourceD02B0072"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Diagnosis.NestedStack/Diagnosis.NestedStackResource",
+    "aws:asset:path": "BackendStackHospitalManagementAPIDiagnosis29CA7B8F.nested.template.json",
+    "aws:asset:property": "TemplateURL"
+   }
+  },
+  "HospitalManagementAPIDoctorNestedStackDoctorNestedStackResourceB5892450": {
+   "Type": "AWS::CloudFormation::Stack",
+   "Properties": {
+    "Parameters": {
+     "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId": {
+      "Fn::GetAtt": [
+       "HospitalManagementAPIGraphQLAPI9F85DA17",
+       "ApiId"
+      ]
+     },
+     "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName": {
+      "Fn::GetAtt": [
+       "HospitalManagementAPIGraphQLAPINONEDS1A67C111",
+       "Name"
+      ]
+     },
+     "referencetoBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538OutputsBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLLambdaData83D6855B": {
+      "Fn::GetAtt": [
+       "HospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResourceD02B0072",
+       "Outputs.BackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLLambdaDataSourceHospitalManagementSchema30F8FE8CName"
+      ]
+     },
+     "referencetoBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538OutputsBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLFunctionHo5FC8E1BE": {
+      "Fn::GetAtt": [
+       "HospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResourceD02B0072",
+       "Outputs.BackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLFunctionHospitalManagementSchema60B0171EArn"
+      ]
+     }
+    },
+    "TemplateURL": {
+     "Fn::Join": [
+      "",
+      [
+       "https://s3.",
+       {
+        "Ref": "AWS::Region"
+       },
+       ".",
+       {
+        "Ref": "AWS::URLSuffix"
+       },
+       "/",
+       {
+        "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+       },
+       "/5abd4ef47c8fc715cb7be638430a1c94474c124033b83e20679af567577ea558.json"
+      ]
+     ]
+    }
+   },
+   "DependsOn": [
+    "HospitalManagementAPIGraphQLAPITransformerSchemaDDF4672C",
+    "HospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResourceD02B0072"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Doctor.NestedStack/Doctor.NestedStackResource",
+    "aws:asset:path": "BackendStackHospitalManagementAPIDoctor65CD7106.nested.template.json",
+    "aws:asset:property": "TemplateURL"
+   }
+  },
+  "HospitalManagementAPIHospitalNestedStackHospitalNestedStackResource7EE1608F": {
+   "Type": "AWS::CloudFormation::Stack",
+   "Properties": {
+    "Parameters": {
+     "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId": {
+      "Fn::GetAtt": [
+       "HospitalManagementAPIGraphQLAPI9F85DA17",
+       "ApiId"
+      ]
+     },
+     "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName": {
+      "Fn::GetAtt": [
+       "HospitalManagementAPIGraphQLAPINONEDS1A67C111",
+       "Name"
+      ]
+     },
+     "referencetoBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538OutputsBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLLambdaData83D6855B": {
+      "Fn::GetAtt": [
+       "HospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResourceD02B0072",
+       "Outputs.BackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLLambdaDataSourceHospitalManagementSchema30F8FE8CName"
+      ]
+     },
+     "referencetoBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538OutputsBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLFunctionHo5FC8E1BE": {
+      "Fn::GetAtt": [
+       "HospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResourceD02B0072",
+       "Outputs.BackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLFunctionHospitalManagementSchema60B0171EArn"
+      ]
+     }
+    },
+    "TemplateURL": {
+     "Fn::Join": [
+      "",
+      [
+       "https://s3.",
+       {
+        "Ref": "AWS::Region"
+       },
+       ".",
+       {
+        "Ref": "AWS::URLSuffix"
+       },
+       "/",
+       {
+        "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+       },
+       "/5755da42bba365c77163626824be72d400883027a81b5cbb1c49363517936dd3.json"
+      ]
+     ]
+    }
+   },
+   "DependsOn": [
+    "HospitalManagementAPIGraphQLAPITransformerSchemaDDF4672C",
+    "HospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResourceD02B0072"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Hospital.NestedStack/Hospital.NestedStackResource",
+    "aws:asset:path": "BackendStackHospitalManagementAPIHospitalEE1FED98.nested.template.json",
+    "aws:asset:property": "TemplateURL"
+   }
+  },
+  "HospitalManagementAPIPatientNestedStackPatientNestedStackResourceA406A01A": {
+   "Type": "AWS::CloudFormation::Stack",
+   "Properties": {
+    "Parameters": {
+     "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId": {
+      "Fn::GetAtt": [
+       "HospitalManagementAPIGraphQLAPI9F85DA17",
+       "ApiId"
+      ]
+     },
+     "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName": {
+      "Fn::GetAtt": [
+       "HospitalManagementAPIGraphQLAPINONEDS1A67C111",
+       "Name"
+      ]
+     },
+     "referencetoBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538OutputsBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLLambdaData83D6855B": {
+      "Fn::GetAtt": [
+       "HospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResourceD02B0072",
+       "Outputs.BackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLLambdaDataSourceHospitalManagementSchema30F8FE8CName"
+      ]
+     },
+     "referencetoBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538OutputsBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLFunctionHo5FC8E1BE": {
+      "Fn::GetAtt": [
+       "HospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResourceD02B0072",
+       "Outputs.BackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLFunctionHospitalManagementSchema60B0171EArn"
+      ]
+     }
+    },
+    "TemplateURL": {
+     "Fn::Join": [
+      "",
+      [
+       "https://s3.",
+       {
+        "Ref": "AWS::Region"
+       },
+       ".",
+       {
+        "Ref": "AWS::URLSuffix"
+       },
+       "/",
+       {
+        "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+       },
+       "/fb6d967da2cdd6ade84964ee7ffcf41a753752ea3a154d9134ba0bd4409351ae.json"
+      ]
+     ]
+    }
+   },
+   "DependsOn": [
+    "HospitalManagementAPIGraphQLAPITransformerSchemaDDF4672C",
+    "HospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResourceD02B0072"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Patient.NestedStack/Patient.NestedStackResource",
+    "aws:asset:path": "BackendStackHospitalManagementAPIPatient37326DE0.nested.template.json",
+    "aws:asset:property": "TemplateURL"
+   }
+  },
+  "HospitalManagementAPIPrescriptionNestedStackPrescriptionNestedStackResource490AEFA8": {
+   "Type": "AWS::CloudFormation::Stack",
+   "Properties": {
+    "Parameters": {
+     "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId": {
+      "Fn::GetAtt": [
+       "HospitalManagementAPIGraphQLAPI9F85DA17",
+       "ApiId"
+      ]
+     },
+     "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName": {
+      "Fn::GetAtt": [
+       "HospitalManagementAPIGraphQLAPINONEDS1A67C111",
+       "Name"
+      ]
+     },
+     "referencetoBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538OutputsBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLLambdaData83D6855B": {
+      "Fn::GetAtt": [
+       "HospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResourceD02B0072",
+       "Outputs.BackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLLambdaDataSourceHospitalManagementSchema30F8FE8CName"
+      ]
+     },
+     "referencetoBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538OutputsBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLFunctionHo5FC8E1BE": {
+      "Fn::GetAtt": [
+       "HospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResourceD02B0072",
+       "Outputs.BackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLFunctionHospitalManagementSchema60B0171EArn"
+      ]
+     }
+    },
+    "TemplateURL": {
+     "Fn::Join": [
+      "",
+      [
+       "https://s3.",
+       {
+        "Ref": "AWS::Region"
+       },
+       ".",
+       {
+        "Ref": "AWS::URLSuffix"
+       },
+       "/",
+       {
+        "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+       },
+       "/6062ed477fa4a014a31a9aac2cc43ca5684057d1240ff2845bb1b7cf0700ce68.json"
+      ]
+     ]
+    }
+   },
+   "DependsOn": [
+    "HospitalManagementAPIGraphQLAPITransformerSchemaDDF4672C",
+    "HospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResourceD02B0072"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Prescription.NestedStack/Prescription.NestedStackResource",
+    "aws:asset:path": "BackendStackHospitalManagementAPIPrescription738E4B5D.nested.template.json",
+    "aws:asset:property": "TemplateURL"
+   }
+  },
+  "HospitalManagementAPIConnectionStackNestedStackConnectionStackNestedStackResourceCC3D72F2": {
+   "Type": "AWS::CloudFormation::Stack",
+   "Properties": {
+    "Parameters": {
+     "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId": {
+      "Fn::GetAtt": [
+       "HospitalManagementAPIGraphQLAPI9F85DA17",
+       "ApiId"
+      ]
+     },
+     "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName": {
+      "Fn::GetAtt": [
+       "HospitalManagementAPIGraphQLAPINONEDS1A67C111",
+       "Name"
+      ]
+     },
+     "referencetoBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538OutputsBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLLambdaData83D6855B": {
+      "Fn::GetAtt": [
+       "HospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResourceD02B0072",
+       "Outputs.BackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLLambdaDataSourceHospitalManagementSchema30F8FE8CName"
+      ]
+     },
+     "referencetoBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538OutputsBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLFunctionHo5FC8E1BE": {
+      "Fn::GetAtt": [
+       "HospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResourceD02B0072",
+       "Outputs.BackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLFunctionHospitalManagementSchema60B0171EArn"
+      ]
+     }
+    },
+    "TemplateURL": {
+     "Fn::Join": [
+      "",
+      [
+       "https://s3.",
+       {
+        "Ref": "AWS::Region"
+       },
+       ".",
+       {
+        "Ref": "AWS::URLSuffix"
+       },
+       "/",
+       {
+        "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+       },
+       "/f4454afa9ad4b1e7bda6bfd4d3127a79f4b9d542bf9dc494301eb04e53f43f7a.json"
+      ]
+     ]
+    }
+   },
+   "DependsOn": [
+    "HospitalManagementAPIGraphQLAPITransformerSchemaDDF4672C",
+    "HospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResourceD02B0072"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/ConnectionStack.NestedStack/ConnectionStack.NestedStackResource",
+    "aws:asset:path": "BackendStackHospitalManagementAPIConnectionStack1591F610.nested.template.json",
+    "aws:asset:property": "TemplateURL"
+   }
+  },
+  "HospitalManagementAPIAmplifyCodegenAssetsAmplifyCodegenAssetsBucket6A159A78": {
+   "Type": "AWS::S3::Bucket",
+   "Properties": {
+    "CorsConfiguration": {
+     "CorsRules": [
+      {
+       "AllowedHeaders": [
+        "*"
+       ],
+       "AllowedMethods": [
+        "GET",
+        "HEAD"
+       ],
+       "AllowedOrigins": [
+        {
+         "Fn::Join": [
+          "",
+          [
+           "https://",
+           {
+            "Ref": "AWS::Region"
+           },
+           ".console.aws.amazon.com/amplify"
+          ]
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    "Tags": [
+     {
+      "Key": "aws-cdk:auto-delete-objects",
+      "Value": "true"
+     },
+     {
+      "Key": "aws-cdk:cr-owned:d0beeb81",
+      "Value": "true"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/AmplifyCodegenAssets/AmplifyCodegenAssetsBucket/Resource"
+   }
+  },
+  "HospitalManagementAPIAmplifyCodegenAssetsAmplifyCodegenAssetsBucketPolicy5DFEECF6": {
+   "Type": "AWS::S3::BucketPolicy",
+   "Properties": {
+    "Bucket": {
+     "Ref": "HospitalManagementAPIAmplifyCodegenAssetsAmplifyCodegenAssetsBucket6A159A78"
+    },
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "s3:DeleteObject*",
+        "s3:GetBucket*",
+        "s3:List*",
+        "s3:PutBucketPolicy"
+       ],
+       "Effect": "Allow",
+       "Principal": {
+        "AWS": {
+         "Fn::GetAtt": [
+          "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092",
+          "Arn"
+         ]
+        }
+       },
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "HospitalManagementAPIAmplifyCodegenAssetsAmplifyCodegenAssetsBucket6A159A78",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "HospitalManagementAPIAmplifyCodegenAssetsAmplifyCodegenAssetsBucket6A159A78",
+             "Arn"
+            ]
+           },
+           "/*"
+          ]
+         ]
+        }
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/AmplifyCodegenAssets/AmplifyCodegenAssetsBucket/Policy/Resource"
+   }
+  },
+  "HospitalManagementAPIAmplifyCodegenAssetsAmplifyCodegenAssetsBucketAutoDeleteObjectsCustomResource74966020": {
+   "Type": "Custom::S3AutoDeleteObjects",
+   "Properties": {
+    "ServiceToken": {
+     "Fn::GetAtt": [
+      "CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F",
+      "Arn"
+     ]
+    },
+    "BucketName": {
+     "Ref": "HospitalManagementAPIAmplifyCodegenAssetsAmplifyCodegenAssetsBucket6A159A78"
+    }
+   },
+   "DependsOn": [
+    "HospitalManagementAPIAmplifyCodegenAssetsAmplifyCodegenAssetsBucketPolicy5DFEECF6"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/AmplifyCodegenAssets/AmplifyCodegenAssetsBucket/AutoDeleteObjectsCustomResource/Default"
+   }
+  },
+  "HospitalManagementAPIAmplifyCodegenAssetsAmplifyCodegenAssetsDeploymentAwsCliLayer72B36D2F": {
+   "Type": "AWS::Lambda::LayerVersion",
+   "Properties": {
+    "Content": {
+     "S3Bucket": {
+      "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+     },
+     "S3Key": "3322b7049fb0ed2b7cbb644a2ada8d1116ff80c32dca89e6ada846b5de26f961.zip"
+    },
+    "Description": "/opt/awscli/aws"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/AmplifyCodegenAssets/AmplifyCodegenAssetsDeployment/AwsCliLayer/Resource",
+    "aws:asset:path": "asset.3322b7049fb0ed2b7cbb644a2ada8d1116ff80c32dca89e6ada846b5de26f961.zip",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Content"
+   }
+  },
+  "HospitalManagementAPIAmplifyCodegenAssetsAmplifyCodegenAssetsDeploymentCustomResource1536MiB6B247A84": {
+   "Type": "Custom::CDKBucketDeployment",
+   "Properties": {
+    "ServiceToken": {
+     "Fn::GetAtt": [
+      "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1536MiBC5D8AB21",
+      "Arn"
+     ]
+    },
+    "SourceBucketNames": [
+     {
+      "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+     }
+    ],
+    "SourceObjectKeys": [
+     "7215438420f7ea357f9a403e23199967a1cad0a7c99c86cf6ce572b9c9bef507.zip"
+    ],
+    "SourceMarkers": [
+     {}
+    ],
+    "DestinationBucketName": {
+     "Ref": "HospitalManagementAPIAmplifyCodegenAssetsAmplifyCodegenAssetsBucket6A159A78"
+    },
+    "Prune": true,
+    "DestinationBucketArn": {
+     "Fn::GetAtt": [
+      "HospitalManagementAPIAmplifyCodegenAssetsAmplifyCodegenAssetsBucket6A159A78",
+      "Arn"
+     ]
+    }
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/AmplifyCodegenAssets/AmplifyCodegenAssetsDeployment/CustomResource-1536MiB/Default"
+   }
+  },
+  "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Version": "2012-10-17",
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ]
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Sub": "arn:${AWS::Partition}:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/Custom::S3AutoDeleteObjectsCustomResourceProvider/Role"
+   }
+  },
+  "CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": {
+      "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+     },
+     "S3Key": "faa95a81ae7d7373f3e1f242268f904eb748d8d0fdd306e8a6fe515a1905a7d6.zip"
+    },
+    "Timeout": 900,
+    "MemorySize": 128,
+    "Handler": "index.handler",
+    "Role": {
+     "Fn::GetAtt": [
+      "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092",
+      "Arn"
+     ]
+    },
+    "Runtime": {
+     "Fn::FindInMap": [
+      "LatestNodeRuntimeMap",
+      {
+       "Ref": "AWS::Region"
+      },
+      "value"
+     ]
+    },
+    "Description": {
+     "Fn::Join": [
+      "",
+      [
+       "Lambda function for auto-deleting objects in ",
+       {
+        "Ref": "HospitalManagementAPIAmplifyCodegenAssetsAmplifyCodegenAssetsBucket6A159A78"
+       },
+       " S3 bucket."
+      ]
+     ]
+    }
+   },
+   "DependsOn": [
+    "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/Custom::S3AutoDeleteObjectsCustomResourceProvider/Handler",
+    "aws:asset:path": "asset.faa95a81ae7d7373f3e1f242268f904eb748d8d0fdd306e8a6fe515a1905a7d6",
+    "aws:asset:property": "Code"
+   }
+  },
+  "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1536MiBServiceRoleA41FC8C2": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1536MiB/ServiceRole/Resource"
+   }
+  },
+  "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1536MiBServiceRoleDefaultPolicyFF1C635B": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "s3:GetBucket*",
+        "s3:GetObject*",
+        "s3:List*"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":s3:::",
+           {
+            "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+           },
+           "/*"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":s3:::",
+           {
+            "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+           }
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "Action": [
+        "s3:Abort*",
+        "s3:DeleteObject*",
+        "s3:GetBucket*",
+        "s3:GetObject*",
+        "s3:List*",
+        "s3:PutObject",
+        "s3:PutObjectLegalHold",
+        "s3:PutObjectRetention",
+        "s3:PutObjectTagging",
+        "s3:PutObjectVersionTagging"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "HospitalManagementAPIAmplifyCodegenAssetsAmplifyCodegenAssetsBucket6A159A78",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "HospitalManagementAPIAmplifyCodegenAssetsAmplifyCodegenAssetsBucket6A159A78",
+             "Arn"
+            ]
+           },
+           "/*"
+          ]
+         ]
+        }
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1536MiBServiceRoleDefaultPolicyFF1C635B",
+    "Roles": [
+     {
+      "Ref": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1536MiBServiceRoleA41FC8C2"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1536MiB/ServiceRole/DefaultPolicy/Resource"
+   }
+  },
+  "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1536MiBC5D8AB21": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": {
+      "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+     },
+     "S3Key": "2d56e153cac88d3e0c2f842e8e6f6783b8725bf91f95e0673b4725448a56e96d.zip"
+    },
+    "Environment": {
+     "Variables": {
+      "AWS_CA_BUNDLE": "/etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem"
+     }
+    },
+    "Handler": "index.handler",
+    "Layers": [
+     {
+      "Ref": "HospitalManagementAPIAmplifyCodegenAssetsAmplifyCodegenAssetsDeploymentAwsCliLayer72B36D2F"
+     }
+    ],
+    "MemorySize": 1536,
+    "Role": {
+     "Fn::GetAtt": [
+      "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1536MiBServiceRoleA41FC8C2",
+      "Arn"
+     ]
+    },
+    "Runtime": "python3.9",
+    "Timeout": 900
+   },
+   "DependsOn": [
+    "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1536MiBServiceRoleDefaultPolicyFF1C635B",
+    "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1536MiBServiceRoleA41FC8C2"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1536MiB/Resource",
+    "aws:asset:path": "asset.2d56e153cac88d3e0c2f842e8e6f6783b8725bf91f95e0673b4725448a56e96d",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Code"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/1VRy07DMBD8Fu7uAgGJc5sKDhQojcS1cp2l3daxgx+toij/jh8lLaedHa9nx+MC7h+f4O6Gn+xE1IeJpA30lePiwAK17nnb2k4J6F8Mb3c/ctrSjFtk5bdKzOciMFddJXbY8EgE/hU79q4VzrnjlfZGpHuXbmD2IaywFp2FaSysxlbqrkHlYObFAd18JOI09JlNHjKMkmeUy1JLEt2Fzv3AJG82NYc+HCx4h+YLjSWtWEVqK9Fp9eyVcJEZQRj9wwMj3kC/0jI9ItXLpvOOgaVXhPy2QTQe5ChLb51uVmjHEEacXa1ldLQOkQtJMD3ZUlIyGWffwickuX8qS6OPVKNJUVxLf3jX+hRLqVVN2bzSNcLe3h6LAorw33tLNDFeOWoQVrn+AmRhdkIMAgAA"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/CDKMetadata/Default"
+   },
+   "Condition": "CDKMetadataAvailable"
+  }
+ },
+ "Mappings": {
+  "LatestNodeRuntimeMap": {
+   "af-south-1": {
+    "value": "nodejs20.x"
+   },
+   "ap-east-1": {
+    "value": "nodejs20.x"
+   },
+   "ap-northeast-1": {
+    "value": "nodejs20.x"
+   },
+   "ap-northeast-2": {
+    "value": "nodejs20.x"
+   },
+   "ap-northeast-3": {
+    "value": "nodejs20.x"
+   },
+   "ap-south-1": {
+    "value": "nodejs20.x"
+   },
+   "ap-south-2": {
+    "value": "nodejs20.x"
+   },
+   "ap-southeast-1": {
+    "value": "nodejs20.x"
+   },
+   "ap-southeast-2": {
+    "value": "nodejs20.x"
+   },
+   "ap-southeast-3": {
+    "value": "nodejs20.x"
+   },
+   "ap-southeast-4": {
+    "value": "nodejs20.x"
+   },
+   "ca-central-1": {
+    "value": "nodejs20.x"
+   },
+   "cn-north-1": {
+    "value": "nodejs18.x"
+   },
+   "cn-northwest-1": {
+    "value": "nodejs18.x"
+   },
+   "eu-central-1": {
+    "value": "nodejs20.x"
+   },
+   "eu-central-2": {
+    "value": "nodejs20.x"
+   },
+   "eu-north-1": {
+    "value": "nodejs20.x"
+   },
+   "eu-south-1": {
+    "value": "nodejs20.x"
+   },
+   "eu-south-2": {
+    "value": "nodejs20.x"
+   },
+   "eu-west-1": {
+    "value": "nodejs20.x"
+   },
+   "eu-west-2": {
+    "value": "nodejs20.x"
+   },
+   "eu-west-3": {
+    "value": "nodejs20.x"
+   },
+   "il-central-1": {
+    "value": "nodejs20.x"
+   },
+   "me-central-1": {
+    "value": "nodejs20.x"
+   },
+   "me-south-1": {
+    "value": "nodejs20.x"
+   },
+   "sa-east-1": {
+    "value": "nodejs20.x"
+   },
+   "us-east-1": {
+    "value": "nodejs20.x"
+   },
+   "us-east-2": {
+    "value": "nodejs20.x"
+   },
+   "us-west-1": {
+    "value": "nodejs20.x"
+   },
+   "us-west-2": {
+    "value": "nodejs20.x"
+   }
+  }
+ },
+ "Outputs": {
+  "awsAppsyncApiId": {
+   "Value": {
+    "Fn::GetAtt": [
+     "HospitalManagementAPIGraphQLAPI9F85DA17",
+     "ApiId"
+    ]
+   }
+  },
+  "awsAppsyncApiEndpoint": {
+   "Value": {
+    "Fn::GetAtt": [
+     "HospitalManagementAPIGraphQLAPI9F85DA17",
+     "GraphQLUrl"
+    ]
+   }
+  },
+  "awsAppsyncAuthenticationType": {
+   "Value": "API_KEY"
+  },
+  "awsAppsyncRegion": {
+   "Value": {
+    "Ref": "AWS::Region"
+   }
+  },
+  "amplifyApiModelSchemaS3Uri": {
+   "Value": {
+    "Fn::Join": [
+     "",
+     [
+      "s3://",
+      {
+       "Fn::Select": [
+        0,
+        {
+         "Fn::Split": [
+          "/",
+          {
+           "Fn::Select": [
+            5,
+            {
+             "Fn::Split": [
+              ":",
+              {
+               "Fn::GetAtt": [
+                "HospitalManagementAPIAmplifyCodegenAssetsAmplifyCodegenAssetsDeploymentCustomResource1536MiB6B247A84",
+                "DestinationBucketArn"
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      "/model-schema.graphql"
+     ]
+    ]
+   }
+  },
+  "awsAppsyncApiKey": {
+   "Value": {
+    "Fn::GetAtt": [
+     "HospitalManagementAPIGraphQLAPIDefaultApiKeyCC4FF53A",
+     "ApiKey"
+    ]
+   }
+  }
+ },
+ "Conditions": {
+  "CDKMetadataAvailable": {
+   "Fn::Or": [
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "af-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-northeast-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-northeast-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ca-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "cn-north-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "cn-northwest-1"
+       ]
+      }
+     ]
+    },
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-north-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-3"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "il-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "me-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "me-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "sa-east-1"
+       ]
+      }
+     ]
+    },
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-east-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-west-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-west-2"
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "Parameters": {
+  "BootstrapVersion": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/cdk-bootstrap/hnb659fds/version",
+   "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+  }
+ },
+ "Rules": {
+  "CheckBootstrapVersion": {
+   "Assertions": [
+    {
+     "Assert": {
+      "Fn::Not": [
+       {
+        "Fn::Contains": [
+         [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+         ],
+         {
+          "Ref": "BootstrapVersion"
+         }
+        ]
+       }
+      ]
+     },
+     "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,1603 @@
+{
+ "Resources": {
+  "QuerygetPrescriptionpreAuth0FunctionQuerygetPrescriptionpreAuth0FunctionAppSyncFunctionAC856D16": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerygetPrescriptionpreAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/a53f40cc80761757c9868d6ea993546fc1bd1c6258ff32ef0fe67cbed981c473.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Prescription/QuerygetPrescriptionpreAuth0Function/QuerygetPrescriptionpreAuth0Function.AppSyncFunction"
+   }
+  },
+  "QuerygetPrescriptionpreAuth1FunctionQuerygetPrescriptionpreAuth1FunctionAppSyncFunction6AEBC017": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerygetPrescriptionpreAuth1Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/05088fd82225268586dbc14844787dced9a49115a7bf539da7ceb65a8f8a4f20.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Prescription/QuerygetPrescriptionpreAuth1Function/QuerygetPrescriptionpreAuth1Function.AppSyncFunction"
+   }
+  },
+  "QuerygetPrescriptionauth0FunctionQuerygetPrescriptionauth0FunctionAppSyncFunction9B429108": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerygetPrescriptionauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/ed7aee4ef7fcea2620aee982ad8193afe5a366541c5a031bc98417538464a5e0.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Prescription/QuerygetPrescriptionauth0Function/QuerygetPrescriptionauth0Function.AppSyncFunction"
+   }
+  },
+  "QuerygetPrescriptionpostAuth0FunctionQuerygetPrescriptionpostAuth0FunctionAppSyncFunctionBE6D5E27": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerygetPrescriptionpostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/0fff176e894a85ceed7486a9ea7444fcf3560c2c64ce431db741c1a2edf40f42.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Prescription/QuerygetPrescriptionpostAuth0Function/QuerygetPrescriptionpostAuth0Function.AppSyncFunction"
+   }
+  },
+  "QueryGetPrescriptionDataResolverFnQueryGetPrescriptionDataResolverFnAppSyncFunctionF8ACA8B9": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538OutputsBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLLambdaData83D6855B"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QueryGetPrescriptionDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/d95b4d2ce1dd280975a2c05a9dfae49ccce571d1c7721027ca03abff075c1160.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/cc01911d0269d4080ea57505dc445dfc315ef7ad85d3d9d4ea1357858bff451d.vtl"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Prescription/QueryGetPrescriptionDataResolverFn/QueryGetPrescriptionDataResolverFn.AppSyncFunction"
+   }
+  },
+  "GetPrescriptionResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "FieldName": "getPrescription",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "QuerygetPrescriptionpreAuth0FunctionQuerygetPrescriptionpreAuth0FunctionAppSyncFunctionAC856D16",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QuerygetPrescriptionpreAuth1FunctionQuerygetPrescriptionpreAuth1FunctionAppSyncFunction6AEBC017",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QuerygetPrescriptionauth0FunctionQuerygetPrescriptionauth0FunctionAppSyncFunction9B429108",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QuerygetPrescriptionpostAuth0FunctionQuerygetPrescriptionpostAuth0FunctionAppSyncFunctionBE6D5E27",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QueryGetPrescriptionDataResolverFnQueryGetPrescriptionDataResolverFnAppSyncFunctionF8ACA8B9",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Query\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"getPrescription\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AWS_LAMBDA\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"lambdaFunctionArn\", \"",
+       {
+        "Ref": "referencetoBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538OutputsBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLFunctionHo5FC8E1BE"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Query"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Prescription/queryGetPrescriptionResolver"
+   }
+  },
+  "QuerylistPrescriptionspreAuth0FunctionQuerylistPrescriptionspreAuth0FunctionAppSyncFunction8DF71218": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerylistPrescriptionspreAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/d6b85eb0d6e328305109c31d1f7dd910db7e4bb3e56992604edfe09b82ffe130.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Prescription/QuerylistPrescriptionspreAuth0Function/QuerylistPrescriptionspreAuth0Function.AppSyncFunction"
+   }
+  },
+  "QuerylistPrescriptionspreAuth1FunctionQuerylistPrescriptionspreAuth1FunctionAppSyncFunctionA3915397": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerylistPrescriptionspreAuth1Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/05088fd82225268586dbc14844787dced9a49115a7bf539da7ceb65a8f8a4f20.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Prescription/QuerylistPrescriptionspreAuth1Function/QuerylistPrescriptionspreAuth1Function.AppSyncFunction"
+   }
+  },
+  "QuerylistPrescriptionsauth0FunctionQuerylistPrescriptionsauth0FunctionAppSyncFunction292E0A66": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerylistPrescriptionsauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/ed7aee4ef7fcea2620aee982ad8193afe5a366541c5a031bc98417538464a5e0.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Prescription/QuerylistPrescriptionsauth0Function/QuerylistPrescriptionsauth0Function.AppSyncFunction"
+   }
+  },
+  "QuerylistPrescriptionspostAuth0FunctionQuerylistPrescriptionspostAuth0FunctionAppSyncFunction034634C8": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerylistPrescriptionspostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/0fff176e894a85ceed7486a9ea7444fcf3560c2c64ce431db741c1a2edf40f42.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Prescription/QuerylistPrescriptionspostAuth0Function/QuerylistPrescriptionspostAuth0Function.AppSyncFunction"
+   }
+  },
+  "QueryListPrescriptionsDataResolverFnQueryListPrescriptionsDataResolverFnAppSyncFunction92700F8C": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538OutputsBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLLambdaData83D6855B"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QueryListPrescriptionsDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/d9f73eaf629c13b5937049c913d6327bdabb9495f52ef704e9395084463ba906.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/cc01911d0269d4080ea57505dc445dfc315ef7ad85d3d9d4ea1357858bff451d.vtl"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Prescription/QueryListPrescriptionsDataResolverFn/QueryListPrescriptionsDataResolverFn.AppSyncFunction"
+   }
+  },
+  "ListPrescriptionResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "FieldName": "listPrescriptions",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "QuerylistPrescriptionspreAuth0FunctionQuerylistPrescriptionspreAuth0FunctionAppSyncFunction8DF71218",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QuerylistPrescriptionspreAuth1FunctionQuerylistPrescriptionspreAuth1FunctionAppSyncFunctionA3915397",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QuerylistPrescriptionsauth0FunctionQuerylistPrescriptionsauth0FunctionAppSyncFunction292E0A66",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QuerylistPrescriptionspostAuth0FunctionQuerylistPrescriptionspostAuth0FunctionAppSyncFunction034634C8",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QueryListPrescriptionsDataResolverFnQueryListPrescriptionsDataResolverFnAppSyncFunction92700F8C",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Query\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"listPrescriptions\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AWS_LAMBDA\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"lambdaFunctionArn\", \"",
+       {
+        "Ref": "referencetoBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538OutputsBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLFunctionHo5FC8E1BE"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Query"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Prescription/queryListPrescriptionsResolver"
+   }
+  },
+  "MutationcreatePrescriptioninit0FunctionMutationcreatePrescriptioninit0FunctionAppSyncFunction65CEF34A": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationcreatePrescriptioninit0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/a23c4a3e5ddfdbb2b45573a1ba5b62e5ffd290eb5546b612731e44cacd77fdee.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Prescription/MutationcreatePrescriptioninit0Function/MutationcreatePrescriptioninit0Function.AppSyncFunction"
+   }
+  },
+  "MutationcreatePrescriptionpreAuth0FunctionMutationcreatePrescriptionpreAuth0FunctionAppSyncFunction8A89B803": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationcreatePrescriptionpreAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/a53f40cc80761757c9868d6ea993546fc1bd1c6258ff32ef0fe67cbed981c473.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Prescription/MutationcreatePrescriptionpreAuth0Function/MutationcreatePrescriptionpreAuth0Function.AppSyncFunction"
+   }
+  },
+  "MutationcreatePrescriptionpreAuth1FunctionMutationcreatePrescriptionpreAuth1FunctionAppSyncFunction8E80518D": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationcreatePrescriptionpreAuth1Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/05088fd82225268586dbc14844787dced9a49115a7bf539da7ceb65a8f8a4f20.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Prescription/MutationcreatePrescriptionpreAuth1Function/MutationcreatePrescriptionpreAuth1Function.AppSyncFunction"
+   }
+  },
+  "MutationcreatePrescriptionauth0FunctionMutationcreatePrescriptionauth0FunctionAppSyncFunctionAFBF2662": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationcreatePrescriptionauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/4fa1add4600228e635e773ed98f46e1ddc7ed593e5b626926b56e39d203b1fb7.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Prescription/MutationcreatePrescriptionauth0Function/MutationcreatePrescriptionauth0Function.AppSyncFunction"
+   }
+  },
+  "MutationcreatePrescriptionpostAuth0FunctionMutationcreatePrescriptionpostAuth0FunctionAppSyncFunction93E2BE6D": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationcreatePrescriptionpostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/0fff176e894a85ceed7486a9ea7444fcf3560c2c64ce431db741c1a2edf40f42.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Prescription/MutationcreatePrescriptionpostAuth0Function/MutationcreatePrescriptionpostAuth0Function.AppSyncFunction"
+   }
+  },
+  "MutationCreatePrescriptionDataResolverFnMutationCreatePrescriptionDataResolverFnAppSyncFunction2FC203CD": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538OutputsBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLLambdaData83D6855B"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationCreatePrescriptionDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/1cd18ac4adab746608a49c72d7e622007b654f8de43f78f49d616873aabc9955.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/f4a52b72209a9dfa197b5e7367a5c378c5bb86de6e29ddd9e48b49a3fe54b249.vtl"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Prescription/MutationCreatePrescriptionDataResolverFn/MutationCreatePrescriptionDataResolverFn.AppSyncFunction"
+   }
+  },
+  "CreatePrescriptionResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "FieldName": "createPrescription",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "MutationcreatePrescriptioninit0FunctionMutationcreatePrescriptioninit0FunctionAppSyncFunction65CEF34A",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationcreatePrescriptionpreAuth0FunctionMutationcreatePrescriptionpreAuth0FunctionAppSyncFunction8A89B803",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationcreatePrescriptionpreAuth1FunctionMutationcreatePrescriptionpreAuth1FunctionAppSyncFunction8E80518D",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationcreatePrescriptionauth0FunctionMutationcreatePrescriptionauth0FunctionAppSyncFunctionAFBF2662",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationcreatePrescriptionpostAuth0FunctionMutationcreatePrescriptionpostAuth0FunctionAppSyncFunction93E2BE6D",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationCreatePrescriptionDataResolverFnMutationCreatePrescriptionDataResolverFnAppSyncFunction2FC203CD",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Mutation\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"createPrescription\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AWS_LAMBDA\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"lambdaFunctionArn\", \"",
+       {
+        "Ref": "referencetoBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538OutputsBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLFunctionHo5FC8E1BE"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Mutation"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Prescription/mutationCreatePrescriptionResolver"
+   }
+  },
+  "MutationupdatePrescriptioninit0FunctionMutationupdatePrescriptioninit0FunctionAppSyncFunction37CFC2F4": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationupdatePrescriptioninit0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/69012da9b7b085486ee5cab0cdc6841382cdb3d605c26bed1cc10125538d5d1f.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Prescription/MutationupdatePrescriptioninit0Function/MutationupdatePrescriptioninit0Function.AppSyncFunction"
+   }
+  },
+  "MutationupdatePrescriptionpreAuth0FunctionMutationupdatePrescriptionpreAuth0FunctionAppSyncFunction0FE1773B": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationupdatePrescriptionpreAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/a53f40cc80761757c9868d6ea993546fc1bd1c6258ff32ef0fe67cbed981c473.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Prescription/MutationupdatePrescriptionpreAuth0Function/MutationupdatePrescriptionpreAuth0Function.AppSyncFunction"
+   }
+  },
+  "MutationupdatePrescriptionpreAuth1FunctionMutationupdatePrescriptionpreAuth1FunctionAppSyncFunctionC54CF858": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationupdatePrescriptionpreAuth1Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/05088fd82225268586dbc14844787dced9a49115a7bf539da7ceb65a8f8a4f20.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Prescription/MutationupdatePrescriptionpreAuth1Function/MutationupdatePrescriptionpreAuth1Function.AppSyncFunction"
+   }
+  },
+  "MutationupdatePrescriptionauth0FunctionMutationupdatePrescriptionauth0FunctionAppSyncFunction1B731456": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538OutputsBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLLambdaData83D6855B"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationupdatePrescriptionauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/60643ed8eb5de11e9d4ac4f048c95daea6d87d73c65deaa2f7ff4c7bccb25eb9.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/82bfb27cc0d12a2e2b5c6517e8a032ccb547c575b4dfdcc615dc1a704d3022d1.vtl"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Prescription/MutationupdatePrescriptionauth0Function/MutationupdatePrescriptionauth0Function.AppSyncFunction"
+   }
+  },
+  "MutationupdatePrescriptionpostAuth0FunctionMutationupdatePrescriptionpostAuth0FunctionAppSyncFunctionB0F9ACEC": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationupdatePrescriptionpostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/0fff176e894a85ceed7486a9ea7444fcf3560c2c64ce431db741c1a2edf40f42.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Prescription/MutationupdatePrescriptionpostAuth0Function/MutationupdatePrescriptionpostAuth0Function.AppSyncFunction"
+   }
+  },
+  "MutationUpdatePrescriptionDataResolverFnMutationUpdatePrescriptionDataResolverFnAppSyncFunctionB661DD07": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538OutputsBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLLambdaData83D6855B"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationUpdatePrescriptionDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/75973e716d3c0f6b341ca37dec310de1a4ef93a60b05506ef295af101fafc5c6.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/f4a52b72209a9dfa197b5e7367a5c378c5bb86de6e29ddd9e48b49a3fe54b249.vtl"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Prescription/MutationUpdatePrescriptionDataResolverFn/MutationUpdatePrescriptionDataResolverFn.AppSyncFunction"
+   }
+  },
+  "UpdatePrescriptionResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "FieldName": "updatePrescription",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "MutationupdatePrescriptioninit0FunctionMutationupdatePrescriptioninit0FunctionAppSyncFunction37CFC2F4",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationupdatePrescriptionpreAuth0FunctionMutationupdatePrescriptionpreAuth0FunctionAppSyncFunction0FE1773B",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationupdatePrescriptionpreAuth1FunctionMutationupdatePrescriptionpreAuth1FunctionAppSyncFunctionC54CF858",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationupdatePrescriptionauth0FunctionMutationupdatePrescriptionauth0FunctionAppSyncFunction1B731456",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationupdatePrescriptionpostAuth0FunctionMutationupdatePrescriptionpostAuth0FunctionAppSyncFunctionB0F9ACEC",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationUpdatePrescriptionDataResolverFnMutationUpdatePrescriptionDataResolverFnAppSyncFunctionB661DD07",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Mutation\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"updatePrescription\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AWS_LAMBDA\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"lambdaFunctionArn\", \"",
+       {
+        "Ref": "referencetoBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538OutputsBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLFunctionHo5FC8E1BE"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Mutation"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Prescription/mutationUpdatePrescriptionResolver"
+   }
+  },
+  "MutationdeletePrescriptionpreAuth0FunctionMutationdeletePrescriptionpreAuth0FunctionAppSyncFunction293E6029": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationdeletePrescriptionpreAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/a53f40cc80761757c9868d6ea993546fc1bd1c6258ff32ef0fe67cbed981c473.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Prescription/MutationdeletePrescriptionpreAuth0Function/MutationdeletePrescriptionpreAuth0Function.AppSyncFunction"
+   }
+  },
+  "MutationdeletePrescriptionpreAuth1FunctionMutationdeletePrescriptionpreAuth1FunctionAppSyncFunction12C6C0D6": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationdeletePrescriptionpreAuth1Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/05088fd82225268586dbc14844787dced9a49115a7bf539da7ceb65a8f8a4f20.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Prescription/MutationdeletePrescriptionpreAuth1Function/MutationdeletePrescriptionpreAuth1Function.AppSyncFunction"
+   }
+  },
+  "MutationdeletePrescriptionauth0FunctionMutationdeletePrescriptionauth0FunctionAppSyncFunction164D338A": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538OutputsBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLLambdaData83D6855B"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationdeletePrescriptionauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/60643ed8eb5de11e9d4ac4f048c95daea6d87d73c65deaa2f7ff4c7bccb25eb9.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/ef2b19fc83c89f4775fe6f98adfd449a0275b8cd0e2d01c4d21936514f2e7b57.vtl"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Prescription/MutationdeletePrescriptionauth0Function/MutationdeletePrescriptionauth0Function.AppSyncFunction"
+   }
+  },
+  "MutationdeletePrescriptionpostAuth0FunctionMutationdeletePrescriptionpostAuth0FunctionAppSyncFunction8D175515": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationdeletePrescriptionpostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/0fff176e894a85ceed7486a9ea7444fcf3560c2c64ce431db741c1a2edf40f42.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Prescription/MutationdeletePrescriptionpostAuth0Function/MutationdeletePrescriptionpostAuth0Function.AppSyncFunction"
+   }
+  },
+  "MutationDeletePrescriptionDataResolverFnMutationDeletePrescriptionDataResolverFnAppSyncFunction520084F6": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538OutputsBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLLambdaData83D6855B"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationDeletePrescriptionDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/10b757401c2b44c8d304c83cf33a40896aec2b3165d1514f48de69ade2d838f4.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/f4a52b72209a9dfa197b5e7367a5c378c5bb86de6e29ddd9e48b49a3fe54b249.vtl"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Prescription/MutationDeletePrescriptionDataResolverFn/MutationDeletePrescriptionDataResolverFn.AppSyncFunction"
+   }
+  },
+  "DeletePrescriptionResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "FieldName": "deletePrescription",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "MutationdeletePrescriptionpreAuth0FunctionMutationdeletePrescriptionpreAuth0FunctionAppSyncFunction293E6029",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationdeletePrescriptionpreAuth1FunctionMutationdeletePrescriptionpreAuth1FunctionAppSyncFunction12C6C0D6",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationdeletePrescriptionauth0FunctionMutationdeletePrescriptionauth0FunctionAppSyncFunction164D338A",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationdeletePrescriptionpostAuth0FunctionMutationdeletePrescriptionpostAuth0FunctionAppSyncFunction8D175515",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationDeletePrescriptionDataResolverFnMutationDeletePrescriptionDataResolverFnAppSyncFunction520084F6",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Mutation\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"deletePrescription\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AWS_LAMBDA\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"lambdaFunctionArn\", \"",
+       {
+        "Ref": "referencetoBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538OutputsBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLFunctionHo5FC8E1BE"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Mutation"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Prescription/mutationDeletePrescriptionResolver"
+   }
+  },
+  "SubscriptiononCreatePrescriptionauth0FunctionSubscriptiononCreatePrescriptionauth0FunctionAppSyncFunctionF62202D6": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononCreatePrescriptionauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/d9aa567f194c805fe6b3ba471de897f7c3f8c93ed1db9f4e754b05de669a509f.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Prescription/SubscriptiononCreatePrescriptionauth0Function/SubscriptiononCreatePrescriptionauth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptiononCreatePrescriptionpostAuth0FunctionSubscriptiononCreatePrescriptionpostAuth0FunctionAppSyncFunction9BE3ABBE": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononCreatePrescriptionpostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/0fff176e894a85ceed7486a9ea7444fcf3560c2c64ce431db741c1a2edf40f42.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Prescription/SubscriptiononCreatePrescriptionpostAuth0Function/SubscriptiononCreatePrescriptionpostAuth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptionOnCreatePrescriptionDataResolverFnSubscriptionOnCreatePrescriptionDataResolverFnAppSyncFunctionC46C1F18": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptionOnCreatePrescriptionDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/fe3c43ada4b9d681a5e2312663ef7a73386424d73b73e51f8e2e9d4b50f7c502.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/e0cff47fb007f0bbf2a4e43ca256d6aa7ec109821769fd79fa7c5e83f0e7f9fc.vtl"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Prescription/SubscriptionOnCreatePrescriptionDataResolverFn/SubscriptionOnCreatePrescriptionDataResolverFn.AppSyncFunction"
+   }
+  },
+  "SubscriptiononCreatePrescriptionResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "FieldName": "onCreatePrescription",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononCreatePrescriptionauth0FunctionSubscriptiononCreatePrescriptionauth0FunctionAppSyncFunctionF62202D6",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononCreatePrescriptionpostAuth0FunctionSubscriptiononCreatePrescriptionpostAuth0FunctionAppSyncFunction9BE3ABBE",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptionOnCreatePrescriptionDataResolverFnSubscriptionOnCreatePrescriptionDataResolverFnAppSyncFunctionC46C1F18",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Subscription\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"onCreatePrescription\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Subscription"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Prescription/subscriptionOnCreatePrescriptionResolver"
+   }
+  },
+  "SubscriptiononUpdatePrescriptionauth0FunctionSubscriptiononUpdatePrescriptionauth0FunctionAppSyncFunction3431C016": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononUpdatePrescriptionauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/d9aa567f194c805fe6b3ba471de897f7c3f8c93ed1db9f4e754b05de669a509f.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Prescription/SubscriptiononUpdatePrescriptionauth0Function/SubscriptiononUpdatePrescriptionauth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptiononUpdatePrescriptionpostAuth0FunctionSubscriptiononUpdatePrescriptionpostAuth0FunctionAppSyncFunctionA1B271B1": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononUpdatePrescriptionpostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/0fff176e894a85ceed7486a9ea7444fcf3560c2c64ce431db741c1a2edf40f42.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Prescription/SubscriptiononUpdatePrescriptionpostAuth0Function/SubscriptiononUpdatePrescriptionpostAuth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptionOnUpdatePrescriptionDataResolverFnSubscriptionOnUpdatePrescriptionDataResolverFnAppSyncFunction9CFFFF06": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptionOnUpdatePrescriptionDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/fe3c43ada4b9d681a5e2312663ef7a73386424d73b73e51f8e2e9d4b50f7c502.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/e0cff47fb007f0bbf2a4e43ca256d6aa7ec109821769fd79fa7c5e83f0e7f9fc.vtl"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Prescription/SubscriptionOnUpdatePrescriptionDataResolverFn/SubscriptionOnUpdatePrescriptionDataResolverFn.AppSyncFunction"
+   }
+  },
+  "SubscriptiononUpdatePrescriptionResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "FieldName": "onUpdatePrescription",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononUpdatePrescriptionauth0FunctionSubscriptiononUpdatePrescriptionauth0FunctionAppSyncFunction3431C016",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononUpdatePrescriptionpostAuth0FunctionSubscriptiononUpdatePrescriptionpostAuth0FunctionAppSyncFunctionA1B271B1",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptionOnUpdatePrescriptionDataResolverFnSubscriptionOnUpdatePrescriptionDataResolverFnAppSyncFunction9CFFFF06",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Subscription\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"onUpdatePrescription\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Subscription"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Prescription/subscriptionOnUpdatePrescriptionResolver"
+   }
+  },
+  "SubscriptiononDeletePrescriptionauth0FunctionSubscriptiononDeletePrescriptionauth0FunctionAppSyncFunctionFE227098": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononDeletePrescriptionauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/d9aa567f194c805fe6b3ba471de897f7c3f8c93ed1db9f4e754b05de669a509f.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Prescription/SubscriptiononDeletePrescriptionauth0Function/SubscriptiononDeletePrescriptionauth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptiononDeletePrescriptionpostAuth0FunctionSubscriptiononDeletePrescriptionpostAuth0FunctionAppSyncFunction65FD2937": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononDeletePrescriptionpostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/0fff176e894a85ceed7486a9ea7444fcf3560c2c64ce431db741c1a2edf40f42.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Prescription/SubscriptiononDeletePrescriptionpostAuth0Function/SubscriptiononDeletePrescriptionpostAuth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptionOnDeletePrescriptionDataResolverFnSubscriptionOnDeletePrescriptionDataResolverFnAppSyncFunction5514E4D7": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptionOnDeletePrescriptionDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/fe3c43ada4b9d681a5e2312663ef7a73386424d73b73e51f8e2e9d4b50f7c502.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/e0cff47fb007f0bbf2a4e43ca256d6aa7ec109821769fd79fa7c5e83f0e7f9fc.vtl"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Prescription/SubscriptionOnDeletePrescriptionDataResolverFn/SubscriptionOnDeletePrescriptionDataResolverFn.AppSyncFunction"
+   }
+  },
+  "SubscriptiononDeletePrescriptionResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "FieldName": "onDeletePrescription",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononDeletePrescriptionauth0FunctionSubscriptiononDeletePrescriptionauth0FunctionAppSyncFunctionFE227098",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononDeletePrescriptionpostAuth0FunctionSubscriptiononDeletePrescriptionpostAuth0FunctionAppSyncFunction65FD2937",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptionOnDeletePrescriptionDataResolverFnSubscriptionOnDeletePrescriptionDataResolverFnAppSyncFunction5514E4D7",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Subscription\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"onDeletePrescription\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Subscription"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Prescription/subscriptionOnDeletePrescriptionResolver"
+   }
+  },
+  "QueryprescriptionsByPatientidpreAuth0FunctionQueryprescriptionsByPatientidpreAuth0FunctionAppSyncFunction005005F5": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QueryprescriptionsByPatientidpreAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/05088fd82225268586dbc14844787dced9a49115a7bf539da7ceb65a8f8a4f20.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Prescription/QueryprescriptionsByPatientidpreAuth0Function/QueryprescriptionsByPatientidpreAuth0Function.AppSyncFunction"
+   }
+  },
+  "QueryprescriptionsByPatientidauth0FunctionQueryprescriptionsByPatientidauth0FunctionAppSyncFunction0B52669F": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QueryprescriptionsByPatientidauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/ed7aee4ef7fcea2620aee982ad8193afe5a366541c5a031bc98417538464a5e0.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Prescription/QueryprescriptionsByPatientidauth0Function/QueryprescriptionsByPatientidauth0Function.AppSyncFunction"
+   }
+  },
+  "QueryprescriptionsByPatientidpostAuth0FunctionQueryprescriptionsByPatientidpostAuth0FunctionAppSyncFunction7BFB0733": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QueryprescriptionsByPatientidpostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/0fff176e894a85ceed7486a9ea7444fcf3560c2c64ce431db741c1a2edf40f42.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Prescription/QueryprescriptionsByPatientidpostAuth0Function/QueryprescriptionsByPatientidpostAuth0Function.AppSyncFunction"
+   }
+  },
+  "QueryPrescriptionsByPatientidDataResolverFnQueryPrescriptionsByPatientidDataResolverFnAppSyncFunction168FB832": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538OutputsBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLLambdaData83D6855B"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QueryPrescriptionsByPatientidDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/7e7a56925d66a2577a53e62e31066ce7467f66e0c72471303e1afba270d053e1.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/098c998f215c333f57348ca8912f66057ae6b574fe34013033dc54362ee2372c.vtl"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Prescription/QueryPrescriptionsByPatientidDataResolverFn/QueryPrescriptionsByPatientidDataResolverFn.AppSyncFunction"
+   }
+  },
+  "QueryprescriptionsByPatientidResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+    },
+    "FieldName": "prescriptionsByPatientid",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "QueryprescriptionsByPatientidpreAuth0FunctionQueryprescriptionsByPatientidpreAuth0FunctionAppSyncFunction005005F5",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QueryprescriptionsByPatientidauth0FunctionQueryprescriptionsByPatientidauth0FunctionAppSyncFunction0B52669F",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QueryprescriptionsByPatientidpostAuth0FunctionQueryprescriptionsByPatientidpostAuth0FunctionAppSyncFunction7BFB0733",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QueryPrescriptionsByPatientidDataResolverFnQueryPrescriptionsByPatientidDataResolverFnAppSyncFunction168FB832",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Query\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"prescriptionsByPatientid\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AWS_LAMBDA\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"lambdaFunctionArn\", \"",
+       {
+        "Ref": "referencetoBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538OutputsBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLFunctionHo5FC8E1BE"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Query"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Prescription/queryPrescriptionsByPatientidResolver"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/zWOwQ6CMBBEv8V7WbWYeBYSjx7wA0htF1LALem2GEP4d1uNp5nJy0xGwvF0hsNOvbjQZiwm+4D1hhzQ3IPSo0igXblsFTMGhksWwSVUUY8YKsUo1DzzmzSsdUfXSDpYR7WjzvbRqxxEAg2ymxb02ya+G2m9t9T/UfQas089Y3NnE+QMwsD7RUqQ6eLA1hY+UrBPhOanH6IQMqa/AAAA"
+   },
+   "Metadata": {
+    "aws:cdk:path": "BackendStack/HospitalManagementAPI/Prescription/CDKMetadata/Default"
+   },
+   "Condition": "CDKMetadataAvailable"
+  }
+ },
+ "Conditions": {
+  "CDKMetadataAvailable": {
+   "Fn::Or": [
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "af-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-northeast-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-northeast-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ca-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "cn-north-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "cn-northwest-1"
+       ]
+      }
+     ]
+    },
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-north-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-3"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "il-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "me-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "me-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "sa-east-1"
+       ]
+      }
+     ]
+    },
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-east-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-west-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-west-2"
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "Parameters": {
+  "referencetoBackendStackHospitalManagementAPIGraphQLAPIC6D5CBDCApiId": {
+   "Type": "String"
+  },
+  "referencetoBackendStackHospitalManagementAPIGraphQLAPINONEDS7CF08E0AName": {
+   "Type": "String"
+  },
+  "referencetoBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538OutputsBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLLambdaData83D6855B": {
+   "Type": "String"
+  },
+  "referencetoBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaNestedStackSQLApiStackHospitalManagementSchemaNestedStackResource7699C538OutputsBackendStackHospitalManagementAPISQLApiStackHospitalManagementSchemaSQLFunctionHo5FC8E1BE": {
+   "Type": "String"
+  }
+ }
+}

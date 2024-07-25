@@ -1,0 +1,18 @@
+type Patient {
+  id: Int!
+  name: String!
+}
+
+type Query {
+  getPatients: [Patient]
+    @sql(
+      statement: "SELECT * FROM patient;"
+    )
+    @auth(rules: [{ allow: public }])
+}
+
+type Mutation {
+  createPatient(name: String!): AWSJSON
+    @sql(statement: "INSERT INTO patient (name) VALUES (:name);")
+    @auth(rules: [{ allow: public }])
+}
